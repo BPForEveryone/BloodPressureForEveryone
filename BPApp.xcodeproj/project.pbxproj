@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1F34DB1F65D71D006391F9 /* BPForEveryone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */; };
+		DC1F34DD1F65D779006391F9 /* EveryoneLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */; };
 		DC3832061EAE2E2D00804EDF /* BPEMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */; };
 		DC38320C1EAE3A1600804EDF /* BPProResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */; };
 		DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */; };
@@ -48,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BPForEveryone-Info.plist"; sourceTree = "<group>"; };
+		DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EveryoneLaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPEMainViewController.swift; sourceTree = "<group>"; };
 		DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BPProResourceTableViewController.swift; path = ../BPProResourceTableViewController.swift; sourceTree = "<group>"; };
 		DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPETrackUsersViewController.swift; sourceTree = "<group>"; };
@@ -68,7 +72,6 @@
 		DC5E4B7A1EADBED900B35F2D /* BPAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPAppUITests.swift; sourceTree = "<group>"; };
 		DC5E4B7C1EADBED900B35F2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DC5E4B951EADBEF500B35F2D /* BPForEveryone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPForEveryone.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC5E4B961EADBEF500B35F2D /* BPForEveryone-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BPForEveryone-Info.plist"; path = "/Users/blackstone/Documents/Spring 2017/CS3311_LMC3432/BPApp/BPApp/BPForEveryone-Info.plist"; sourceTree = "<absolute>"; };
 		DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickBPAnalysisViewController.swift; sourceTree = "<group>"; };
 		DC5E4B991EADD2F800B35F2D /* BPEMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BPEMain.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,7 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				DC5E4B661EADBED900B35F2D /* BPForProfesionals-Info.plist */,
-				DC5E4B961EADBEF500B35F2D /* BPForEveryone-Info.plist */,
+				DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */,
+				DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */,
 				DC5E4B571EADBED900B35F2D /* AppDelegate.swift */,
 				DC5E4B591EADBED900B35F2D /* BPProMainViewController.swift */,
 				DC5E4B5B1EADBED900B35F2D /* BPProMain.storyboard */,
@@ -251,6 +255,7 @@
 				TargetAttributes = {
 					DC5E4B531EADBED900B35F2D = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = WPENDQLXA4;
 						ProvisioningStyle = Automatic;
 					};
 					DC5E4B6A1EADBED900B35F2D = {
@@ -262,6 +267,9 @@
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = DC5E4B531EADBED900B35F2D;
+					};
+					DC5E4B881EADBEF500B35F2D = {
+						DevelopmentTeam = WPENDQLXA4;
 					};
 				};
 			};
@@ -292,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC5E4B651EADBED900B35F2D /* ProLaunchScreen.storyboard in Resources */,
+				DC1F34DB1F65D71D006391F9 /* BPForEveryone-Info.plist in Resources */,
 				DC5E4B621EADBED900B35F2D /* Assets.xcassets in Resources */,
 				DC5E4B5D1EADBED900B35F2D /* BPProMain.storyboard in Resources */,
 			);
@@ -317,6 +326,7 @@
 			files = (
 				DC5E4B8F1EADBEF500B35F2D /* ProLaunchScreen.storyboard in Resources */,
 				DC5E4B9A1EADD2F800B35F2D /* BPEMain.storyboard in Resources */,
+				DC1F34DD1F65D779006391F9 /* EveryoneLaunchScreen.storyboard in Resources */,
 				DC5E4B901EADBEF500B35F2D /* Assets.xcassets in Resources */,
 				DC5E4B911EADBEF500B35F2D /* BPProMain.storyboard in Resources */,
 			);
@@ -499,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WPENDQLXA4;
 				INFOPLIST_FILE = "$(SRCROOT)/BPApp/BPForProfesionals-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blackstone.BPForProfessionals;
@@ -511,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WPENDQLXA4;
 				INFOPLIST_FILE = "$(SRCROOT)/BPApp/BPForProfesionals-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blackstone.BPForProfessionals;
@@ -577,6 +589,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WPENDQLXA4;
 				INFOPLIST_FILE = "$(SRCROOT)/BPForEveryone-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blackstone.BPForEveryone;
@@ -589,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = WPENDQLXA4;
 				INFOPLIST_FILE = "$(SRCROOT)/BPForEveryone-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.blackstone.BPForEveryone;
