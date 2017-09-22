@@ -18,7 +18,6 @@
 		DC5E4B5A1EADBED900B35F2D /* BPProMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B591EADBED900B35F2D /* BPProMainViewController.swift */; };
 		DC5E4B5D1EADBED900B35F2D /* BPProMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B5B1EADBED900B35F2D /* BPProMain.storyboard */; };
 		DC5E4B601EADBED900B35F2D /* BPApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B5E1EADBED900B35F2D /* BPApp.xcdatamodeld */; };
-		DC5E4B621EADBED900B35F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B611EADBED900B35F2D /* Assets.xcassets */; };
 		DC5E4B651EADBED900B35F2D /* ProLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B631EADBED900B35F2D /* ProLaunchScreen.storyboard */; };
 		DC5E4B701EADBED900B35F2D /* BPAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B6F1EADBED900B35F2D /* BPAppTests.swift */; };
 		DC5E4B7B1EADBED900B35F2D /* BPAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B7A1EADBED900B35F2D /* BPAppUITests.swift */; };
@@ -26,10 +25,11 @@
 		DC5E4B8B1EADBEF500B35F2D /* BPProMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B591EADBED900B35F2D /* BPProMainViewController.swift */; };
 		DC5E4B8C1EADBEF500B35F2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B571EADBED900B35F2D /* AppDelegate.swift */; };
 		DC5E4B8F1EADBEF500B35F2D /* ProLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B631EADBED900B35F2D /* ProLaunchScreen.storyboard */; };
-		DC5E4B901EADBEF500B35F2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B611EADBED900B35F2D /* Assets.xcassets */; };
 		DC5E4B911EADBEF500B35F2D /* BPProMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B5B1EADBED900B35F2D /* BPProMain.storyboard */; };
 		DC5E4B981EADCEB200B35F2D /* QuickBPAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */; };
 		DC5E4B9A1EADD2F800B35F2D /* BPEMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B991EADD2F800B35F2D /* BPEMain.storyboard */; };
+		FF68C5041F7972D80068530C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B611EADBED900B35F2D /* Assets.xcassets */; };
+		FF7B0F421F75821900422746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B611EADBED900B35F2D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,7 +301,7 @@
 			files = (
 				DC5E4B651EADBED900B35F2D /* ProLaunchScreen.storyboard in Resources */,
 				DC1F34DB1F65D71D006391F9 /* BPForEveryone-Info.plist in Resources */,
-				DC5E4B621EADBED900B35F2D /* Assets.xcassets in Resources */,
+				FF7B0F421F75821900422746 /* Assets.xcassets in Resources */,
 				DC5E4B5D1EADBED900B35F2D /* BPProMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,8 +327,8 @@
 				DC5E4B8F1EADBEF500B35F2D /* ProLaunchScreen.storyboard in Resources */,
 				DC5E4B9A1EADD2F800B35F2D /* BPEMain.storyboard in Resources */,
 				DC1F34DD1F65D779006391F9 /* EveryoneLaunchScreen.storyboard in Resources */,
-				DC5E4B901EADBEF500B35F2D /* Assets.xcassets in Resources */,
 				DC5E4B911EADBEF500B35F2D /* BPProMain.storyboard in Resources */,
+				FF68C5041F7972D80068530C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WPENDQLXA4;
 				INFOPLIST_FILE = "$(SRCROOT)/BPApp/BPForProfesionals-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -522,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = WPENDQLXA4;
 				INFOPLIST_FILE = "$(SRCROOT)/BPApp/BPForProfesionals-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
