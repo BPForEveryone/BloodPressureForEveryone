@@ -28,6 +28,7 @@
 		DC5E4B911EADBEF500B35F2D /* BPProMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B5B1EADBED900B35F2D /* BPProMain.storyboard */; };
 		DC5E4B981EADCEB200B35F2D /* QuickBPAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */; };
 		DC5E4B9A1EADD2F800B35F2D /* BPEMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B991EADD2F800B35F2D /* BPEMain.storyboard */; };
+		DC685B361F7B422000EF7C21 /* BPEAddPatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */; };
 		FF68C5041F7972D80068530C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B611EADBED900B35F2D /* Assets.xcassets */; };
 		FF7B0F421F75821900422746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B611EADBED900B35F2D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -74,6 +75,7 @@
 		DC5E4B951EADBEF500B35F2D /* BPForEveryone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPForEveryone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickBPAnalysisViewController.swift; sourceTree = "<group>"; };
 		DC5E4B991EADD2F800B35F2D /* BPEMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BPEMain.storyboard; sourceTree = "<group>"; };
+		DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEAddPatientViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */,
 				DC5E4B991EADD2F800B35F2D /* BPEMain.storyboard */,
 				DC3832111EAE44DC00804EDF /* BPESettingsViewController.swift */,
+				DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */,
 				DC38320F1EAE415400804EDF /* BPEResourceTableViewController.swift */,
 				DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */,
 				DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */,
@@ -367,6 +370,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC685B361F7B422000EF7C21 /* BPEAddPatientViewController.swift in Sources */,
 				DC3832121EAE44DC00804EDF /* BPESettingsViewController.swift in Sources */,
 				DC5E4B8A1EADBEF500B35F2D /* BPApp.xcdatamodeld in Sources */,
 				DC3832061EAE2E2D00804EDF /* BPEMainViewController.swift in Sources */,
