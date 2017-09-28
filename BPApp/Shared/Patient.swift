@@ -22,7 +22,18 @@ public class Patient: NSObject, NSCoding {
     var birthDate: Date
     var heightInMeters: Float
     private var sexInBoolean: Bool
-    var bloodPressureMeasurements: [BloodPressureMeasurement]
+    private var bloodPressureMeasurementsSorted: [BloodPressureMeasurement]
+    public var bloodPressureMeasurements: [BloodPressureMeasurement] {
+        get {
+            return self.bloodPressureMeasurementsSorted
+        }
+        
+        set(newBloodPressureMeasurements) {
+            self.bloodPressureMeasurementsSorted = newBloodPressureMeasurements.sorted {
+                return $0.measurementDate < $1.measurementDate
+            }
+        }
+    }
     
     public var sex: Patient.Sex {
         get {
@@ -47,7 +58,7 @@ public class Patient: NSObject, NSCoding {
         static let birthDate = "birthDate"
         static let heightInMeters = "heightInMeters"
         static let sexInBoolean = "sexInBoolean"
-        static let bloodPressureMeasurements = "bloodPressureMeasurements"
+        static let bloodPressureMeasurementsSorted = "bloodPressureMeasurementsSorted"
     }
     
     // Create a new patient
@@ -77,7 +88,9 @@ public class Patient: NSObject, NSCoding {
             case .female: self.sexInBoolean = false
         }
         
-        self.bloodPressureMeasurements = bloodPressureMeasurements
+        self.bloodPressureMeasurementsSorted = bloodPressureMeasurements.sorted {
+            return $0.measurementDate < $1.measurementDate
+        }
     }
     
     // Encoder used to store a patient.
@@ -87,7 +100,7 @@ public class Patient: NSObject, NSCoding {
         encoder.encode(birthDate, forKey: PropertyKey.birthDate)
         encoder.encode(heightInMeters, forKey: PropertyKey.heightInMeters)
         encoder.encode(sexInBoolean, forKey: PropertyKey.sexInBoolean)
-        encoder.encode(bloodPressureMeasurements, forKey: PropertyKey.bloodPressureMeasurements)
+        encoder.encode(bloodPressureMeasurementsSorted, forKey: PropertyKey.bloodPressureMeasurementsSorted)
     }
     
     public required convenience init?(coder decoder: NSCoder) {
@@ -122,7 +135,8 @@ public class Patient: NSObject, NSCoding {
         }
         
         // Blood pressure log is required.
-        guard let bloodPressureMeasurements = decoder.decodeObject(forKey: PropertyKey.bloodPressureMeasurements) as? [BloodPressureMeasurement] else {
+        guard let bloodPressureMeasurementsSorted = decoder.decodeObject(forKey: PropertyKey.bloodPressureMeasurementsSorted) as? [BloodPressureMeasurement] else {
+            
             os_log("Unable to decode the blood pressure log for a Patient object.", log: OSLog.default, type: .debug)
             return nil
         }
@@ -134,7 +148,7 @@ public class Patient: NSObject, NSCoding {
             birthDate: birthDate,
             heightInMeters: heightInMeters,
             sex: sex,
-            bloodPressureMeasurements: bloodPressureMeasurements
+            bloodPressureMeasurements: bloodPressureMeasurementsSorted
         )
     }
 }
