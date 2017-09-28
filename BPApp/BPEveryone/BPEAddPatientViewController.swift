@@ -10,4 +10,26 @@ import UIKit
 
 class BPEAddPatientViewController: UIViewController {
     
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var dobTextField: UITextField!
+    @IBOutlet weak var heightTextField: UITextField!
+    @IBOutlet weak var genderControl: UISegmentedControl!
+    
+    var patient: Patient!
+    var patients: PersistentPatients!
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad();
+    }
+    
+    @IBAction func createFromBar(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil);
+    }
+    @IBAction func Cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil);
+    }
+    
+    
 }
