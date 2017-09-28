@@ -29,6 +29,20 @@
 		DC5E4B981EADCEB200B35F2D /* QuickBPAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */; };
 		DC5E4B9A1EADD2F800B35F2D /* BPEMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B991EADD2F800B35F2D /* BPEMain.storyboard */; };
 		DC685B361F7B422000EF7C21 /* BPEAddPatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */; };
+		DC7C783A1F7C75B400D87C3D /* BPProResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */; };
+		DC7C783B1F7C75BD00D87C3D /* QuickBPAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */; };
+		DC7C78401F7C82B200D87C3D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783E1F7C7EBA00D87C3D /* Patient.swift */; };
+		DC7C78411F7C82B300D87C3D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783E1F7C7EBA00D87C3D /* Patient.swift */; };
+		DC7C78421F7C82B500D87C3D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783E1F7C7EBA00D87C3D /* Patient.swift */; };
+		DC7C78431F7C82B600D87C3D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783E1F7C7EBA00D87C3D /* Patient.swift */; };
+		DC7C78441F7C82C100D87C3D /* PersistentPatients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */; };
+		DC7C78451F7C82C200D87C3D /* PersistentPatients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */; };
+		DC7C78461F7C82C300D87C3D /* PersistentPatients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */; };
+		DC7C78471F7C82C300D87C3D /* PersistentPatients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */; };
+		DC7C78491F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */; };
+		DC7C784A1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */; };
+		DC7C784B1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */; };
+		DC7C784C1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */; };
 		FF68C5041F7972D80068530C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B611EADBED900B35F2D /* Assets.xcassets */; };
 		FF7B0F421F75821900422746 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B611EADBED900B35F2D /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -54,7 +68,7 @@
 		DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BPForEveryone-Info.plist"; sourceTree = "<group>"; };
 		DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EveryoneLaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPEMainViewController.swift; sourceTree = "<group>"; };
-		DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BPProResourceTableViewController.swift; path = ../BPProResourceTableViewController.swift; sourceTree = "<group>"; };
+		DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPProResourceTableViewController.swift; sourceTree = "<group>"; };
 		DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPETrackUsersViewController.swift; sourceTree = "<group>"; };
 		DC38320F1EAE415400804EDF /* BPEResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPEResourceTableViewController.swift; sourceTree = "<group>"; };
 		DC3832111EAE44DC00804EDF /* BPESettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPESettingsViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +90,9 @@
 		DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickBPAnalysisViewController.swift; sourceTree = "<group>"; };
 		DC5E4B991EADD2F800B35F2D /* BPEMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BPEMain.storyboard; sourceTree = "<group>"; };
 		DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEAddPatientViewController.swift; sourceTree = "<group>"; };
+		DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentPatients.swift; sourceTree = "<group>"; };
+		DC7C783E1F7C7EBA00D87C3D /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
+		DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BloodPressureMeasurement.swift; path = BPApp/BloodPressureMeasurement.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,20 +151,15 @@
 		DC5E4B561EADBED900B35F2D /* BPApp */ = {
 			isa = PBXGroup;
 			children = (
+				DC7C783F1F7C7EC000D87C3D /* Shared */,
+				DC7C783C1F7C766D00D87C3D /* BPEveryone */,
+				DC7C78391F7C759700D87C3D /* BPProfessional */,
 				DC5E4B661EADBED900B35F2D /* BPForProfesionals-Info.plist */,
 				DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */,
 				DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */,
 				DC5E4B571EADBED900B35F2D /* AppDelegate.swift */,
-				DC5E4B591EADBED900B35F2D /* BPProMainViewController.swift */,
 				DC5E4B5B1EADBED900B35F2D /* BPProMain.storyboard */,
-				DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */,
 				DC5E4B991EADD2F800B35F2D /* BPEMain.storyboard */,
-				DC3832111EAE44DC00804EDF /* BPESettingsViewController.swift */,
-				DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */,
-				DC38320F1EAE415400804EDF /* BPEResourceTableViewController.swift */,
-				DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */,
-				DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */,
-				DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */,
 				DC5E4B611EADBED900B35F2D /* Assets.xcassets */,
 				DC5E4B631EADBED900B35F2D /* ProLaunchScreen.storyboard */,
 				DC5E4B5E1EADBED900B35F2D /* BPApp.xcdatamodeld */,
@@ -171,6 +183,38 @@
 				DC5E4B7C1EADBED900B35F2D /* Info.plist */,
 			);
 			path = BPAppUITests;
+			sourceTree = "<group>";
+		};
+		DC7C78391F7C759700D87C3D /* BPProfessional */ = {
+			isa = PBXGroup;
+			children = (
+				DC5E4B591EADBED900B35F2D /* BPProMainViewController.swift */,
+				DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */,
+				DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */,
+			);
+			path = BPProfessional;
+			sourceTree = "<group>";
+		};
+		DC7C783C1F7C766D00D87C3D /* BPEveryone */ = {
+			isa = PBXGroup;
+			children = (
+				DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */,
+				DC38320F1EAE415400804EDF /* BPEResourceTableViewController.swift */,
+				DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */,
+				DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */,
+				DC3832111EAE44DC00804EDF /* BPESettingsViewController.swift */,
+			);
+			path = BPEveryone;
+			sourceTree = "<group>";
+		};
+		DC7C783F1F7C7EC000D87C3D /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */,
+				DC7C783E1F7C7EBA00D87C3D /* Patient.swift */,
+				DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,11 +386,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7C78491F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
 				DC5E4B981EADCEB200B35F2D /* QuickBPAnalysisViewController.swift in Sources */,
 				DC5E4B601EADBED900B35F2D /* BPApp.xcdatamodeld in Sources */,
+				DC7C78441F7C82C100D87C3D /* PersistentPatients.swift in Sources */,
 				DC5E4B5A1EADBED900B35F2D /* BPProMainViewController.swift in Sources */,
 				DC5E4B581EADBED900B35F2D /* AppDelegate.swift in Sources */,
 				DC38320C1EAE3A1600804EDF /* BPProResourceTableViewController.swift in Sources */,
+				DC7C78411F7C82B300D87C3D /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,7 +401,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7C784A1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
+				DC7C78461F7C82C300D87C3D /* PersistentPatients.swift in Sources */,
 				DC5E4B701EADBED900B35F2D /* BPAppTests.swift in Sources */,
+				DC7C78421F7C82B500D87C3D /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +412,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7C784B1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
+				DC7C78471F7C82C300D87C3D /* PersistentPatients.swift in Sources */,
 				DC5E4B7B1EADBED900B35F2D /* BPAppUITests.swift in Sources */,
+				DC7C78431F7C82B600D87C3D /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,14 +423,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7C784C1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
+				DC7C78451F7C82C200D87C3D /* PersistentPatients.swift in Sources */,
 				DC685B361F7B422000EF7C21 /* BPEAddPatientViewController.swift in Sources */,
 				DC3832121EAE44DC00804EDF /* BPESettingsViewController.swift in Sources */,
+				DC7C783B1F7C75BD00D87C3D /* QuickBPAnalysisViewController.swift in Sources */,
 				DC5E4B8A1EADBEF500B35F2D /* BPApp.xcdatamodeld in Sources */,
 				DC3832061EAE2E2D00804EDF /* BPEMainViewController.swift in Sources */,
 				DC5E4B8B1EADBEF500B35F2D /* BPProMainViewController.swift in Sources */,
+				DC7C783A1F7C75B400D87C3D /* BPProResourceTableViewController.swift in Sources */,
 				DC3832101EAE415400804EDF /* BPEResourceTableViewController.swift in Sources */,
 				DC5E4B8C1EADBEF500B35F2D /* AppDelegate.swift in Sources */,
 				DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */,
+				DC7C78401F7C82B200D87C3D /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

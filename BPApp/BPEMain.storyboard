@@ -158,7 +158,7 @@ Pressure</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fzL-xb-4jB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3655" y="-376"/>
+            <point key="canvasLocation" x="3697" y="-362"/>
         </scene>
         <!--Create A New Patient-->
         <scene sceneID="PL4-Iy-rMQ">
@@ -193,13 +193,6 @@ Pressure</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1L-Sc-8R5">
-                                <rect key="frame" x="21" y="141" width="338" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="gBQ-sy-dnJ">
                                 <rect key="frame" x="79" y="225" width="216" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -222,13 +215,6 @@ Pressure</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PXW-og-Q4S">
-                                <rect key="frame" x="16" y="307" width="343" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DL0-Mh-2bo">
                                 <rect key="frame" x="80" y="393" width="89" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -247,18 +233,49 @@ Pressure</string>
                                 <rect key="frame" x="0.0" y="592" width="375" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Patient"/>
+                                <connections>
+                                    <action selector="createFromBar:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="40b-wQ-SjY"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-fm-dSN">
+                                <rect key="frame" x="21" y="307" width="338" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q1L-Sc-8R5">
+                                <rect key="frame" x="21" y="141" width="338" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create A New Patient" id="kA9-C0-xtD">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ykq-ed-UkX"/>
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="D0R-ce-bBs"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ykq-ed-UkX">
+                            <connections>
+                                <action selector="Cancel:" destination="Vgl-Ia-ds8" id="E0k-sB-JSJ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="D0R-ce-bBs">
+                            <connections>
+                                <action selector="createFromBar:" destination="Vgl-Ia-ds8" id="Zv3-yY-XGO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dobTextField" destination="5ZV-fm-dSN" id="ChW-Jn-hT4"/>
+                        <outlet property="genderControl" destination="gBQ-sy-dnJ" id="FXC-OX-8eU"/>
+                        <outlet property="heightTextField" destination="DL0-Mh-2bo" id="bKg-Bi-2Pd"/>
+                        <outlet property="nameTextField" destination="Q1L-Sc-8R5" id="hpv-6o-A5S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtC-Tv-pxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4426.3999999999996" y="-375.56221889055473"/>
+            <point key="canvasLocation" x="4428" y="-362.06896551724139"/>
         </scene>
         <!--Resource Articles-->
         <scene sceneID="YF2-8d-uKk">
