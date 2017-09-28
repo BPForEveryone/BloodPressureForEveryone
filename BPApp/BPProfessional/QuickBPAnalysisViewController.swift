@@ -10,6 +10,7 @@ import UIKit
 
 class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    @IBOutlet weak var genderField: UISegmentedControl!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
@@ -22,6 +23,10 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
     
     var weightOptions: [String] = []
     var bpOptions = Array<Array<String>>()
+    let stage2HTN = "This patient has stage 2 hypertension and is over the 95th percentile + 12 mmHg. This patient needs to take immediate action and drastic life changes to imrpove personal health to combat this high BP."
+    let stage1HTN = "This patient has stage 1 hypertension and is between the 95th percentile and the 95th percentile + 12 mmH. This patient needs to to have an action plan to improve personal health to combat this high BP."
+    let elevatedBP = "This patient has stage 2 hypertension and between the 90th and 95th percentiles. This patient needs to look into incorporating small life changes (ie. healthy diet, more exercise) to handle this elevated BP."
+    let normalBP = "This patient is within normal BP ranges, ie. < 90th percentile. They should still continue to live a healthy lifestyle, especially if they are older or have previously had hypertension."
     
     @IBAction func cancel() {
         dismiss(animated: true, completion: nil)
@@ -141,5 +146,60 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
         self.view.endEditing(true)
     }
     
-
+    func convertHeightToDouble(heightString: String) -> Double {
+        let apostropheInd = heightString.index(of: "'")
+        let quotationInd = heightString.index(of: "\"")
+        let spaceInd = heightString.index(of: " ")
+        let rangeFeet = heightString.startIndex..<apostropheInd
+        let rangeInches = heightString.index(spaceInd!, offsetBy: 1)..<quotationInd
+        return Double(heightString.substring(with: rangeFeet))! * 12.0 + Double(heightString.substring(with: rangeInches))!
+    }
+    
+    @IBAction func analyzeOnPress(_ sender: Any) {
+        // age must not be empty
+        guard var ageString: String = ageTextField.text, !(ageTextField.text?.isEmpty)! else {
+            print("Age is null or 0")
+            return
+        }
+        var age: Int = Int(ageString.components(separatedBy: " ")[0])!
+        // weight must not be empty
+        guard var weightString: String = weightTextField.text, !(weightTextField.text?.isEmpty)! else {
+            print("Weight is null or 0")
+            return
+        }
+        var weight: Int = Int(weightString.components(separatedBy: " ")[0])!
+        // bp must be valid not empty (sanity check mainly)
+        guard var bpString: String = bpTextField.text, !(bpTextField.text?.isEmpty)! else {
+            print("BP is null or 0")
+            return
+        }
+        var bothBP: [String] = bpString.components(separatedBy: "/")
+        var systolicBP: Int = Int(bothBP[0])!
+        var diastolicBP: Int = Int(bothBP[1])!
+        print("\(systolicBP), \(diastolicBP)")
+        guard var heightString: String = heightTextField.text, !(heightTextField.text?.isEmpty)! else {
+            print("Height is null or 0")
+            return
+        }
+        var height: Double = convertHeightToDouble(heightString: heightString)
+        print("\(height)")
+        var readingDiagnosis: String = "Here is an unitialized diagnosis"
+        if (age < 13) {
+            // Do BP for children calculations based on table here
+        } else {
+            // This is the adolescents+ case
+            if (systolicBP >= 140 || diastolicBP >= 90) {
+                readingDiagnosis = stage2HTN
+            } else if (systolicBP >= 130 || diastolicBP >= 80) {
+                readingDiagnosis = stage1HTN
+            } else if (systolicBP >= 120) {
+                readingDiagnosis = elevatedBP
+            } else {
+                readingDiagnosis = normalBP
+            }
+            
+        }
+        // Use readingDiagnosis to pass into next screen in label position
+    }
+    
 }
