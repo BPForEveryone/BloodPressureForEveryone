@@ -224,32 +224,36 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
     }
     
     @IBAction func analyzeOnPress(_ sender: Any) {
+        
         // age must not be empty
-        guard var ageString: String = ageTextField.text, !(ageTextField.text?.isEmpty)! else {
+        guard let ageString: String = ageTextField.text, !(ageTextField.text?.isEmpty)! else {
             print("Age is null or 0")
             return
         }
-        var age: Int = Int(ageString.components(separatedBy: " ")[0])!
-        // weight must not be empty
-        guard var weightString: String = weightTextField.text, !(weightTextField.text?.isEmpty)! else {
-            print("Weight is null or 0")
-            return
-        }
-        var weight: Int = Int(weightString.components(separatedBy: " ")[0])!
+        
+        let age: Int = Int(ageString.components(separatedBy: " ")[0])!
+        
+        
         // bp must be valid not empty (sanity check mainly)
-        guard var bpString: String = bpTextField.text, !(bpTextField.text?.isEmpty)! else {
+        guard let bpString: String = bpTextField.text, !(bpTextField.text?.isEmpty)! else {
             print("BP is null or 0")
             return
         }
+        
         bothBP = bpString.components(separatedBy: "/")
-        var systolicBP: Int = Int(bothBP[0])!
-        var diastolicBP: Int = Int(bothBP[1])!
+        
+        let systolicBP: Int = Int(bothBP[0])!
+        let diastolicBP: Int = Int(bothBP[1])!
+        
         print("\(systolicBP), \(diastolicBP)")
-        guard var heightString: String = heightTextField.text, !(heightTextField.text?.isEmpty)! else {
+        
+        guard let heightString: String = heightTextField.text, !(heightTextField.text?.isEmpty)! else {
             print("Height is null or 0")
             return
         }
-        var height: Double = convertHeightToDouble(heightString: heightString)
+        
+        let height: Double = convertHeightToDouble(heightString: heightString)
+        
         print("\(height)")
         readingDiagnosis = "Here is an uninitialized diagnosis"
         if (age < 13) {
