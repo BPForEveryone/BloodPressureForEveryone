@@ -23,6 +23,8 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
     
     var weightOptions: [String] = []
     var bpOptions = Array<Array<String>>()
+    var readingDiagnosis: String = ""
+    var bothBP: [String] = []
     let stage2HTN = "This patient has stage 2 hypertension and is over the 95th percentile + 12 mmHg. This patient needs to take immediate action and drastic life changes to imrpove personal health to combat this high BP."
     let stage1HTN = "This patient has stage 1 hypertension and is between the 95th percentile and the 95th percentile + 12 mmH. This patient needs to to have an action plan to improve personal health to combat this high BP."
     let elevatedBP = "This patient has stage 2 hypertension and between the 90th and 95th percentiles. This patient needs to look into incorporating small life changes (ie. healthy diet, more exercise) to handle this elevated BP."
@@ -173,7 +175,7 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
             print("BP is null or 0")
             return
         }
-        var bothBP: [String] = bpString.components(separatedBy: "/")
+        bothBP = bpString.components(separatedBy: "/")
         var systolicBP: Int = Int(bothBP[0])!
         var diastolicBP: Int = Int(bothBP[1])!
         print("\(systolicBP), \(diastolicBP)")
@@ -183,7 +185,7 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
         }
         var height: Double = convertHeightToDouble(heightString: heightString)
         print("\(height)")
-        var readingDiagnosis: String = "Here is an unitialized diagnosis"
+        readingDiagnosis = "Here is an uninitialized diagnosis"
         if (age < 13) {
             // Do BP for children calculations based on table here
         } else {
@@ -200,6 +202,15 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
             
         }
         // Use readingDiagnosis to pass into next screen in label position
+        //performSegue(withIdentifier: "BPAnalysisResultsController", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let BPAnaysisResultsViewController = segue.destination as? BPAnalysisResultsViewController {
+            BPAnaysisResultsViewController.readingDiagnosis = readingDiagnosis
+            BPAnaysisResultsViewController.systolic = bothBP[0]
+            BPAnaysisResultsViewController.diastolic = bothBP[1]
+        }
     }
     
 }
