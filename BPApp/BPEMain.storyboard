@@ -135,7 +135,7 @@ Pressure</string>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Patient" id="5l2-Hn-wOP">
                             <connections>
-                                <segue destination="q41-tM-3fs" kind="presentation" id="RAg-21-SMF"/>
+                                <segue destination="q41-tM-3fs" kind="showDetail" id="RAg-21-SMF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
