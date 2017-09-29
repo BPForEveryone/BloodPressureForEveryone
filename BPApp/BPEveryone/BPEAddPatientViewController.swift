@@ -16,7 +16,7 @@ class BPEAddPatientViewController: UIViewController {
     @IBOutlet weak var genderControl: UISegmentedControl!
     
     var patient: Patient!
-    var patients: PersistentPatients!
+    var patients = Config.patients
     
     override func viewDidLoad() {
         
