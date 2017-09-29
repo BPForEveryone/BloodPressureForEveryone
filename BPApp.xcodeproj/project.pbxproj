@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		28F55EF81F7DD03300B17BBB /* BPAnalysisResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */; };
 		575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */; };
+		575FD7821F7DCEA50050EF52 /* BPProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */; };
 		AD4AF1421F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
 		AD4AF1431F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
 		AD4AF1441F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
@@ -193,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				DC5E4B591EADBED900B35F2D /* BPProMainViewController.swift */,
+				575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */,
 				DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */,
 				28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */,
 				DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */,
@@ -208,7 +210,6 @@
 				DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */,
 				DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */,
 				DC3832111EAE44DC00804EDF /* BPESettingsViewController.swift */,
-				575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */,
 			);
 			path = BPEveryone;
 			sourceTree = "<group>";
@@ -442,6 +443,7 @@
 				DC7C783A1F7C75B400D87C3D /* BPProResourceTableViewController.swift in Sources */,
 				DC3832101EAE415400804EDF /* BPEResourceTableViewController.swift in Sources */,
 				DC5E4B8C1EADBEF500B35F2D /* AppDelegate.swift in Sources */,
+				575FD7821F7DCEA50050EF52 /* BPProSettingsViewController.swift in Sources */,
 				DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */,
 				DC7C78401F7C82B200D87C3D /* Patient.swift in Sources */,
 			);
