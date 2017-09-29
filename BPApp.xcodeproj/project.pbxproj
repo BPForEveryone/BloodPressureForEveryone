@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		28F55EF81F7DD03300B17BBB /* BPAnalysisResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */; };
 		575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */; };
 		575FD7821F7DCEA50050EF52 /* BPProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */; };
 		AD4AF1421F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPAnalysisResultsViewController.swift; sourceTree = "<group>"; };
 		575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BPProSettingsViewController.swift; path = BPApp/BPProfessional/BPProSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		AD4AF1411F7D989600F416A4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BPForEveryone-Info.plist"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				DC5E4B591EADBED900B35F2D /* BPProMainViewController.swift */,
 				575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */,
 				DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */,
+				28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */,
 				DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */,
 			);
 			path = BPProfessional;
@@ -391,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7C78491F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
+				28F55EF81F7DD03300B17BBB /* BPAnalysisResultsViewController.swift in Sources */,
 				DC5E4B981EADCEB200B35F2D /* QuickBPAnalysisViewController.swift in Sources */,
 				AD4AF1451F7D989600F416A4 /* Config.swift in Sources */,
 				DC5E4B601EADBED900B35F2D /* BPApp.xcdatamodeld in Sources */,
