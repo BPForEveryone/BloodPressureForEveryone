@@ -92,6 +92,8 @@ class BPEAddPatientViewController: UIViewController {
         let height = (heightStr as NSString).floatValue;
         
         patient = Patient(firstName: firstname, lastName: lastname, birthDate: patientDob, heightInMeters: height, sex: patientSex, bloodPressureMeasurements: bpMeasurements);
+        
+        Config.patients.append(patient);
     }
     
     
