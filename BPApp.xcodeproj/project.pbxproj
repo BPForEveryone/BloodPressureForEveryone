@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */; };
+		AD4AF1421F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
+		AD4AF1431F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
+		AD4AF1441F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
+		AD4AF1451F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
 		DC1F34DB1F65D71D006391F9 /* BPForEveryone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */; };
 		DC1F34DD1F65D779006391F9 /* EveryoneLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */; };
 		DC3832061EAE2E2D00804EDF /* BPEMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */; };
@@ -35,10 +40,6 @@
 		DC7C78411F7C82B300D87C3D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783E1F7C7EBA00D87C3D /* Patient.swift */; };
 		DC7C78421F7C82B500D87C3D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783E1F7C7EBA00D87C3D /* Patient.swift */; };
 		DC7C78431F7C82B600D87C3D /* Patient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783E1F7C7EBA00D87C3D /* Patient.swift */; };
-		DC7C78441F7C82C100D87C3D /* PersistentPatients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */; };
-		DC7C78451F7C82C200D87C3D /* PersistentPatients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */; };
-		DC7C78461F7C82C300D87C3D /* PersistentPatients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */; };
-		DC7C78471F7C82C300D87C3D /* PersistentPatients.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */; };
 		DC7C78491F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */; };
 		DC7C784A1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */; };
 		DC7C784B1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */; };
@@ -65,6 +66,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BPProSettingsViewController.swift; path = BPApp/BPProfessional/BPProSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
+		AD4AF1411F7D989600F416A4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BPForEveryone-Info.plist"; sourceTree = "<group>"; };
 		DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EveryoneLaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPEMainViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +93,6 @@
 		DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickBPAnalysisViewController.swift; sourceTree = "<group>"; };
 		DC5E4B991EADD2F800B35F2D /* BPEMain.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BPEMain.storyboard; sourceTree = "<group>"; };
 		DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEAddPatientViewController.swift; sourceTree = "<group>"; };
-		DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentPatients.swift; sourceTree = "<group>"; };
 		DC7C783E1F7C7EBA00D87C3D /* Patient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Patient.swift; sourceTree = "<group>"; };
 		DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BloodPressureMeasurement.swift; path = BPApp/BloodPressureMeasurement.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -203,6 +205,7 @@
 				DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */,
 				DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */,
 				DC3832111EAE44DC00804EDF /* BPESettingsViewController.swift */,
+				575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */,
 			);
 			path = BPEveryone;
 			sourceTree = "<group>";
@@ -210,9 +213,9 @@
 		DC7C783F1F7C7EC000D87C3D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AD4AF1411F7D989600F416A4 /* Config.swift */,
 				DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */,
 				DC7C783E1F7C7EBA00D87C3D /* Patient.swift */,
-				DC7C783D1F7C7EBA00D87C3D /* PersistentPatients.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -388,8 +391,9 @@
 			files = (
 				DC7C78491F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
 				DC5E4B981EADCEB200B35F2D /* QuickBPAnalysisViewController.swift in Sources */,
+				AD4AF1451F7D989600F416A4 /* Config.swift in Sources */,
 				DC5E4B601EADBED900B35F2D /* BPApp.xcdatamodeld in Sources */,
-				DC7C78441F7C82C100D87C3D /* PersistentPatients.swift in Sources */,
+				575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */,
 				DC5E4B5A1EADBED900B35F2D /* BPProMainViewController.swift in Sources */,
 				DC5E4B581EADBED900B35F2D /* AppDelegate.swift in Sources */,
 				DC38320C1EAE3A1600804EDF /* BPProResourceTableViewController.swift in Sources */,
@@ -402,7 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7C784A1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
-				DC7C78461F7C82C300D87C3D /* PersistentPatients.swift in Sources */,
+				AD4AF1441F7D989600F416A4 /* Config.swift in Sources */,
 				DC5E4B701EADBED900B35F2D /* BPAppTests.swift in Sources */,
 				DC7C78421F7C82B500D87C3D /* Patient.swift in Sources */,
 			);
@@ -413,7 +417,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7C784B1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
-				DC7C78471F7C82C300D87C3D /* PersistentPatients.swift in Sources */,
+				AD4AF1421F7D989600F416A4 /* Config.swift in Sources */,
 				DC5E4B7B1EADBED900B35F2D /* BPAppUITests.swift in Sources */,
 				DC7C78431F7C82B600D87C3D /* Patient.swift in Sources */,
 			);
@@ -424,8 +428,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC7C784C1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
-				DC7C78451F7C82C200D87C3D /* PersistentPatients.swift in Sources */,
 				DC685B361F7B422000EF7C21 /* BPEAddPatientViewController.swift in Sources */,
+				AD4AF1431F7D989600F416A4 /* Config.swift in Sources */,
 				DC3832121EAE44DC00804EDF /* BPESettingsViewController.swift in Sources */,
 				DC7C783B1F7C75BD00D87C3D /* QuickBPAnalysisViewController.swift in Sources */,
 				DC5E4B8A1EADBEF500B35F2D /* BPApp.xcdatamodeld in Sources */,
