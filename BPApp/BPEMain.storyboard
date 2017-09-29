@@ -286,9 +286,11 @@ Pressure</string>
                     </navigationItem>
                     <connections>
                         <outlet property="dobTextField" destination="5ZV-fm-dSN" id="ChW-Jn-hT4"/>
+                        <outlet property="firstnameTextField" destination="Q1L-Sc-8R5" id="F1o-u2-8XP"/>
                         <outlet property="genderControl" destination="gBQ-sy-dnJ" id="FXC-OX-8eU"/>
                         <outlet property="heightTextField" destination="DL0-Mh-2bo" id="bKg-Bi-2Pd"/>
-                        <outlet property="nameTextField" destination="Q1L-Sc-8R5" id="hpv-6o-A5S"/>
+                        <outlet property="lastNameTextField" destination="V6R-XR-UoB" id="nP4-Nh-yWe"/>
+                        <outlet property="weightTextField" destination="bjn-I8-305" id="noG-Jv-3yF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MtC-Tv-pxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
