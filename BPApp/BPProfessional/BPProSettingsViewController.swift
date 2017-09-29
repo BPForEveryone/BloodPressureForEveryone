@@ -27,6 +27,11 @@ class BPProSettingsViewController : UIViewController {
         UserDefaults.standard.set(numSysSelection.selectedSegmentIndex, forKey: "numSystem")
         UserDefaults.standard.set(true, forKey: "numSystemChanged")
     }
+
+    @IBAction func save2(_ sender: UIButton) {
+        UserDefaults.standard.set(numSysSelection.selectedSegmentIndex, forKey: "numSystem")
+        UserDefaults.standard.set(true, forKey: "numSystemChanged")
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         if let x = UserDefaults.standard.object(forKey: "numSystem") as? Int {

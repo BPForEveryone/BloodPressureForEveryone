@@ -17,13 +17,16 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
     @IBOutlet weak var bpTextField: UITextField!
     
     
+    let numSysImperial = UserDefaults.standard.value(forKey: "numSystem") as? Int == 0
     var ageOptions: [String] = []
     let heightOptions = [["1'", "2'", "3'", "4'", "5'", "6'"],
                          ["0\"","1\"","2\"","3\"","4\"","5\"","6\"","7\"","8\"","9\"","10\"","11\""]]
+    var heightOptionsMetric = [["0m", "1m", "2m"], []]
     
     var weightOptions: [String] = []
+    var weightOptionsMetric: [String] = []
     var bpOptions = Array<Array<String>>()
-    let stage2HTN = "This patient has stage 2 hypertension and is over the 95th percentile + 12 mmHg. This patient needs to take immediate action and drastic life changes to imrpove personal health to combat this high BP."
+    let stage2HTN = "This patient has stage 2 hypertension and is over the 95th percentile + 12 mmHg. This patient needs to take immediate action and drastic life changes to improve personal health to combat this high BP."
     let stage1HTN = "This patient has stage 1 hypertension and is between the 95th percentile and the 95th percentile + 12 mmH. This patient needs to to have an action plan to improve personal health to combat this high BP."
     let elevatedBP = "This patient has stage 2 hypertension and between the 90th and 95th percentiles. This patient needs to look into incorporating small life changes (ie. healthy diet, more exercise) to handle this elevated BP."
     let normalBP = "This patient is within normal BP ranges, ie. < 90th percentile. They should still continue to live a healthy lifestyle, especially if they are older or have previously had hypertension."
@@ -42,17 +45,32 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
         agePickerView.selectRow(8, inComponent: 0, animated: true)
         ageTextField.inputView = agePickerView
         
-        let heightPickerView = UIPickerView()
-        heightPickerView.delegate = self
-        heightPickerView.tag = 2
-        heightPickerView.selectRow(3, inComponent: 0, animated: true)
-        heightTextField.inputView = heightPickerView
-        
-        let weightPickerView = UIPickerView()
-        weightPickerView.delegate = self
-        weightPickerView.tag = 3
-        weightPickerView.selectRow(189, inComponent: 0, animated: true)
-        weightTextField.inputView = weightPickerView
+        if numSysImperial {
+            let heightPickerView = UIPickerView()
+            heightPickerView.delegate = self
+            heightPickerView.tag = 2
+            heightPickerView.selectRow(3, inComponent: 0, animated: true)
+            heightTextField.inputView = heightPickerView
+            
+            let weightPickerView = UIPickerView()
+            weightPickerView.delegate = self
+            weightPickerView.tag = 3
+            weightPickerView.selectRow(189, inComponent: 0, animated: true)
+            weightTextField.inputView = weightPickerView
+        } else {
+            let heightPickerView = UIPickerView()
+            heightPickerView.delegate = self
+            heightPickerView.tag = 2
+            heightPickerView.selectRow(1, inComponent: 0, animated: true)
+            heightPickerView.selectRow(50, inComponent: 1, animated: true)
+            heightTextField.inputView = heightPickerView
+            
+            let weightPickerView = UIPickerView()
+            weightPickerView.delegate = self
+            weightPickerView.tag = 3
+            weightPickerView.selectRow(79, inComponent: 0, animated: true)
+            weightTextField.inputView = weightPickerView
+        }
         
         let bpPickerView = UIPickerView()
         bpPickerView.delegate = self
@@ -70,6 +88,12 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
         for i in 1...500 {
             weightOptions.append("\(i) lbs")
         }
+        for i in 1...230 {
+            weightOptionsMetric.append("\(i) kg")
+        }
+        for i in 0...99 {
+            heightOptionsMetric[1].append("\(i)cm")
+        }
         
         var systolicOptions: [String] = []
         var diastolicOptions: [String] = []
@@ -86,7 +110,11 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         if pickerView.tag == 2 {
-            return heightOptions.count
+            if numSysImperial {
+                return heightOptions.count
+            } else {
+                return heightOptionsMetric.count
+            }
         }
         
         if pickerView.tag == 4 {
@@ -100,9 +128,17 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
         if pickerView.tag == 1 {
             return ageOptions.count
         } else if pickerView.tag == 2 {
-            return heightOptions[component].count
+            if numSysImperial {
+                return heightOptions[component].count
+            } else {
+                return heightOptionsMetric[component].count
+            }
         } else if pickerView.tag == 3 {
-            return weightOptions.count
+            if numSysImperial {
+                return weightOptions.count
+            } else {
+                return weightOptionsMetric.count
+            }
         } else if pickerView.tag == 4 {
             return bpOptions[component].count
         } else {
@@ -115,9 +151,17 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
         if pickerView.tag == 1 {
             return ageOptions[row]
         } else if pickerView.tag == 2 {
-            return heightOptions[component][row]
+            if numSysImperial {
+                return heightOptions[component][row]
+            } else {
+                return heightOptionsMetric[component][row]
+            }
         } else if pickerView.tag == 3 {
-            return weightOptions[row]
+            if numSysImperial {
+                return weightOptions[row]
+            } else {
+                return weightOptionsMetric[row]
+            }
         } else if pickerView.tag == 4 {
             return bpOptions[component][row]
         } else {
@@ -130,11 +174,21 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
         if pickerView.tag == 1 {
             ageTextField.text = ageOptions[row]
         } else if pickerView.tag == 2 {
-            let feet = heightOptions[0][pickerView.selectedRow(inComponent: 0)]
-            let inches = heightOptions[1][pickerView.selectedRow(inComponent: 1)]
-            heightTextField.text = feet + " " + inches
+            if numSysImperial {
+                let feet = heightOptions[0][pickerView.selectedRow(inComponent: 0)]
+                let inches = heightOptions[1][pickerView.selectedRow(inComponent: 1)]
+                heightTextField.text = feet + " " + inches
+            } else {
+                let meters = heightOptionsMetric[0][pickerView.selectedRow(inComponent: 0)]
+                let centimeters = heightOptionsMetric[1][pickerView.selectedRow(inComponent: 1)]
+                heightTextField.text = meters + " " + centimeters
+            }
         } else if pickerView.tag == 3 {
-            weightTextField.text = weightOptions[row]
+            if numSysImperial {
+                weightTextField.text = weightOptions[row]
+            } else {
+                weightTextField.text = weightOptionsMetric[row]
+            }
         } else if pickerView.tag == 4 {
             let systolic = bpOptions[0][pickerView.selectedRow(inComponent: 0)]
             let diastolic = bpOptions[1][pickerView.selectedRow(inComponent: 1)]
@@ -147,12 +201,24 @@ class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, U
     }
     
     func convertHeightToDouble(heightString: String) -> Double {
-        let apostropheInd = heightString.index(of: "'")
-        let quotationInd = heightString.index(of: "\"")
-        let spaceInd = heightString.index(of: " ")
-        let rangeFeet = heightString.startIndex..<apostropheInd
-        let rangeInches = heightString.index(spaceInd!, offsetBy: 1)..<quotationInd
-        return Double(heightString.substring(with: rangeFeet))! * 12.0 + Double(heightString.substring(with: rangeInches))!
+        if numSysImperial {
+            let apostropheInd = heightString.index(of: "'")
+            let quotationInd = heightString.index(of: "\"")
+            let spaceInd = heightString.index(of: " ")
+            let rangeFeet = heightString.startIndex..<apostropheInd
+            let rangeInches = heightString.index(spaceInd!, offsetBy: 1)..<quotationInd
+            return Double(heightString.substring(with: rangeFeet))! * 12.0 + Double(heightString.substring(with: rangeInches))!
+        } else {
+            //let spaceInd = heightString.index(of: " ")
+            //let rangeCm = heightString.startIndex..<spaceInd
+            //return Double(heightString.substring(with: rangeCm))!
+            let meterInd = heightString.index(of: "m")
+            let centimeterInd = heightString.index(of: "c")
+            let spaceInd = heightString.index(of: " ")
+            let rangeMeters = heightString.startIndex..<meterInd
+            let rangeCentimeters = heightString.index(spaceInd!, offsetBy: 1)..<centimeterInd
+            return Double(heightString.substring(with: rangeMeters))! * 100.0 + Double(heightString.substring(with: rangeCentimeters))!
+        }
     }
     
     @IBAction func analyzeOnPress(_ sender: Any) {

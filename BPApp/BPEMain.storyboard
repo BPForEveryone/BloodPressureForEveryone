@@ -364,7 +364,7 @@ Pressure</string>
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="back" destination="ERM-UE-yzK" eventType="touchUpInside" id="h0h-JP-BHh"/>
+                                    <action selector="save2:" destination="ERM-UE-yzK" eventType="touchUpInside" id="nV4-XY-owp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -373,15 +373,18 @@ Pressure</string>
                     <navigationItem key="navigationItem" title="Settings" id="3B4-gH-MJI">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="q0O-v1-hg1">
                             <connections>
-                                <action selector="back" destination="ERM-UE-yzK" id="bOx-6D-gar"/>
+                                <action selector="back" destination="ERM-UE-yzK" id="9Nw-nb-rYu"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="HgI-HB-0c5">
                             <connections>
-                                <action selector="back" destination="ERM-UE-yzK" id="mmM-GB-QaS"/>
+                                <action selector="save:" destination="ERM-UE-yzK" id="mRo-vQ-DgT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="numSysSelection" destination="tby-Zv-RZ1" id="MEM-qs-M6u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3p2-J7-Dud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
