@@ -16,6 +16,9 @@
 		AD7D33EB1F7F00B100A2C15A /* QuickBPAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */; };
 		DC1F34DB1F65D71D006391F9 /* BPForEveryone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */; };
 		DC1F34DD1F65D779006391F9 /* EveryoneLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */; };
+		DC2633381F7F1D5100945319 /* BPEPatientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2633371F7F1D5100945319 /* BPEPatientDetailViewController.swift */; };
+		DC26333A1F7F1DC600945319 /* BPEPatientEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2633391F7F1DC600945319 /* BPEPatientEditViewController.swift */; };
+		DC26333C1F7F1E0C00945319 /* BPERecordBPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26333B1F7F1E0C00945319 /* BPERecordBPViewController.swift */; };
 		DC3832061EAE2E2D00804EDF /* BPEMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */; };
 		DC38320C1EAE3A1600804EDF /* BPProResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */; };
 		DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */; };
@@ -69,6 +72,9 @@
 		AD4AF1411F7D989600F416A4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BPForEveryone-Info.plist"; sourceTree = "<group>"; };
 		DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EveryoneLaunchScreen.storyboard; sourceTree = "<group>"; };
+		DC2633371F7F1D5100945319 /* BPEPatientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEPatientDetailViewController.swift; sourceTree = "<group>"; };
+		DC2633391F7F1DC600945319 /* BPEPatientEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEPatientEditViewController.swift; sourceTree = "<group>"; };
+		DC26333B1F7F1E0C00945319 /* BPERecordBPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPERecordBPViewController.swift; sourceTree = "<group>"; };
 		DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPEMainViewController.swift; sourceTree = "<group>"; };
 		DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPProResourceTableViewController.swift; sourceTree = "<group>"; };
 		DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BPETrackUsersViewController.swift; sourceTree = "<group>"; };
@@ -206,6 +212,9 @@
 				DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */,
 				DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */,
 				DC3832111EAE44DC00804EDF /* BPESettingsViewController.swift */,
+				DC2633371F7F1D5100945319 /* BPEPatientDetailViewController.swift */,
+				DC2633391F7F1DC600945319 /* BPEPatientEditViewController.swift */,
+				DC26333B1F7F1E0C00945319 /* BPERecordBPViewController.swift */,
 			);
 			path = BPEveryone;
 			sourceTree = "<group>";
@@ -430,13 +439,16 @@
 			files = (
 				DC7C784C1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
 				DC685B361F7B422000EF7C21 /* BPEAddPatientViewController.swift in Sources */,
+				DC2633381F7F1D5100945319 /* BPEPatientDetailViewController.swift in Sources */,
 				AD4AF1431F7D989600F416A4 /* Config.swift in Sources */,
 				DC3832121EAE44DC00804EDF /* BPESettingsViewController.swift in Sources */,
 				DC5E4B8A1EADBEF500B35F2D /* BPApp.xcdatamodeld in Sources */,
 				DC3832061EAE2E2D00804EDF /* BPEMainViewController.swift in Sources */,
+				DC26333C1F7F1E0C00945319 /* BPERecordBPViewController.swift in Sources */,
 				DC3832101EAE415400804EDF /* BPEResourceTableViewController.swift in Sources */,
 				DC5E4B8C1EADBEF500B35F2D /* AppDelegate.swift in Sources */,
 				DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */,
+				DC26333A1F7F1DC600945319 /* BPEPatientEditViewController.swift in Sources */,
 				DC7C78401F7C82B200D87C3D /* Patient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
