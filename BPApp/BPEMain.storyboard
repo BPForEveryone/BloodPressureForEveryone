@@ -121,7 +121,7 @@ Pressure</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="t3f-eo-Ny9" kind="show" id="6LB-tY-Kyr"/>
+                                    <segue destination="t3f-eo-Ny9" kind="showDetail" identifier="patientDetailView" id="zu2-a9-yif"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -323,7 +323,6 @@ Pressure</string>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit Patient" id="flc-lu-4lJ">
                             <connections>
-                                <action selector="editPatient:" destination="CR4-WP-Lap" id="RR1-y2-Fxj"/>
                                 <segue destination="rby-jo-Nho" kind="show" id="kWh-cb-0I3"/>
                             </connections>
                         </barButtonItem>
@@ -331,7 +330,6 @@ Pressure</string>
                     <connections>
                         <outlet property="analysisGroupLabel" destination="nLz-uh-v6q" id="4kB-6O-p7P"/>
                         <outlet property="dateOfBirthLabel" destination="nCV-Yb-MaF" id="f12-mo-hmp"/>
-                        <outlet property="editPatient" destination="flc-lu-4lJ" id="ToI-d3-7Gq"/>
                         <outlet property="firstNameLabel" destination="PS9-Kz-Uzj" id="awG-AP-x4N"/>
                         <outlet property="heightLabel" destination="4Q9-Ie-gVc" id="qWc-Rk-oyJ"/>
                         <outlet property="lastBPDateTimeLabel" destination="NK2-Bm-Lv3" id="XV3-Nt-8lW"/>

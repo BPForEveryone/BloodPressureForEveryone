@@ -22,7 +22,10 @@ class BPEPatientDetailViewController: UIViewController {
     @IBOutlet weak var lastBPPercentileLabel: UILabel!
     @IBOutlet weak var lastBPReccomendationsLabel: UITextView!
     
+    var patientId: Int = 0
+    
     @IBAction func back(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
     //May not be needed... 'Edit Patient' button linked to EditPatient View in Storyboard.
@@ -34,8 +37,20 @@ class BPEPatientDetailViewController: UIViewController {
     @IBAction func recordNewBP(_ sender: Any) {
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad();
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let patient = Config.patients[patientId]
+
+        firstNameLabel.text = patient.firstName
+        lastNameLabel.text = patient.lastName
+        dateOfBirthLabel.text = patient.birthDate.description
+        analysisGroupLabel.text = "N/A"
+        heightLabel.text = patient.heightInMeters.description
+        weightLabel.text = "N/A"
+        lastBPDateTimeLabel.text = "N/A"
+        lastBPPercentileLabel.text = "N/A"
+        lastBPMeasurmentLabel.text = "N/A"
+        lastBPReccomendationsLabel.text = "N/A"
     }
 }

@@ -25,6 +25,20 @@ class BPETrackUsersViewControler: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        
+        // This is the name of the segue in the storyboard.
+        if (segue.identifier == "patientDetailView") {
+            
+            let controller = (segue.destination as! UINavigationController).topViewController as! BPEPatientDetailViewController
+            
+            let cell = sender as! UITableViewCell
+            let tableView = cell.superview as! UITableView
+            let row = tableView.indexPathForSelectedRow!.row
+            
+            controller.patientId = row
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
