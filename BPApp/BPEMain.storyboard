@@ -308,6 +308,7 @@ Pressure</string>
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="recordNewBP:" destination="CR4-WP-Lap" eventType="touchUpInside" id="7Gt-6p-bbB"/>
                                     <segue destination="QgS-zM-Eyk" kind="show" id="Vy4-jv-p1e"/>
                                 </connections>
                             </button>
@@ -315,13 +316,31 @@ Pressure</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" title="Patient Details" id="NVw-nQ-5gH">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="uHm-9K-IDS"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="uHm-9K-IDS">
+                            <connections>
+                                <action selector="back:" destination="CR4-WP-Lap" id="K8D-77-8uJ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit Patient" id="flc-lu-4lJ">
                             <connections>
+                                <action selector="editPatient:" destination="CR4-WP-Lap" id="RR1-y2-Fxj"/>
                                 <segue destination="rby-jo-Nho" kind="show" id="kWh-cb-0I3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="analysisGroupLabel" destination="nLz-uh-v6q" id="4kB-6O-p7P"/>
+                        <outlet property="dateOfBirthLabel" destination="nCV-Yb-MaF" id="f12-mo-hmp"/>
+                        <outlet property="editPatient" destination="flc-lu-4lJ" id="ToI-d3-7Gq"/>
+                        <outlet property="firstNameLabel" destination="PS9-Kz-Uzj" id="awG-AP-x4N"/>
+                        <outlet property="heightLabel" destination="4Q9-Ie-gVc" id="qWc-Rk-oyJ"/>
+                        <outlet property="lastBPDateTimeLabel" destination="NK2-Bm-Lv3" id="XV3-Nt-8lW"/>
+                        <outlet property="lastBPMeasurmentLabel" destination="Qj9-8F-lR6" id="HEn-mm-P8e"/>
+                        <outlet property="lastBPPercentileLabel" destination="m21-Sl-xEN" id="qMp-Rn-xhV"/>
+                        <outlet property="lastBPReccomendationsLabel" destination="U7Y-aC-Aga" id="5MM-Fu-gtu"/>
+                        <outlet property="lastNameLabel" destination="o9B-QJ-9iN" id="X70-cZ-cKi"/>
+                        <outlet property="weightLabel" destination="TXu-dy-us2" id="zQM-ZT-kBx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb7-hQ-Kmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -450,6 +469,7 @@ Pressure</string>
                                 <connections>
                                     <action selector="createFromBar:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="15r-HZ-y6M"/>
                                     <action selector="createFromButton:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="DdT-LW-UPu"/>
+                                    <action selector="updatePatient:" destination="xb2-Qs-wVu" eventType="touchUpInside" id="WuK-9E-DvR"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -457,8 +477,20 @@ Pressure</string>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Patient" id="YWk-G4-kdb">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="cDc-Ja-jLb"/>
-                        <barButtonItem key="rightBarButtonItem" title="Update" id="PeC-Ph-C47"/>
+                        <barButtonItem key="rightBarButtonItem" title="Update" id="PeC-Ph-C47">
+                            <connections>
+                                <action selector="updatePatient:" destination="xb2-Qs-wVu" id="ZO6-Qc-wuZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dobTextField" destination="nEr-yc-i27" id="sfz-wT-Ar9"/>
+                        <outlet property="firstNameTextField" destination="qVA-T7-34O" id="0Kz-Qb-9S9"/>
+                        <outlet property="heightTextField" destination="OqN-PV-fDG" id="DV2-5Y-cSl"/>
+                        <outlet property="lastNameTextField" destination="WEI-hO-KBO" id="dXs-mh-i6W"/>
+                        <outlet property="sexSegmentedControl" destination="xgM-Ra-OIi" id="Nnv-Jk-oW0"/>
+                        <outlet property="weightTextField" destination="FeH-9g-zil" id="f80-KP-Zme"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRe-S0-ZaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -582,6 +614,19 @@ Pressure</string>
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="SBg-va-RD4"/>
                         <barButtonItem key="rightBarButtonItem" title="Record" id="0Ja-H9-gHZ"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ageLabel" destination="DJ4-rs-WPL" id="cjg-1T-sXe"/>
+                        <outlet property="ageTextField" destination="DJ4-rs-WPL" id="0NP-c1-Xdc"/>
+                        <outlet property="bpSystolicDiastolicPicker" destination="W2G-zX-y73" id="XYU-8t-d8b"/>
+                        <outlet property="combinedBPLabel" destination="a4v-y5-fOg" id="Lza-H0-EUQ"/>
+                        <outlet property="confirmPatientSwitch" destination="Oko-N1-oXe" id="wfR-Xz-csC"/>
+                        <outlet property="fullNameLabel" destination="ZuA-Ou-E60" id="714-Z7-hZn"/>
+                        <outlet property="fullNameTextField" destination="ZuA-Ou-E60" id="niR-0T-vxY"/>
+                        <outlet property="heightLabel" destination="kbY-eQ-ksx" id="s0N-12-jH0"/>
+                        <outlet property="heightTextField" destination="kbY-eQ-ksx" id="g6a-BH-weo"/>
+                        <outlet property="weightLabel" destination="Fdt-MI-24Z" id="wcT-48-LuW"/>
+                        <outlet property="weightTextField" destination="Fdt-MI-24Z" id="Yfr-qK-4oc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJp-qj-WqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
