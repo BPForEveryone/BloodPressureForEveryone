@@ -17,13 +17,119 @@ class BPEPatientEditViewController : UIViewController {
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     
+    var dob: Date!
+    var patientId: Int = 0
     
-    //Connected to both the bar button and button at the bottom of the page.
-    @IBAction func updatePatient(_ sender: Any) {
+    // Exit without updating.
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil);
     }
     
+    // Update the patient.
+    @IBAction func updatePatient(_ sender: Any) {
+        guard let firstName = firstNameTextField.text else {
+            print("Firstname not entered");
+            return;
+        }
+        
+        guard let lastName = lastNameTextField.text else {
+            print("Lastname not entered");
+            return;
+        }
+        
+        guard let heightStr = heightTextField.text  else {
+            print("height not entered");
+            return;
+        }
+        
+        guard let weightStr = weightTextField.text else {
+            print("weight not entered");
+            return;
+        }
+        
+        guard let patientDob = dob else {
+            print("dob not entered");
+            return;
+        }
+        
+        let patientSex = (sexSegmentedControl.selectedSegmentIndex == 0) ? Patient.Sex.male : Patient.Sex.female;
+        
+        let weight = (weightStr as NSString).floatValue;
+        let height = (heightStr as NSString).floatValue;
+        
+        let patient = Patient(
+            firstName: firstName,
+            lastName: lastName,
+            birthDate: patientDob,
+            heightInMeters: height,
+            sex: patientSex,
+            bloodPressureMeasurements: Config.patients[patientId].bloodPressureMeasurements
+        );
+        
+        Config.patients[patientId] = patient!
+        
+        dismiss(animated: true, completion: nil);
+    }
     
-    override func viewDidLoad() {
-        super.viewDidLoad();
+    // Use a date picker for the date of birth field
+    @IBAction func editingDOBTextField(_ sender: UITextField) {
+        
+        // Create date of birth picker.
+        let dobPickerView: UIDatePicker = UIDatePicker();
+        dobPickerView.datePickerMode = UIDatePickerMode.date;
+        sender.inputView = dobPickerView;
+        
+        // Callback for handling picker.
+        dobPickerView.addTarget(self, action: #selector(handleDOBPicker(sender:)), for: .valueChanged)
+    }
+    
+    func handleDOBPicker(sender: UIDatePicker) {
+        
+        // Record birth date
+        dob = sender.date
+        
+        // Display new birth date
+        setDate(target: sender.date)
+    }
+
+    // Set the date field to display the target date.
+    func setDate(target: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        dobTextField.text = dateFormatter.string(from: target)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    // Update the defaults of all the fields to that of the selected patient.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // Grab patient we are editting.
+        let patient = Config.patients[patientId]
+        
+        // Populate old date of birth so that update function works.
+        self.dob = patient.birthDate
+       
+        // Set names
+        firstNameTextField.text = patient.firstName
+        lastNameTextField.text = patient.lastName
+        
+        // Set gender
+        var selectedSegment: Int = 0
+        if patient.sex == Patient.Sex.female {
+            selectedSegment = 1
+        }
+        sexSegmentedControl.selectedSegmentIndex = selectedSegment
+        
+        // Birth date
+        setDate(target: patient.birthDate)
+        
+        // Height and weight
+        heightTextField.text = patient.heightInMeters.description
+        weightTextField.text = "0"
     }
 }

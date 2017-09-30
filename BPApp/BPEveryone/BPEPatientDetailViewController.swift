@@ -53,4 +53,15 @@ class BPEPatientDetailViewController: UIViewController {
         lastBPMeasurmentLabel.text = "N/A"
         lastBPReccomendationsLabel.text = "N/A"
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        
+        // This is the name of the segue in the storyboard.
+        if (segue.identifier == "patientEditDetailView") {
+            
+            let controller = (segue.destination as! UINavigationController).topViewController as! BPEPatientEditViewController
+            
+            controller.patientId = self.patientId
+        }
+    }
 }

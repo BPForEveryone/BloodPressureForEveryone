@@ -25,6 +25,7 @@ class BPEAddPatientViewController: UIViewController {
         
         super.viewDidLoad();
     }
+    
     @IBAction func editingDOBTextField(_ sender: UITextField) {
         let dobPickerView: UIDatePicker = UIDatePicker();
         dobPickerView.datePickerMode = UIDatePickerMode.date;
@@ -93,8 +94,8 @@ class BPEAddPatientViewController: UIViewController {
         
         patient = Patient(firstName: firstname, lastName: lastname, birthDate: patientDob, heightInMeters: height, sex: patientSex, bloodPressureMeasurements: bpMeasurements);
         
-        Config.patients.append(patient);
+        var patients = Config.patients
+        patients.append(patient)
+        Config.patients = patients
     }
-    
-    
 }

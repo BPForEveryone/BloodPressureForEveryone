@@ -436,7 +436,7 @@ Pressure</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
-                                    <action selector="editingDOBTextField:" destination="Vgl-Ia-ds8" eventType="editingDidBegin" id="o8L-5R-5sl"/>
+                                    <action selector="editingDOBTextField:" destination="xb2-Qs-wVu" eventType="editingDidBegin" id="A39-kg-IDh"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qVA-T7-34O">
@@ -474,7 +474,11 @@ Pressure</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Patient" id="YWk-G4-kdb">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="cDc-Ja-jLb"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="cDc-Ja-jLb">
+                            <connections>
+                                <action selector="cancel:" destination="xb2-Qs-wVu" id="SLG-h5-YeL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Update" id="PeC-Ph-C47">
                             <connections>
                                 <action selector="updatePatient:" destination="xb2-Qs-wVu" id="ZO6-Qc-wuZ"/>
