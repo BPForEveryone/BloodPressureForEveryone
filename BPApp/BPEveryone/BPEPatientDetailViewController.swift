@@ -44,7 +44,7 @@ class BPEPatientDetailViewController: UIViewController {
 
         firstNameLabel.text = patient.firstName
         lastNameLabel.text = patient.lastName
-        dateOfBirthLabel.text = patient.birthDate.description
+        dateOfBirthLabel.text = BirthDay.format(date: patient.birthDate)
         analysisGroupLabel.text = "N/A"
         heightLabel.text = patient.heightInMeters.description
         weightLabel.text = "N/A"

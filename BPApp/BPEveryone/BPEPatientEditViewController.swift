@@ -89,15 +89,7 @@ class BPEPatientEditViewController : UIViewController {
         dob = sender.date
         
         // Display new birth date
-        setDate(target: sender.date)
-    }
-
-    // Set the date field to display the target date.
-    func setDate(target: Date) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        dateFormatter.timeStyle = DateFormatter.Style.none
-        dobTextField.text = dateFormatter.string(from: target)
+        dobTextField.text = BirthDay.format(date: dob)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -126,7 +118,7 @@ class BPEPatientEditViewController : UIViewController {
         sexSegmentedControl.selectedSegmentIndex = selectedSegment
         
         // Birth date
-        setDate(target: patient.birthDate)
+        dobTextField.text = BirthDay.format(date: dob)
         
         // Height and weight
         heightTextField.text = patient.heightInMeters.description

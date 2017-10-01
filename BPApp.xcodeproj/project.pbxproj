@@ -14,6 +14,10 @@
 		AD4AF1441F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
 		AD4AF1451F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
 		AD7D33EB1F7F00B100A2C15A /* QuickBPAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */; };
+		AD9BEE201F80B35300F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
+		AD9BEE211F80B4FE00F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
+		AD9BEE221F80B4FF00F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
+		AD9BEE231F80B4FF00F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
 		DC1F34DB1F65D71D006391F9 /* BPForEveryone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */; };
 		DC1F34DD1F65D779006391F9 /* EveryoneLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */; };
 		DC2633381F7F1D5100945319 /* BPEPatientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2633371F7F1D5100945319 /* BPEPatientDetailViewController.swift */; };
@@ -70,6 +74,7 @@
 		28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPAnalysisResultsViewController.swift; sourceTree = "<group>"; };
 		575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BPProSettingsViewController.swift; path = BPApp/BPProfessional/BPProSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		AD4AF1411F7D989600F416A4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDay.swift; sourceTree = "<group>"; };
 		DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BPForEveryone-Info.plist"; sourceTree = "<group>"; };
 		DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EveryoneLaunchScreen.storyboard; sourceTree = "<group>"; };
 		DC2633371F7F1D5100945319 /* BPEPatientDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEPatientDetailViewController.swift; sourceTree = "<group>"; };
@@ -225,6 +230,7 @@
 				AD4AF1411F7D989600F416A4 /* Config.swift */,
 				DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */,
 				DC7C783E1F7C7EBA00D87C3D /* Patient.swift */,
+				AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -403,6 +409,7 @@
 				AD7D33EB1F7F00B100A2C15A /* QuickBPAnalysisViewController.swift in Sources */,
 				AD4AF1451F7D989600F416A4 /* Config.swift in Sources */,
 				DC5E4B601EADBED900B35F2D /* BPApp.xcdatamodeld in Sources */,
+				AD9BEE201F80B35300F1C986 /* BirthDay.swift in Sources */,
 				575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */,
 				DC5E4B5A1EADBED900B35F2D /* BPProMainViewController.swift in Sources */,
 				DC5E4B581EADBED900B35F2D /* AppDelegate.swift in Sources */,
@@ -415,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9BEE221F80B4FF00F1C986 /* BirthDay.swift in Sources */,
 				DC7C784A1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
 				AD4AF1441F7D989600F416A4 /* Config.swift in Sources */,
 				DC5E4B701EADBED900B35F2D /* BPAppTests.swift in Sources */,
@@ -426,6 +434,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9BEE231F80B4FF00F1C986 /* BirthDay.swift in Sources */,
 				DC7C784B1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
 				AD4AF1421F7D989600F416A4 /* Config.swift in Sources */,
 				DC5E4B7B1EADBED900B35F2D /* BPAppUITests.swift in Sources */,
@@ -447,6 +456,7 @@
 				DC26333C1F7F1E0C00945319 /* BPERecordBPViewController.swift in Sources */,
 				DC3832101EAE415400804EDF /* BPEResourceTableViewController.swift in Sources */,
 				DC5E4B8C1EADBEF500B35F2D /* AppDelegate.swift in Sources */,
+				AD9BEE211F80B4FE00F1C986 /* BirthDay.swift in Sources */,
 				DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */,
 				DC26333A1F7F1DC600945319 /* BPEPatientEditViewController.swift in Sources */,
 				DC7C78401F7C82B200D87C3D /* Patient.swift in Sources */,
