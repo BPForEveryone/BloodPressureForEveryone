@@ -20,8 +20,18 @@ class BPETrackUsersViewControler: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Users", for: indexPath)
-        let titleLabel = cell.viewWithTag(10) as! UILabel
-        titleLabel.text = "\(Config.patients[indexPath.row].lastName), \(Config.patients[indexPath.row].firstName)"
+        let firstNameLabel = cell.viewWithTag(10) as! UILabel;
+        let lastNameLabel = cell.viewWithTag(11) as! UILabel;
+        let lastBPRecordingLabel = cell.viewWithTag(20) as! UILabel;
+        firstNameLabel.text = Config.patients[indexPath.row].firstName;
+        lastNameLabel.text = Config.patients[indexPath.row].lastName;
+        lastBPRecordingLabel.text = "None";
+        
+        if(!Config.patients[indexPath.row].bloodPressureMeasurements.isEmpty) {
+            let lastBPRecording = Config.patients[indexPath.row].bloodPressureMeasurements.last;
+            lastBPRecordingLabel.text = "\(lastBPRecording?.systolic)/\(lastBPRecording?.diastolic)";
+        }
+        
         return cell
     }
     
