@@ -738,8 +738,7 @@ For</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Patient"/>
                                 <connections>
-                                    <action selector="createFromBar:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="40b-wQ-SjY"/>
-                                    <action selector="createFromButton:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="hKx-dY-K6o"/>
+                                    <action selector="createPatient:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="lyg-cz-Cyv"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-fm-dSN">
@@ -784,7 +783,7 @@ For</string>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create" id="D0R-ce-bBs">
                             <connections>
-                                <action selector="createFromBar:" destination="Vgl-Ia-ds8" id="Zv3-yY-XGO"/>
+                                <action selector="createPatient:" destination="Vgl-Ia-ds8" id="Ajb-vB-AzM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

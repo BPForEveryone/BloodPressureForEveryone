@@ -106,13 +106,13 @@ public class Patient: NSObject, NSCoding {
     public required convenience init?(coder decoder: NSCoder) {
         
         // First name is required
-        guard let lastName = decoder.decodeObject(forKey: PropertyKey.firstName) as? String else {
+        guard let lastName = decoder.decodeObject(forKey: PropertyKey.lastName) as? String else {
             os_log("Unable to decode the first name for a Patient object.", log: OSLog.default, type: .debug)
             return nil
         }
         
         // Last name is required.
-        guard let firstName = decoder.decodeObject(forKey: PropertyKey.lastName) as? String else {
+        guard let firstName = decoder.decodeObject(forKey: PropertyKey.firstName) as? String else {
             os_log("Unable to decode the last name for a Patient object.", log: OSLog.default, type: .debug)
             return nil
         }
