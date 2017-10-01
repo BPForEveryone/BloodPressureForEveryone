@@ -9,10 +9,22 @@
 import UIKit
 
 class BPEMainVewController: UIViewController {
+    
+    @IBOutlet weak var viewPatientsButton: UIButton!
+    @IBOutlet weak var quickResourcesButton: UIButton!
+    @IBOutlet weak var settingsButton: UIButton!
+    let btnRadius: CGFloat = 20;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // This sets the system's default measurement system as the app's default
+        viewPatientsButton.layer.cornerRadius = btnRadius;
+        quickResourcesButton.layer.cornerRadius = btnRadius;
+        settingsButton.layer.cornerRadius = btnRadius;
+        
+        
+        
         if UserDefaults.standard.value(forKey: "numSystemChanged") as? Bool != true {
             UserDefaults.standard.set(false, forKey: "numSystemChanged")
             let isMetric = (Locale.current as NSLocale).object(forKey: NSLocale.Key.usesMetricSystem) as! Bool

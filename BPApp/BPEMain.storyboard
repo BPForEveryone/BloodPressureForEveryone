@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="h1M-x5-u4K">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="7JL-Ij-QxT">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -12,7 +12,7 @@
         <!--BP For Everyone-->
         <scene sceneID="uoJ-mV-nio">
             <objects>
-                <viewController id="7JL-Ij-QxT" sceneMemberID="viewController">
+                <viewController id="7JL-Ij-QxT" customClass="BPEMainVewController" customModule="BPForEveryone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jZ0-tb-n2E"/>
                         <viewControllerLayoutGuide type="bottom" id="rGW-P6-iII"/>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q0r-ve-VMT">
-                                <rect key="frame" x="35" y="320" width="304" height="220"/>
+                                <rect key="frame" x="35" y="409" width="304" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.17273174890000001" green="0.41859571950000002" blue="0.69681919640000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
@@ -44,15 +44,41 @@ Resources</string>
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAz-9M-YcZ">
+                                <rect key="frame" x="35" y="532" width="304" height="115"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.17273174890000001" green="0.41859571950000002" blue="0.69681919640000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <state key="normal" title="Settings">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cA2-1O-vy2" kind="presentation" id="VPc-df-vnT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylg-1z-jck">
+                                <rect key="frame" x="16" y="65" width="343" height="112"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <string key="text">Blood Pressure
+For</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Everyone" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBR-ED-nM2">
+                                <rect key="frame" x="16" y="161" width="343" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="60"/>
+                                <color key="textColor" red="0.99011200666427612" green="0.89472943544387817" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AoC-uj-ZWD">
-                                <rect key="frame" x="35" y="92" width="304" height="220"/>
+                                <rect key="frame" x="35" y="286" width="304" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.17273174890000001" green="0.41859571950000002" blue="0.69681919640000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment>
-                                            <string key="content">Track Blood
-Pressure</string>
+                                        <fragment content="View Patients">
                                             <attributes>
                                                 <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <font key="NSFont" metaFont="system" size="48"/>
@@ -67,22 +93,15 @@ Pressure</string>
                                     </segue>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MAz-9M-YcZ">
-                                <rect key="frame" x="35" y="548" width="304" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.17273174890000001" green="0.41859571950000002" blue="0.69681919640000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
-                                <state key="normal" title="Settings">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cA2-1O-vy2" kind="presentation" id="VPc-df-vnT"/>
-                                </connections>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.54117647058823526" green="0.027450980392156862" blue="0.027450980392156862" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="BP For Everyone" id="o0r-lP-2xe"/>
+                    <connections>
+                        <outlet property="quickResourcesButton" destination="Q0r-ve-VMT" id="SBr-4I-RFy"/>
+                        <outlet property="settingsButton" destination="MAz-9M-YcZ" id="PEb-NC-Cnx"/>
+                        <outlet property="viewPatientsButton" destination="AoC-uj-ZWD" id="eEh-Up-XST"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ihj-I0-gyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,15 +123,29 @@ Pressure</string>
                                     <rect key="frame" x="0.0" y="0.0" width="308" height="88.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chris Blackstone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTk-D5-DiB">
-                                            <rect key="frame" x="8" y="34" width="129" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="20" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="120/80" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSa-Ov-dxS">
+                                            <rect key="frame" x="153" y="8" width="139" height="47"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lastname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIW-TE-Gb9">
+                                            <rect key="frame" x="8" y="40" width="147" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last BP Reading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2k-cV-x2a">
+                                            <rect key="frame" x="145" y="53" width="155" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="11" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last BP: 120/80" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSa-Ov-dxS">
-                                            <rect key="frame" x="163" y="34" width="145" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Firstname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTk-D5-DiB">
+                                            <rect key="frame" x="8" y="15" width="129" height="33"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
@@ -464,8 +497,6 @@ Pressure</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Update Patient"/>
                                 <connections>
-                                    <action selector="createFromBar:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="15r-HZ-y6M"/>
-                                    <action selector="createFromButton:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="DdT-LW-UPu"/>
                                     <action selector="updatePatient:" destination="xb2-Qs-wVu" eventType="touchUpInside" id="WuK-9E-DvR"/>
                                 </connections>
                             </button>
@@ -707,8 +738,7 @@ Pressure</string>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create Patient"/>
                                 <connections>
-                                    <action selector="createFromBar:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="40b-wQ-SjY"/>
-                                    <action selector="createFromButton:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="hKx-dY-K6o"/>
+                                    <action selector="createPatient:" destination="Vgl-Ia-ds8" eventType="touchUpInside" id="lyg-cz-Cyv"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ZV-fm-dSN">
@@ -753,7 +783,7 @@ Pressure</string>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Create" id="D0R-ce-bBs">
                             <connections>
-                                <action selector="createFromBar:" destination="Vgl-Ia-ds8" id="Zv3-yY-XGO"/>
+                                <action selector="createPatient:" destination="Vgl-Ia-ds8" id="Ajb-vB-AzM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -882,24 +912,6 @@ Pressure</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3p2-J7-Dud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2880.8000000000002" y="1145.577211394303"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="LWY-Ad-hJa">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="h1M-x5-u4K" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="og6-nQ-VFD">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="7JL-Ij-QxT" kind="relationship" relationship="rootViewController" id="Ivt-eh-9ff"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qyf-Zj-9Mz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="q8i-ks-glA">

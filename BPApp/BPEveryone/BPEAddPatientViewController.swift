@@ -46,12 +46,7 @@ class BPEAddPatientViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    @IBAction func createFromBar(_ sender: Any) {
-        createNewPatient();
-        dismiss(animated: true, completion: nil);
-    }
-    
-    @IBAction func createFromButton(_ sender: Any) {
+    @IBAction func createPatient(_ sender: Any) {
         createNewPatient();
         dismiss(animated: true, completion: nil);
     }
