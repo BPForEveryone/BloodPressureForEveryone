@@ -18,7 +18,7 @@ class BPEPatientDetailPageViewController: PageViewStaticListController {
     }
     
     override func sourcePageIdentifiers() -> [String] {
-        return ["PatientDetailPage1"]
+        return ["PatientDetailPage1", "PatientDetailPage2"]
     }
     
     /*override func newControllerSelected(controller: UIViewController) {

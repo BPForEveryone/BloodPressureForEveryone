@@ -86,12 +86,12 @@ extension PageViewStaticListController: UIPageViewControllerDataSource {
             return nil
         }
         
-        guard controllers.count < index + 1 else {
+        guard controllers.count > index + 1 else {
             return nil
         }
         
         self.newControllerSelected(controller: controllers[index + 1])
         
-        return controllers[index - 1]
+        return controllers[index + 1]
     }
 }

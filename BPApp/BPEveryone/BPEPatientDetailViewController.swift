@@ -20,7 +20,6 @@ class BPEPatientDetailViewController: UIViewController {
     @IBOutlet weak var lastBPDateTimeLabel: UILabel!
     @IBOutlet weak var lastBPMeasurmentLabel: UILabel!
     @IBOutlet weak var lastBPPercentileLabel: UILabel!
-    @IBOutlet weak var lastBPReccomendationsLabel: UITextView!
     
     var patientId: Int = 0
     
@@ -42,7 +41,6 @@ class BPEPatientDetailViewController: UIViewController {
         lastBPDateTimeLabel.text = "N/A"
         lastBPPercentileLabel.text = "N/A"
         lastBPMeasurmentLabel.text = "N/A"
-        lastBPReccomendationsLabel.text = "N/A"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
