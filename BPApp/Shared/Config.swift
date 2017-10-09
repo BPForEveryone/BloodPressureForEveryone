@@ -24,10 +24,7 @@ public class Config {
             defer { objc_sync_exit(self) }
             
             if let restored = NSKeyedUnarchiver.unarchiveObject(withFile: Config.PatientStore.path) as? [Patient] {
-                
-                os_log("Patients restored.", log: OSLog.default, type: .debug)
                 return restored
-                
             } else {
                 os_log("Failed to restore patients.", log: OSLog.default, type: .debug)
                 return []
@@ -45,12 +42,8 @@ public class Config {
                 toFile: Config.PatientStore.path
             )
             
-            if isSuccessfulSave {
-                
-                os_log("Patients persisted.", log: OSLog.default, type: .debug)
-            } else {
-                
-                os_log("Failed to persist patients...", log: OSLog.default, type: .error)
+            if !isSuccessfulSave {
+                os_log("Failed to persist patients.", log: OSLog.default, type: .error)
             }
         }
     }

@@ -63,5 +63,13 @@ class BPEPatientDetailViewController: UIViewController {
             
             controller.patientId = self.patientId
         }
+        
+        // Blood pressure list also requires a patient id.
+        if (segue.identifier == "bloodPressureList") {
+            
+            let controller = (segue.destination as! UINavigationController).topViewController as! BPEBPListViewController
+            
+            controller.patientId = self.patientId
+        }
     }
 }

@@ -22,7 +22,7 @@ public class Patient: NSObject, NSCoding {
     var birthDate: Date
     var heightInMeters: Float
     private var sexInBoolean: Bool
-    private var bloodPressureMeasurementsSorted: [BloodPressureMeasurement]
+    private var bloodPressureMeasurementsSorted: [BloodPressureMeasurement]! = []
     public var bloodPressureMeasurements: [BloodPressureMeasurement] {
         get {
             return self.bloodPressureMeasurementsSorted
