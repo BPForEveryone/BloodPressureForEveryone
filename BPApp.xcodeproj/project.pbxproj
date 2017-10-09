@@ -16,6 +16,12 @@
 		AD5CFD931F8AE9BD00D9BDD9 /* BPEBPListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD921F8AE9BD00D9BDD9 /* BPEBPListViewController.swift */; };
 		AD5CFD941F8AE9BD00D9BDD9 /* BPEBPListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD921F8AE9BD00D9BDD9 /* BPEBPListViewController.swift */; };
 		AD5CFD951F8AE9BD00D9BDD9 /* BPEBPListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD921F8AE9BD00D9BDD9 /* BPEBPListViewController.swift */; };
+		AD5CFD971F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD961F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift */; };
+		AD5CFD981F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD961F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift */; };
+		AD5CFD991F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD961F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift */; };
+		AD5CFD9B1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */; };
+		AD5CFD9C1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */; };
+		AD5CFD9D1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */; };
 		AD7D33EB1F7F00B100A2C15A /* QuickBPAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */; };
 		AD9BEE201F80B35300F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
 		AD9BEE211F80B4FE00F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
@@ -78,6 +84,8 @@
 		575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BPProSettingsViewController.swift; path = BPApp/BPProfessional/BPProSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		AD4AF1411F7D989600F416A4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		AD5CFD921F8AE9BD00D9BDD9 /* BPEBPListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEBPListViewController.swift; sourceTree = "<group>"; };
+		AD5CFD961F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEPatientDetailPageViewController.swift; sourceTree = "<group>"; };
+		AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewStaticListController.swift; sourceTree = "<group>"; };
 		AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDay.swift; sourceTree = "<group>"; };
 		DC1F34DA1F65D71D006391F9 /* BPForEveryone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BPForEveryone-Info.plist"; sourceTree = "<group>"; };
 		DC1F34DC1F65D779006391F9 /* EveryoneLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EveryoneLaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -225,6 +233,7 @@
 				DC2633391F7F1DC600945319 /* BPEPatientEditViewController.swift */,
 				DC26333B1F7F1E0C00945319 /* BPERecordBPViewController.swift */,
 				AD5CFD921F8AE9BD00D9BDD9 /* BPEBPListViewController.swift */,
+				AD5CFD961F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift */,
 			);
 			path = BPEveryone;
 			sourceTree = "<group>";
@@ -236,6 +245,7 @@
 				DC7C783E1F7C7EBA00D87C3D /* Patient.swift */,
 				DC7C78481F7C82DE00D87C3D /* BloodPressureMeasurement.swift */,
 				AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */,
+				AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -428,9 +438,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5CFD941F8AE9BD00D9BDD9 /* BPEBPListViewController.swift in Sources */,
+				AD5CFD9C1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */,
 				AD9BEE221F80B4FF00F1C986 /* BirthDay.swift in Sources */,
 				DC7C784A1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
 				AD4AF1441F7D989600F416A4 /* Config.swift in Sources */,
+				AD5CFD981F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift in Sources */,
 				DC5E4B701EADBED900B35F2D /* BPAppTests.swift in Sources */,
 				DC7C78421F7C82B500D87C3D /* Patient.swift in Sources */,
 			);
@@ -441,9 +453,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD5CFD951F8AE9BD00D9BDD9 /* BPEBPListViewController.swift in Sources */,
+				AD5CFD9D1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */,
 				AD9BEE231F80B4FF00F1C986 /* BirthDay.swift in Sources */,
 				DC7C784B1F7C82DE00D87C3D /* BloodPressureMeasurement.swift in Sources */,
 				AD4AF1421F7D989600F416A4 /* Config.swift in Sources */,
+				AD5CFD991F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift in Sources */,
 				DC5E4B7B1EADBED900B35F2D /* BPAppUITests.swift in Sources */,
 				DC7C78431F7C82B600D87C3D /* Patient.swift in Sources */,
 			);
@@ -467,7 +481,9 @@
 				AD9BEE211F80B4FE00F1C986 /* BirthDay.swift in Sources */,
 				DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */,
 				DC26333A1F7F1DC600945319 /* BPEPatientEditViewController.swift in Sources */,
+				AD5CFD971F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift in Sources */,
 				DC7C78401F7C82B200D87C3D /* Patient.swift in Sources */,
+				AD5CFD9B1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

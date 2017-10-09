@@ -154,7 +154,7 @@ For</string>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="t3f-eo-Ny9" kind="showDetail" identifier="patientDetailView" id="zu2-a9-yif"/>
+                                    <segue destination="hC4-Nf-ZWk" kind="show" id="unv-ZW-usL"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -196,10 +196,26 @@ For</string>
             </objects>
             <point key="canvasLocation" x="3697" y="-362"/>
         </scene>
+        <!--Patient Detail Page View Controller-->
+        <scene sceneID="pH6-9F-ZTx">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="hC4-Nf-ZWk" customClass="BPEPatientDetailPageViewController" customModule="BPForEveryone" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="a1d-lo-qP4">
+                        <barButtonItem key="rightBarButtonItem" title="Edit Patient" id="flc-lu-4lJ">
+                            <connections>
+                                <segue destination="rby-jo-Nho" kind="show" id="kWh-cb-0I3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DAi-gG-sY4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3697" y="-1075"/>
+        </scene>
         <!--Patient Details-->
         <scene sceneID="kT1-rE-qIY">
             <objects>
-                <viewController id="CR4-WP-Lap" customClass="BPEPatientDetailViewController" customModule="BPForEveryone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PatientDetailPage1" id="CR4-WP-Lap" customClass="BPEPatientDetailViewController" customModule="BPForEveryone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vwj-xW-DIN"/>
                         <viewControllerLayoutGuide type="bottom" id="mxN-1o-peJ"/>
@@ -353,11 +369,6 @@ For</string>
                                 <action selector="back:" destination="CR4-WP-Lap" id="K8D-77-8uJ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Edit Patient" id="flc-lu-4lJ">
-                            <connections>
-                                <segue destination="rby-jo-Nho" kind="show" id="kWh-cb-0I3"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="analysisGroupLabel" destination="nLz-uh-v6q" id="4kB-6O-p7P"/>
@@ -374,7 +385,7 @@ For</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb7-hQ-Kmy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4428" y="-1075.4122938530736"/>
+            <point key="canvasLocation" x="7532" y="-1075"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DR6-m5-IMt">
@@ -390,7 +401,7 @@ For</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6vd-wN-w97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5223" y="-1786"/>
+            <point key="canvasLocation" x="4663" y="-1771"/>
         </scene>
         <!--Edit Patient-->
         <scene sceneID="VDk-av-i2l">
@@ -526,7 +537,7 @@ For</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dRe-S0-ZaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5990" y="-1786"/>
+            <point key="canvasLocation" x="5431" y="-1771"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="g5T-Ol-cQa">
@@ -542,7 +553,7 @@ For</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWl-Zd-Vs2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6746" y="-1075"/>
+            <point key="canvasLocation" x="9849" y="-1075"/>
         </scene>
         <!--Record A BP-->
         <scene sceneID="eAx-pR-BHE">
@@ -701,7 +712,7 @@ For</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bJp-qj-WqA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7602.3999999999996" y="-1075.4122938530736"/>
+            <point key="canvasLocation" x="10706" y="-1075"/>
         </scene>
         <!--Create A New Patient-->
         <scene sceneID="PL4-Iy-rMQ">
@@ -1007,24 +1018,6 @@ For</string>
             <point key="canvasLocation" x="1942" y="1146"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Tut-mi-pVk">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t3f-eo-Ny9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qok-44-nAN">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="CR4-WP-Lap" kind="relationship" relationship="rootViewController" id="V46-Tj-bq9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KHe-nb-azW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3697" y="-1075"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="nPW-Ej-0j0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QgS-zM-Eyk" sceneMemberID="viewController">
@@ -1040,7 +1033,7 @@ For</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KQx-jD-Ozu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5222" y="-1075"/>
+            <point key="canvasLocation" x="8326" y="-1075"/>
         </scene>
         <!--Blood Pressure-->
         <scene sceneID="vuM-i3-efF">
@@ -1107,7 +1100,7 @@ For</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMU-W5-acz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5990" y="-1075"/>
+            <point key="canvasLocation" x="9094" y="-1075"/>
         </scene>
     </scenes>
 </document>

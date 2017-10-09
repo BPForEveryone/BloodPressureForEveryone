@@ -27,16 +27,7 @@ class BPEPatientDetailViewController: UIViewController {
     @IBAction func back(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    //May not be needed... 'Edit Patient' button linked to EditPatient View in Storyboard.
-    @IBAction func editPatient(_ sender: Any) {
-        
-    }
-    
-    //May not be needed... 'Record BP!' button linked to RecordBP View in Storyboard.
-    @IBAction func recordNewBP(_ sender: Any) {
-    }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
