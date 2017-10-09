@@ -24,7 +24,16 @@ public class Config {
             defer { objc_sync_exit(self) }
             
             if let restored = NSKeyedUnarchiver.unarchiveObject(withFile: Config.PatientStore.path) as? [Patient] {
-                return restored
+                
+                let restoredSortedFirstNamePatients = restored.sorted {
+                    return $0.firstName < $1.firstName
+                }
+                
+                let restoredSorted = restoredSortedFirstNamePatients.sorted {
+                    return $0.lastName < $1.lastName
+                }
+                
+                return restoredSorted
             } else {
                 os_log("Failed to restore patients.", log: OSLog.default, type: .debug)
                 return []

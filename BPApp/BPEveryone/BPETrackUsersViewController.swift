@@ -55,4 +55,18 @@ class BPETrackUsersViewControler: UITableViewController {
         self.tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            Config.patients.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
+    }
 }
