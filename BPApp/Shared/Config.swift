@@ -25,15 +25,7 @@ public class Config {
             
             if let restored = NSKeyedUnarchiver.unarchiveObject(withFile: Config.PatientStore.path) as? [Patient] {
                 
-                let restoredSortedFirstNamePatients = restored.sorted {
-                    return $0.firstName < $1.firstName
-                }
-                
-                let restoredSorted = restoredSortedFirstNamePatients.sorted {
-                    return $0.lastName < $1.lastName
-                }
-                
-                return restoredSorted
+                return restored
             } else {
                 os_log("Failed to restore patients.", log: OSLog.default, type: .debug)
                 return []

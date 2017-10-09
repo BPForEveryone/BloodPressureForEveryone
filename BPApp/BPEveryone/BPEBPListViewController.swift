@@ -52,4 +52,20 @@ class BPEBPListViewController: UITableViewController {
         self.tableView.reloadData()
     }
     
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let patient = Config.patients[patientId]
+            patient.bloodPressureMeasurements.remove(at: indexPath.row)
+            Config.patients[patientId] = patient
+            self.tableView.reloadData()
+        }
+    }
 }

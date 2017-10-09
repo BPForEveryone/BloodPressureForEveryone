@@ -54,8 +54,8 @@ class BPEPatientEditViewController : UIViewController {
         
         let patientSex = (sexSegmentedControl.selectedSegmentIndex == 0) ? Patient.Sex.male : Patient.Sex.female;
         
-        let weight = (weightStr as NSString).floatValue;
-        let height = (heightStr as NSString).floatValue;
+        let weight = (weightStr as NSString).floatValue
+        let height = (heightStr as NSString).floatValue
         
         let patient = Patient(
             firstName: firstName,
