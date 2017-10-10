@@ -19,6 +19,9 @@ class BPAnalysisResultsViewController: UIViewController {
     @IBOutlet weak var systolicPercentileLabel: UILabel!
     @IBOutlet weak var diastolicPercentileLabel: UILabel!
     
+    @IBAction func backPressed(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)  
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.readingDiagnosisLabel.text = readingDiagnosis
