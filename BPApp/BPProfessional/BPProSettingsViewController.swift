@@ -11,14 +11,20 @@ import UIKit
 
 import UIKit
 
-class BPProSettingsViewController : UIViewController {
+class BPProSettingsViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let x = UserDefaults.standard.object(forKey: "numSystem") as? Int {
+            numSysSelection.selectedSegmentIndex = x
+            //print("Selection: ",numSysSelection.selectedSegmentIndex)
+            //print("numSystem: ",UserDefaults.standard.object(forKey: "numSystem") ?? "blank")
+        }
     }
     
-    @IBAction func back() {
-        dismiss(animated: true, completion: nil)
-    }
+//    @IBAction func back() {
+//        dismiss(animated: true, completion: nil)
+//    }
     
     @IBOutlet weak var numSysSelection: UISegmentedControl!
     
@@ -28,16 +34,16 @@ class BPProSettingsViewController : UIViewController {
         UserDefaults.standard.set(true, forKey: "numSystemChanged")
     }
 
-    @IBAction func save2(_ sender: UIButton) {
-        UserDefaults.standard.set(numSysSelection.selectedSegmentIndex, forKey: "numSystem")
-        UserDefaults.standard.set(true, forKey: "numSystemChanged")
-    }
+//    @IBAction func save2(_ sender: UIButton) {
+//        UserDefaults.standard.set(numSysSelection.selectedSegmentIndex, forKey: "numSystem")
+//        UserDefaults.standard.set(true, forKey: "numSystemChanged")
+//    }
     
-    override func viewDidAppear(_ animated: Bool) {
-        if let x = UserDefaults.standard.object(forKey: "numSystem") as? Int {
-            numSysSelection.selectedSegmentIndex = x
-            //print("Selection: ",numSysSelection.selectedSegmentIndex)
-            //print("numSystem: ",UserDefaults.standard.object(forKey: "numSystem") ?? "blank")
-        }
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        if let x = UserDefaults.standard.object(forKey: "numSystem") as? Int {
+//            numSysSelection.selectedSegmentIndex = x
+//            //print("Selection: ",numSysSelection.selectedSegmentIndex)
+//            //print("numSystem: ",UserDefaults.standard.object(forKey: "numSystem") ?? "blank")
+//        }
+//    }
 }

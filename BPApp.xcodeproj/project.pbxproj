@@ -206,6 +206,25 @@
 			name = Storyboards;
 			sourceTree = "<group>";
 		};
+		DC3AC9711F8C68D8000DAE6A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD4AF1411F7D989600F416A4 /* Config.swift */,
+				DC3AC9551F8C41E9000DAE6A /* BloodPressureMeasurement.swift */,
+				DC7C783E1F7C7EBA00D87C3D /* Patient.swift */,
+				AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */,
+				AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		DC3AC9721F8C68F6000DAE6A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		DC5E4B4B1EADBED900B35F2D = {
 			isa = PBXGroup;
 			children = (
@@ -282,11 +301,8 @@
 		DC7C783F1F7C7EC000D87C3D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				AD4AF1411F7D989600F416A4 /* Config.swift */,
-				DC3AC9551F8C41E9000DAE6A /* BloodPressureMeasurement.swift */,
-				DC7C783E1F7C7EBA00D87C3D /* Patient.swift */,
-				AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */,
-				AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */,
+				DC3AC9721F8C68F6000DAE6A /* Views */,
+				DC3AC9711F8C68D8000DAE6A /* Models */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
