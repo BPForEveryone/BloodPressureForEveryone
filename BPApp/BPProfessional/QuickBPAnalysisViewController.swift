@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuickBPAnalysisViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var genderField: UISegmentedControl!
     @IBOutlet weak var ageTextField: UITextField!

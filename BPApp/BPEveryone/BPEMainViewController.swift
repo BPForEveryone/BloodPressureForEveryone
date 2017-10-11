@@ -19,10 +19,10 @@ class BPEMainVewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // This sets the system's default measurement system as the app's default
-        viewPatientsButton.layer.cornerRadius = btnRadius;
-        quickResourcesButton.layer.cornerRadius = btnRadius;
-        settingsButton.layer.cornerRadius = btnRadius;
-        
+//        viewPatientsButton.layer.cornerRadius = btnRadius;
+//        quickResourcesButton.layer.cornerRadius = btnRadius;
+//        settingsButton.layer.cornerRadius = btnRadius;
+//        
         
         
         if UserDefaults.standard.value(forKey: "numSystemChanged") as? Bool != true {
