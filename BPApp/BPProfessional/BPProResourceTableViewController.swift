@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BPProResourceTableViewController: UITableViewController {
+class BPProResourceTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -17,16 +17,16 @@ class BPProResourceTableViewController: UITableViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        return 1
+//    }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BPProResourceArticle", for: indexPath)
-        let titleLabel = cell.viewWithTag(1) as! UILabel
-        titleLabel.text = "The Fourth Report"
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "BPProResourceArticle", for: indexPath)
+//        let titleLabel = cell.viewWithTag(1) as! UILabel
+//        titleLabel.text = "The Fourth Report"
+//        return cell
+//    }
 }
 
 

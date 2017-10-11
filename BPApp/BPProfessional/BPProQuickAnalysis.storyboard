@@ -290,22 +290,6 @@
             <point key="canvasLocation" x="3764" y="376"/>
         </scene>
         <!--Quick Analysis-->
-        <scene sceneID="Mgy-B6-Bvw">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aq6-Gw-r43" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Quick Analysis" id="VJm-XX-Zj3"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MHZ-yS-S1b">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YGA-w9-obP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1952.8" y="-327.88605697151428"/>
-        </scene>
-        <!--Quick Analysis-->
         <scene sceneID="VBu-0L-5r9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jRK-jF-rQJ" sceneMemberID="viewController">
