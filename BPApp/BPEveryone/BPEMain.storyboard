@@ -119,31 +119,15 @@ For</string>
             </objects>
             <point key="canvasLocation" x="952" y="417"/>
         </scene>
-        <!--UINavigationController-N7i-Nb-Ato-->
+        <!--BPEBloodPressure-->
         <scene sceneID="vmu-Yo-jOE">
             <objects>
-                <viewControllerPlaceholder storyboardName="BPEBloodPressure" referencedIdentifier="UINavigationController-N7i-Nb-Ato" id="adm-ev-Mzy" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="BPEBloodPressure" id="adm-ev-Mzy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="7EW-jI-5Dp"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edQ-cW-Eft" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1053" y="259"/>
-        </scene>
-        <!--PatientDetailPage2-->
-        <scene sceneID="Eai-Ye-kpn">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PatientDetailPage2" storyboardName="BPEBloodPressure" referencedIdentifier="PatientDetailPage2" id="ZOp-wO-dZe" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="la4-Vj-O7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7569" y="-1075"/>
-        </scene>
-        <!--PatientDetailPage1-->
-        <scene sceneID="B4o-zH-1hP">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="PatientDetailPage1" storyboardName="BPEBloodPressure" referencedIdentifier="PatientDetailPage1" id="BL6-eN-Ajh" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xmi-JK-T6M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7569" y="-1772"/>
         </scene>
     </scenes>
 </document>

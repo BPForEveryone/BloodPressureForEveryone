@@ -723,7 +723,7 @@
         <!--BP Analysis-->
         <scene sceneID="q8i-ks-glA">
             <objects>
-                <navigationController storyboardIdentifier="UINavigationController-N7i-Nb-Ato" automaticallyAdjustsScrollViewInsets="NO" id="N7i-Nb-Ato" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="BPEBloodPressure" automaticallyAdjustsScrollViewInsets="NO" id="N7i-Nb-Ato" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="BP Analysis" id="kgp-Xf-2Vz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cNU-Od-Es0">

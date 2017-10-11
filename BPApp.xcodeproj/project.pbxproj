@@ -26,11 +26,15 @@
 		DC2633381F7F1D5100945319 /* BPEPatientDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2633371F7F1D5100945319 /* BPEPatientDetailViewController.swift */; };
 		DC26333A1F7F1DC600945319 /* BPEPatientEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2633391F7F1DC600945319 /* BPEPatientEditViewController.swift */; };
 		DC26333C1F7F1E0C00945319 /* BPERecordBPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC26333B1F7F1E0C00945319 /* BPERecordBPViewController.swift */; };
-		DC3674C81F8E6A4D00C4305C /* BPESettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674C71F8E6A4D00C4305C /* BPESettings.storyboard */; };
-		DC3674CA1F8E6A7400C4305C /* BPEResources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674C91F8E6A7400C4305C /* BPEResources.storyboard */; };
 		DC3674CC1F8E6AC300C4305C /* BPEBloodPressure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674CB1F8E6AC300C4305C /* BPEBloodPressure.storyboard */; };
 		DC3674CD1F8E6AC300C4305C /* BPEBloodPressure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674CB1F8E6AC300C4305C /* BPEBloodPressure.storyboard */; };
 		DC3674CE1F8E6AC300C4305C /* BPEBloodPressure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674CB1F8E6AC300C4305C /* BPEBloodPressure.storyboard */; };
+		DC3674CF1F8E6CD200C4305C /* BPEResources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674C91F8E6A7400C4305C /* BPEResources.storyboard */; };
+		DC3674D01F8E6CD200C4305C /* BPEResources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674C91F8E6A7400C4305C /* BPEResources.storyboard */; };
+		DC3674D11F8E6CD300C4305C /* BPEResources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674C91F8E6A7400C4305C /* BPEResources.storyboard */; };
+		DC3674D21F8E6CDE00C4305C /* BPESettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674C71F8E6A4D00C4305C /* BPESettings.storyboard */; };
+		DC3674D31F8E6CDE00C4305C /* BPESettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674C71F8E6A4D00C4305C /* BPESettings.storyboard */; };
+		DC3674D41F8E6CDF00C4305C /* BPESettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3674C71F8E6A4D00C4305C /* BPESettings.storyboard */; };
 		DC3832061EAE2E2D00804EDF /* BPEMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */; };
 		DC38320C1EAE3A1600804EDF /* BPProResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */; };
 		DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */; };
@@ -452,8 +456,6 @@
 				DC3AC95E1F8C4228000DAE6A /* BPForProfesionals-Info.plist in Resources */,
 				DC3AC96B1F8C4A86000DAE6A /* BPProSettings.storyboard in Resources */,
 				DC3AC9611F8C42C2000DAE6A /* ProAssets.xcassets in Resources */,
-				DC3674C81F8E6A4D00C4305C /* BPESettings.storyboard in Resources */,
-				DC3674CA1F8E6A7400C4305C /* BPEResources.storyboard in Resources */,
 				DC3AC9671F8C4A2B000DAE6A /* BPProQuickAnalysis.storyboard in Resources */,
 				DC3AC95F1F8C422B000DAE6A /* BPProMain.storyboard in Resources */,
 			);
@@ -463,7 +465,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC3674D01F8E6CD200C4305C /* BPEResources.storyboard in Resources */,
 				DC3674CD1F8E6AC300C4305C /* BPEBloodPressure.storyboard in Resources */,
+				DC3674D31F8E6CDE00C4305C /* BPESettings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,7 +475,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC3674D11F8E6CD300C4305C /* BPEResources.storyboard in Resources */,
 				DC3674CE1F8E6AC300C4305C /* BPEBloodPressure.storyboard in Resources */,
+				DC3674D41F8E6CDF00C4305C /* BPESettings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +485,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC3674CF1F8E6CD200C4305C /* BPEResources.storyboard in Resources */,
+				DC3674D21F8E6CDE00C4305C /* BPESettings.storyboard in Resources */,
 				DC3674CC1F8E6AC300C4305C /* BPEBloodPressure.storyboard in Resources */,
 				DC3AC9621F8C42CB000DAE6A /* BPEAssets.xcassets in Resources */,
 				DC3AC95B1F8C421B000DAE6A /* BPEMain.storyboard in Resources */,
