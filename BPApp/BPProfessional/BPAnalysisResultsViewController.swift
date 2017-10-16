@@ -8,25 +8,35 @@
 
 import UIKit
 
-class BPAnalysisResultsViewController: UIViewController {
+class BPAnalysisResultsViewController: UITableViewController {
+    
+    // Data Entered By User (Patient Data)
+    var age: String?
     var readingDiagnosis: String?
-    var systolic: String?
-    var diastolic: String?
+    var systolic: Int?
+    var diastolic: Int?
     
-    @IBOutlet weak var readingDiagnosisLabel: UILabel!
-    @IBOutlet weak var systolicLabel: UILabel!
-    @IBOutlet weak var diastolicLabel: UILabel!
-    @IBOutlet weak var systolicPercentileLabel: UILabel!
-    @IBOutlet weak var diastolicPercentileLabel: UILabel!
-    
-    @IBAction func backPressed(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)  
+    // Navigation Bar Handlers
+    @IBAction func editPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.readingDiagnosisLabel.text = readingDiagnosis
-        self.systolicLabel.text = systolic
-        self.diastolicLabel.text = diastolic
+    @IBAction func donePressed(_ sender: UIBarButtonItem) {
+    }
+    
+    // Table Cell Elements
+    @IBOutlet var genderLabel: UILabel!
+    @IBOutlet var ageLabel: UILabel!
+    @IBOutlet var heightLabel: UILabel!
+    @IBOutlet var weightLabel: UILabel!
+    @IBOutlet var BPReadingLabel: UILabel!
+    @IBOutlet var BPInterpretationText: UITextView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if (systolic != nil && diastolic != nil) {
+            self.BPReadingLabel.text = String(systolic!) + "/" + String(diastolic!) + " mmHg"
+        }
+        self.BPInterpretationText.text = readingDiagnosis
     }
 }
 

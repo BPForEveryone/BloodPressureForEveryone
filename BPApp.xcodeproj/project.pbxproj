@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1702E45820B513779ABDD34C /* Pods_BPForProfessionals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFAF9061F5AF7D3CBF54DB0 /* Pods_BPForProfessionals.framework */; };
+		2870640C1F946AA6006E811A /* BPProGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2870640B1F946AA6006E811A /* BPProGraphViewController.swift */; };
 		28F55EF81F7DD03300B17BBB /* BPAnalysisResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */; };
 		575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */; };
 		AD4AF1421F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
@@ -46,11 +47,9 @@
 		DC3AC9571F8C41F5000DAE6A /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3AC9551F8C41E9000DAE6A /* BloodPressureMeasurement.swift */; };
 		DC3AC9581F8C41FD000DAE6A /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3AC9551F8C41E9000DAE6A /* BloodPressureMeasurement.swift */; };
 		DC3AC9591F8C41FE000DAE6A /* BloodPressureMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3AC9551F8C41E9000DAE6A /* BloodPressureMeasurement.swift */; };
-		DC3AC95A1F8C4215000DAE6A /* BPForEveryone-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC94E1F8C40D7000DAE6A /* BPForEveryone-Info.plist */; };
 		DC3AC95B1F8C421B000DAE6A /* BPEMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC94D1F8C40C5000DAE6A /* BPEMain.storyboard */; };
 		DC3AC95C1F8C421E000DAE6A /* EveryoneLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC94F1F8C40DD000DAE6A /* EveryoneLaunchScreen.storyboard */; };
 		DC3AC95D1F8C4225000DAE6A /* ProLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC9541F8C41B6000DAE6A /* ProLaunchScreen.storyboard */; };
-		DC3AC95E1F8C4228000DAE6A /* BPForProfesionals-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC94C1F8C401E000DAE6A /* BPForProfesionals-Info.plist */; };
 		DC3AC95F1F8C422B000DAE6A /* BPProMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC9531F8C41A8000DAE6A /* BPProMain.storyboard */; };
 		DC3AC9611F8C42C2000DAE6A /* ProAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5E4B611EADBED900B35F2D /* ProAssets.xcassets */; };
 		DC3AC9621F8C42CB000DAE6A /* BPEAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC9601F8C4294000DAE6A /* BPEAssets.xcassets */; };
@@ -91,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		165115CA59EE456379F2225C /* Pods-BPForProfessionals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BPForProfessionals.release.xcconfig"; path = "Pods/Target Support Files/Pods-BPForProfessionals/Pods-BPForProfessionals.release.xcconfig"; sourceTree = "<group>"; };
+		2870640B1F946AA6006E811A /* BPProGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPProGraphViewController.swift; sourceTree = "<group>"; };
 		28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPAnalysisResultsViewController.swift; sourceTree = "<group>"; };
 		575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BPProSettingsViewController.swift; path = BPApp/BPProfessional/BPProSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		90D5D19926BAA8FF97FA18BC /* Pods-BPForProfessionals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BPForProfessionals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BPForProfessionals/Pods-BPForProfessionals.debug.xcconfig"; sourceTree = "<group>"; };
@@ -235,6 +235,7 @@
 				28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */,
 				DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */,
 				DC3AC96C1F8C5C00000DAE6A /* BPProResourceViewController.swift */,
+				2870640B1F946AA6006E811A /* BPProGraphViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -440,7 +441,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = BlackstoneBuilds;
 				TargetAttributes = {
 					DC5E4B531EADBED900B35F2D = {
@@ -491,7 +492,6 @@
 			files = (
 				DC3AC9691F8C4A5B000DAE6A /* BPProResources.storyboard in Resources */,
 				DC3AC95D1F8C4225000DAE6A /* ProLaunchScreen.storyboard in Resources */,
-				DC3AC95E1F8C4228000DAE6A /* BPForProfesionals-Info.plist in Resources */,
 				DC3AC96B1F8C4A86000DAE6A /* BPProSettings.storyboard in Resources */,
 				DC3AC9611F8C42C2000DAE6A /* ProAssets.xcassets in Resources */,
 				DC3AC9671F8C4A2B000DAE6A /* BPProQuickAnalysis.storyboard in Resources */,
@@ -529,7 +529,6 @@
 				DC3AC9621F8C42CB000DAE6A /* BPEAssets.xcassets in Resources */,
 				DC3AC95B1F8C421B000DAE6A /* BPEMain.storyboard in Resources */,
 				DC3AC95C1F8C421E000DAE6A /* EveryoneLaunchScreen.storyboard in Resources */,
-				DC3AC95A1F8C4215000DAE6A /* BPForEveryone-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -654,6 +653,7 @@
 				DC3AC96D1F8C5C00000DAE6A /* BPProResourceViewController.swift in Sources */,
 				AD7D33EB1F7F00B100A2C15A /* QuickBPAnalysisViewController.swift in Sources */,
 				AD4AF1451F7D989600F416A4 /* Config.swift in Sources */,
+				2870640C1F946AA6006E811A /* BPProGraphViewController.swift in Sources */,
 				DC5E4B601EADBED900B35F2D /* BPApp.xcdatamodeld in Sources */,
 				AD9BEE201F80B35300F1C986 /* BirthDay.swift in Sources */,
 				575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */,
@@ -740,7 +740,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -748,7 +750,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -790,7 +796,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -798,7 +806,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
