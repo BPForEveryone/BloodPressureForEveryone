@@ -1,0 +1,6 @@
+framework module Pods_BPForProfessionals {
+  umbrella header "Pods-BPForProfessionals-umbrella.h"
+
+  export *
+  module * { export * }
+}
