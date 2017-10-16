@@ -26,8 +26,9 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
     var weightOptions: [String] = []
     var weightOptionsMetric: [String] = []
     var bpOptions = Array<Array<String>>()
-    var readingDiagnosis: String = ""
-    var bothBP: [String] = []
+    var readingDiagnosis: String = "Default interpretation"
+    var systolicBP: Int = 0
+    var diastolicBP: Int = 0
     let stage2HTN = "This patient has stage 2 hypertension and is over the 95th percentile + 12 mmHg. This patient needs to take immediate action and drastic life changes to improve personal health to combat this high BP."
     let stage1HTN = "This patient has stage 1 hypertension and is between the 95th percentile and the 95th percentile + 12 mmH. This patient needs to to have an action plan to improve personal health to combat this high BP."
     let elevatedBP = "This patient has stage 2 hypertension and between the 90th and 95th percentiles. This patient needs to look into incorporating small life changes (ie. healthy diet, more exercise) to handle this elevated BP."
@@ -223,6 +224,8 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
         }
     }
     
+    // Dsable or grey out Analyze Navigation UIBarButtonItem if
+    // fields are left empty /or invalid
     @IBAction func analyzeOnPress(_ sender: Any) {
         
         // age must not be empty
@@ -240,10 +243,10 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
             return
         }
         
-        bothBP = bpString.components(separatedBy: "/")
+        let bothBP: [String] = bpString.components(separatedBy: "/")
         
-        let systolicBP: Int = Int(bothBP[0])!
-        let diastolicBP: Int = Int(bothBP[1])!
+        systolicBP = Int(bothBP[0])!
+        diastolicBP = Int(bothBP[1])!
         
         print("\(systolicBP), \(diastolicBP)")
         
@@ -271,15 +274,19 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
             }
             
         }
-        // Use readingDiagnosis to pass into next screen in label position
-        //performSegue(withIdentifier: "BPAnalysisResultsController", sender: self)
     }
     
+    // Pass relevant patient data through UINavigationController to BPAnalysisResultsViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let BPAnaysisResultsViewController = segue.destination as? BPAnalysisResultsViewController {
-            BPAnaysisResultsViewController.readingDiagnosis = readingDiagnosis
-            BPAnaysisResultsViewController.systolic = bothBP[0]
-            BPAnaysisResultsViewController.diastolic = bothBP[1]
+        if let identifier = segue.identifier {
+            if identifier == "showBPAnalysisResults" {
+                let navController = segue.destination as! UINavigationController
+                let BPAnalysisResultsViewController = navController.topViewController as! BPAnalysisResultsViewController
+                BPAnalysisResultsViewController.age = self.ageTextField.text
+                BPAnalysisResultsViewController.readingDiagnosis = self.readingDiagnosis
+                BPAnalysisResultsViewController.systolic = self.systolicBP
+                BPAnalysisResultsViewController.diastolic = self.diastolicBP
+            }
         }
     }
     
