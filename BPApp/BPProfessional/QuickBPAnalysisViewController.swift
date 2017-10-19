@@ -224,7 +224,7 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
         }
     }
     
-    // Dsable or grey out Analyze Navigation UIBarButtonItem if
+    // Disable or grey out Analyze Navigation UIBarButtonItem if
     // fields are left empty /or invalid
     @IBAction func analyzeOnPress(_ sender: Any) {
         
@@ -258,9 +258,10 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
         let height: Double = convertHeightToDouble(heightString: heightString)
         
         print("\(height)")
-        readingDiagnosis = "Here is an uninitialized diagnosis"
+        readingDiagnosis = "We could not analyze your BP. Sorry."
         if (age < 13) {
             // Do BP for children calculations based on table here
+            // Note: This now follows the fifth report guidelines
         } else {
             // This is the adolescents+ case
             if (systolicBP >= 140 || diastolicBP >= 90) {
