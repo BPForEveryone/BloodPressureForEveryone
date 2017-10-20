@@ -57,12 +57,12 @@ class BPEAddPatientViewController: UIViewController {
     
     private func createNewPatient() {
         guard let firstname = firstnameTextField.text else {
-            print("Firstname not entered");
+            print("firstname not entered");
             return;
         }
         
         guard let lastname = lastNameTextField.text else {
-            print("Lastname not entered");
+            print("lastname not entered");
             return;
         }
         
