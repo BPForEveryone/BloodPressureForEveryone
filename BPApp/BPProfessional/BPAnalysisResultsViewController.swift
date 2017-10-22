@@ -11,7 +11,10 @@ import UIKit
 class BPAnalysisResultsViewController: UITableViewController {
     
     // Data Entered By User (Patient Data)
-    var age: String?
+    var gender: String?
+    var age: Int?
+    var height: Double?
+    var weight: String?
     var readingDiagnosis: String?
     var systolic: Int?
     var diastolic: Int?
@@ -31,11 +34,15 @@ class BPAnalysisResultsViewController: UITableViewController {
     @IBOutlet var BPReadingLabel: UILabel!
     @IBOutlet var BPInterpretationText: UITextView!
     
+    // Prepare data before view loads
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if (systolic != nil && diastolic != nil) {
-            self.BPReadingLabel.text = String(systolic!) + "/" + String(diastolic!) + " mmHg"
-        }
+        self.genderLabel.text = gender
+        self.ageLabel.text = String(age!) + " yrs"
+        // TODO: Create if statement for Imperial and Metric displays of height and weight, fix formatting
+        self.heightLabel.text = String(height!) + " cm"
+        self.weightLabel.text = weight
+        self.BPReadingLabel.text = String(systolic!) + "/" + String(diastolic!) + " mmHg"
         self.BPInterpretationText.text = readingDiagnosis
     }
 }

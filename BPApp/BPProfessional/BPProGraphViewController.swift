@@ -11,10 +11,15 @@ import Charts
 
 class BPProGraphViewController: UIViewController, ChartViewDelegate {
 
+    // Systolic and Diastolic Line Charts
     @IBOutlet weak var systolicLineChartView: LineChartView!
     @IBOutlet weak var diastolicLineChartView: LineChartView!
-    
+
     var systolicDataEntry: [ChartDataEntry] = []
+    
+    @IBAction func backPressed(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     // Systolic Chart Dummy Data
     let age = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
@@ -25,7 +30,7 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
         super.viewWillAppear(animated)
     }
     
-    // Present graphs once the UIView loads
+    // Present graphs once the view loads
     override func viewDidLoad() {
         super.viewDidLoad()
         lineChartSetup()
@@ -49,33 +54,41 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
             let dataPoint = ChartDataEntry(x: Double(i), y: Double(values[i]))
             systolicDataEntry.append(dataPoint)
         }
-        let chartDataSet = LineChartDataSet(values: systolicDataEntry, label: "50th Percentile Systolic BP")
-        let chartData = LineChartData()
-        chartData.addDataSet(chartDataSet)
-        chartData.setDrawValues(true)
-        chartDataSet.colors = [UIColor.red]
-        chartDataSet.setCircleColor(UIColor.red)
-        chartDataSet.circleHoleColor = UIColor.red
-        chartDataSet.circleRadius = 1.0
+        let fifty_DataSet = LineChartDataSet(values: systolicDataEntry, label: "50th Percentile Systolic BP")
+        let fifty_Data = LineChartData()
+        fifty_Data.addDataSet(fifty_DataSet)
+        fifty_Data.setDrawValues(true)
+        fifty_DataSet.colors = [UIColor.red]
+        fifty_DataSet.setCircleColor(UIColor.red)
+        fifty_DataSet.circleHoleColor = UIColor.red
+        fifty_DataSet.circleRadius = 0.0
+        fifty_DataSet.lineWidth = 5.0
         
         // Gradient Fill
-        let gradientColors = [UIColor.brown.cgColor, UIColor.red.cgColor] as CFArray
+        let gradientColors = [UIColor.red.cgColor, UIColor.red.cgColor] as CFArray
         let colorLocations: [CGFloat] = [1.0, 0.0]
-        guard let gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) else { print("Gradient error"); return }
-        chartDataSet.fill = Fill.fillWithLinearGradient(gradient, angle: 90.0)
-        chartDataSet.drawFilledEnabled = true
+        guard let red_gradient = CGGradient.init(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: gradientColors, locations: colorLocations) else { print("Gradient error"); return }
+        fifty_DataSet.fill = Fill.fillWithLinearGradient(red_gradient, angle: 90.0)
+        fifty_DataSet.drawFilledEnabled = true
         
         // Axes Setup
-        systolicLineChartView.xAxis.labelPosition = .bottom
-        systolicLineChartView.xAxis.xOffset = 1.0
-        systolicLineChartView.xAxis.drawGridLinesEnabled = false
         systolicLineChartView.chartDescription?.enabled = false
         systolicLineChartView.legend.enabled = true
+        
+        systolicLineChartView.xAxis.drawGridLinesEnabled = false
+        systolicLineChartView.xAxis.granularity = 1.0
+        systolicLineChartView.xAxis.labelPosition = .bottom
+        systolicLineChartView.xAxis.xOffset = 1.0
+        
         systolicLineChartView.rightAxis.enabled = true
+        systolicLineChartView.rightAxis.drawGridLinesEnabled = false
         systolicLineChartView.leftAxis.drawGridLinesEnabled = false
         systolicLineChartView.leftAxis.drawLabelsEnabled = true
+        systolicLineChartView.leftAxis.xOffset = 1.0
+        systolicLineChartView.extraTopOffset = 10.0
+        systolicLineChartView.extraLeftOffset = 35.0
         
-        systolicLineChartView.data = chartData
+        systolicLineChartView.data = fifty_Data
     }
 
 }
