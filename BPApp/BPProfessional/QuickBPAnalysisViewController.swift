@@ -10,13 +10,17 @@ import UIKit
 
 class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    // Table Fields
     @IBOutlet weak var genderField: UISegmentedControl!
     @IBOutlet weak var ageTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var bpTextField: UITextField!
     
+    // Analyze Navigation Button Reference (for disabling if the fields are left empty)
+    @IBOutlet var analyzeButton: UIBarButtonItem!
     
+    // Picker Options
     let numSysImperial = UserDefaults.standard.value(forKey: "numSystem") as? Int == 0
     var ageOptions: [String] = []
     let heightOptions = [["1'", "2'", "3'", "4'", "5'", "6'"],
@@ -26,16 +30,24 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
     var weightOptions: [String] = []
     var weightOptionsMetric: [String] = []
     var bpOptions = Array<Array<String>>()
-    var readingDiagnosis: String = "Default interpretation"
-    var systolicBP: Int = 0
-    var diastolicBP: Int = 0
+    
+    // Globals storing data to be passed on
+    var gender: String = ""
+    var age: Int = -1
+    var height: Double = 0.0
+    var weight: String = ""
+    var readingDiagnosis: String = "We could not determine an analysis based on your patient data. Please double check your patient information and try again!"
+    var systolicBP: Int = -1
+    var diastolicBP: Int = -1
+    
+    // Preset Interpretations
     let stage2HTN = "This patient has stage 2 hypertension and is over the 95th percentile + 12 mmHg. This patient needs to take immediate action and drastic life changes to improve personal health to combat this high BP."
     let stage1HTN = "This patient has stage 1 hypertension and is between the 95th percentile and the 95th percentile + 12 mmH. This patient needs to to have an action plan to improve personal health to combat this high BP."
     let elevatedBP = "This patient has stage 2 hypertension and between the 90th and 95th percentiles. This patient needs to look into incorporating small life changes (ie. healthy diet, more exercise) to handle this elevated BP."
     let normalBP = "This patient is within normal BP ranges, ie. < 90th percentile. They should still continue to live a healthy lifestyle, especially if they are older or have previously had hypertension."
     
     @IBAction func cancel() {
-        dismiss(animated: true, completion: nil)
+        // TODO: Return to BPPro Main Menu
     }
     
     override func viewDidLoad() {
@@ -226,40 +238,39 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
     
     // Disable or grey out Analyze Navigation UIBarButtonItem if
     // fields are left empty /or invalid
-    @IBAction func analyzeOnPress(_ sender: Any) {
+    @IBAction func analyzeOnPress(_ sender: UIBarButtonItem) {
+        print("Analyze pressed")
         
-        // age must not be empty
+        self.gender = genderField.titleForSegment(at: genderField.selectedSegmentIndex)!
+        
+        // Age Check: age field must not be empty
         guard let ageString: String = ageTextField.text, !(ageTextField.text?.isEmpty)! else {
             print("Age is null or 0")
             return
         }
+        self.age = Int(ageString.components(separatedBy: " ")[0])!
         
-        let age: Int = Int(ageString.components(separatedBy: " ")[0])!
-        
-        
-        // bp must be valid not empty (sanity check mainly)
-        guard let bpString: String = bpTextField.text, !(bpTextField.text?.isEmpty)! else {
-            print("BP is null or 0")
-            return
-        }
-        
-        let bothBP: [String] = bpString.components(separatedBy: "/")
-        
-        systolicBP = Int(bothBP[0])!
-        diastolicBP = Int(bothBP[1])!
-        
-        print("\(systolicBP), \(diastolicBP)")
-        
+        // Height Check: height field must not be empty
         guard let heightString: String = heightTextField.text, !(heightTextField.text?.isEmpty)! else {
             print("Height is null or 0")
             return
         }
-        
-        let height: Double = convertHeightToDouble(heightString: heightString)
-        
+        self.height = convertHeightToDouble(heightString: heightString)
         print("\(height)")
-        readingDiagnosis = "We could not analyze your BP. Sorry."
-        if (age < 13) {
+        
+        self.weight = weightTextField.text!
+        
+        // BP Check : BP field must not be empty
+        guard let bpString: String = bpTextField.text, !(bpTextField.text?.isEmpty)! else {
+            print("BP is null or 0")
+            return
+        }
+        let bothBP: [String] = bpString.components(separatedBy: "/")
+        self.systolicBP = Int(bothBP[0])!
+        self.diastolicBP = Int(bothBP[1])!
+        print("\(systolicBP), \(diastolicBP)")
+        
+        if (self.age < 13) {
             // Do BP for children calculations based on table here
             // Note: This now follows the fifth report guidelines
         } else {
@@ -275,6 +286,10 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
             }
             
         }
+        
+        self.performSegue(withIdentifier: "showBPAnalysisResults", sender: self)
+        
+        print("Segue was performed successfully")
     }
     
     // Pass relevant patient data through UINavigationController to BPAnalysisResultsViewController
@@ -283,7 +298,10 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
             if identifier == "showBPAnalysisResults" {
                 let navController = segue.destination as! UINavigationController
                 let BPAnalysisResultsViewController = navController.topViewController as! BPAnalysisResultsViewController
-                BPAnalysisResultsViewController.age = self.ageTextField.text
+                BPAnalysisResultsViewController.gender = self.gender
+                BPAnalysisResultsViewController.age = self.age
+                BPAnalysisResultsViewController.height = self.height
+                BPAnalysisResultsViewController.weight = self.weight
                 BPAnalysisResultsViewController.readingDiagnosis = self.readingDiagnosis
                 BPAnalysisResultsViewController.systolic = self.systolicBP
                 BPAnalysisResultsViewController.diastolic = self.diastolicBP
