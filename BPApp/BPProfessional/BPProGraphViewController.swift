@@ -51,7 +51,7 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
         
         // Data Point Setup & Color Configuration
         for i in 0..<dataPoints.count {
-            let dataPoint = ChartDataEntry(x: Double(i), y: Double(values[i]))
+            let dataPoint = ChartDataEntry(x: Double(dataPoints[i]), y: Double(values[i]))
             systolicDataEntry.append(dataPoint)
         }
         let fifty_DataSet = LineChartDataSet(values: systolicDataEntry, label: "50th Percentile Systolic BP")
@@ -77,6 +77,7 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
         
         systolicLineChartView.xAxis.drawGridLinesEnabled = false
         systolicLineChartView.xAxis.granularity = 1.0
+        systolicLineChartView.xAxis.labelCount = dataPoints.count
         systolicLineChartView.xAxis.labelPosition = .bottom
         systolicLineChartView.xAxis.xOffset = 1.0
         
@@ -85,8 +86,8 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
         systolicLineChartView.leftAxis.drawGridLinesEnabled = false
         systolicLineChartView.leftAxis.drawLabelsEnabled = true
         systolicLineChartView.leftAxis.xOffset = 1.0
-        systolicLineChartView.extraTopOffset = 10.0
-        systolicLineChartView.extraLeftOffset = 35.0
+        //systolicLineChartView.extraTopOffset = 10.0
+        //systolicLineChartView.extraLeftOffset = 35.0
         
         systolicLineChartView.data = fifty_Data
     }
