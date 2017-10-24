@@ -46,10 +46,6 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
     let elevatedBP = "This patient has stage 2 hypertension and between the 90th and 95th percentiles. This patient needs to look into incorporating small life changes (ie. healthy diet, more exercise) to handle this elevated BP."
     let normalBP = "This patient is within normal BP ranges, ie. < 90th percentile. They should still continue to live a healthy lifestyle, especially if they are older or have previously had hypertension."
     
-    @IBAction func cancel() {
-        // TODO: Return to BPPro Main Menu
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         initializeOptions()
