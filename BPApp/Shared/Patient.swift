@@ -35,6 +35,12 @@ public class Patient: NSObject, NSCoding {
         }
     }
     
+    public var norms: BPNormsEntry {
+        get {
+            return BPNormsTable.index(patient: self)
+        }
+    }
+    
     public var sex: Patient.Sex {
         get {
             if self.sexInBoolean {

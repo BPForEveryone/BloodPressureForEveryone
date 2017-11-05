@@ -25,7 +25,7 @@ class BPETrackUsersViewControler: UITableViewController {
         let lastBPRecordingLabel = cell.viewWithTag(20) as! UILabel;
         firstNameLabel.text = Config.patients[indexPath.row].firstName;
         lastNameLabel.text = Config.patients[indexPath.row].lastName;
-        lastBPRecordingLabel.text = "None";
+        lastBPRecordingLabel.text = "\(Config.patients[indexPath.row].norms.systolic50)";
         
         if(!Config.patients[indexPath.row].bloodPressureMeasurements.isEmpty) {
             let lastBPRecording = Config.patients[indexPath.row].bloodPressureMeasurements.last;
