@@ -66,11 +66,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Patients" id="10F-fZ-xuN">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="9fg-02-UOS">
-                            <connections>
-                                <action selector="back" destination="8Mx-eQ-FwC" id="Cug-yu-mOu"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Patient" id="5l2-Hn-wOP">
                             <connections>
                                 <segue destination="q41-tM-3fs" kind="showDetail" id="RAg-21-SMF"/>
