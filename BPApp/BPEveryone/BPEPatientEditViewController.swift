@@ -54,14 +54,14 @@ class BPEPatientEditViewController : UIViewController {
         
         let patientSex = (sexSegmentedControl.selectedSegmentIndex == 0) ? Patient.Sex.male : Patient.Sex.female;
         
-        let weight = (weightStr as NSString).floatValue
-        let height = (heightStr as NSString).floatValue
+        let weight = (weightStr as NSString).doubleValue
+        let height = (heightStr as NSString).doubleValue
         
         let patient = Patient(
             firstName: firstName,
             lastName: lastName,
             birthDate: patientDob,
-            heightInMeters: height,
+            height: Height(heightInMeters: height),
             sex: patientSex,
             bloodPressureMeasurements: Config.patients[patientId].bloodPressureMeasurements
         );
@@ -121,7 +121,7 @@ class BPEPatientEditViewController : UIViewController {
         dobTextField.text = BirthDay.format(date: dob)
         
         // Height and weight
-        heightTextField.text = patient.heightInMeters.description
+        heightTextField.text = patient.height.description
         weightTextField.text = "0"
     }
 }

@@ -11,6 +11,10 @@
 		2870640C1F946AA6006E811A /* BPProGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2870640B1F946AA6006E811A /* BPProGraphViewController.swift */; };
 		28F55EF81F7DD03300B17BBB /* BPAnalysisResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */; };
 		575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */; };
+		AD0A18231FB5021900D3056A /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A18221FB5021900D3056A /* Height.swift */; };
+		AD0A18241FB5050700D3056A /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A18221FB5021900D3056A /* Height.swift */; };
+		AD0A18251FB5050800D3056A /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A18221FB5021900D3056A /* Height.swift */; };
+		AD0A18261FB5050900D3056A /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A18221FB5021900D3056A /* Height.swift */; };
 		AD4AF1421F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
 		AD4AF1431F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
 		AD4AF1441F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
@@ -103,6 +107,7 @@
 		575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BPProSettingsViewController.swift; path = BPApp/BPProfessional/BPProSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		90D5D19926BAA8FF97FA18BC /* Pods-BPForProfessionals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BPForProfessionals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BPForProfessionals/Pods-BPForProfessionals.debug.xcconfig"; sourceTree = "<group>"; };
 		9BFAF9061F5AF7D3CBF54DB0 /* Pods_BPForProfessionals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BPForProfessionals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD0A18221FB5021900D3056A /* Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Height.swift; sourceTree = "<group>"; };
 		AD4AF1411F7D989600F416A4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		AD5CFD921F8AE9BD00D9BDD9 /* BPEBPListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEBPListViewController.swift; sourceTree = "<group>"; };
 		AD5CFD961F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEPatientDetailPageViewController.swift; sourceTree = "<group>"; };
@@ -268,6 +273,7 @@
 				AD4AF1411F7D989600F416A4 /* Config.swift */,
 				DC3AC9551F8C41E9000DAE6A /* BloodPressureMeasurement.swift */,
 				DC7C783E1F7C7EBA00D87C3D /* Patient.swift */,
+				AD0A18221FB5021900D3056A /* Height.swift */,
 				AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */,
 				AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */,
 				ADE764CA1FAF9B9E00A119A9 /* BPNormsEntry.swift */,
@@ -665,6 +671,7 @@
 				DC3AC96D1F8C5C00000DAE6A /* BPProResourceViewController.swift in Sources */,
 				AD7D33EB1F7F00B100A2C15A /* QuickBPAnalysisViewController.swift in Sources */,
 				AD4AF1451F7D989600F416A4 /* Config.swift in Sources */,
+				AD0A18231FB5021900D3056A /* Height.swift in Sources */,
 				2870640C1F946AA6006E811A /* BPProGraphViewController.swift in Sources */,
 				DC5E4B601EADBED900B35F2D /* BPApp.xcdatamodeld in Sources */,
 				AD9BEE201F80B35300F1C986 /* BirthDay.swift in Sources */,
@@ -684,6 +691,7 @@
 			files = (
 				ADE764CD1FAF9C0400A119A9 /* BPNormsEntry.swift in Sources */,
 				AD5CFD9C1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */,
+				AD0A18251FB5050800D3056A /* Height.swift in Sources */,
 				AD9BEE221F80B4FF00F1C986 /* BirthDay.swift in Sources */,
 				DC3AC9581F8C41FD000DAE6A /* BloodPressureMeasurement.swift in Sources */,
 				ADFF25041FA925CD00A459CC /* BPNormsTable.swift in Sources */,
@@ -699,6 +707,7 @@
 			files = (
 				ADE764CE1FAF9C0500A119A9 /* BPNormsEntry.swift in Sources */,
 				AD5CFD9D1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */,
+				AD0A18261FB5050900D3056A /* Height.swift in Sources */,
 				AD9BEE231F80B4FF00F1C986 /* BirthDay.swift in Sources */,
 				DC3AC9591F8C41FE000DAE6A /* BloodPressureMeasurement.swift in Sources */,
 				ADFF25051FA925CD00A459CC /* BPNormsTable.swift in Sources */,
@@ -728,6 +737,7 @@
 				DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */,
 				DC26333A1F7F1DC600945319 /* BPEPatientEditViewController.swift in Sources */,
 				ADFF25031FA925CD00A459CC /* BPNormsTable.swift in Sources */,
+				AD0A18241FB5050700D3056A /* Height.swift in Sources */,
 				AD5CFD971F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift in Sources */,
 				DC7C78401F7C82B200D87C3D /* Patient.swift in Sources */,
 				AD5CFD9B1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */,

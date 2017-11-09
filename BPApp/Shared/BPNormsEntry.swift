@@ -13,7 +13,7 @@ public class BPNormsEntry {
     
     public var sex: Patient.Sex
     public var age: Int
-    public var heightInMeters: Float
+    public var heightInMeters: Double
     public var systolic50: Int
     public var systolic90: Int
     public var systolic95: Int
@@ -25,7 +25,7 @@ public class BPNormsEntry {
     
     init?(age: Int,
           sex: Patient.Sex,
-          heightInMeters: Float,
+          heightInMeters: Double,
           systolic50: Int,
           systolic90: Int,
           systolic95: Int,

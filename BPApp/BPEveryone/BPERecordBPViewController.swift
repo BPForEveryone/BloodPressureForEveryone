@@ -67,7 +67,7 @@ class BPERecordBPViewController: UIViewController {
         
         fullNameTextField.text = "\(patient.firstName) \(patient.lastName)"
         ageTextField.text = "\(age) years"
-        heightTextField.text = "\(patient.heightInMeters) meters"
+        heightTextField.text = "\(patient.height.meters) meters"
         
         super.viewDidLoad();
     }

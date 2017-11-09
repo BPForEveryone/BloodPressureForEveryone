@@ -16,7 +16,6 @@ class BPEPatientDetailViewController: UIViewController {
     @IBOutlet weak var dateOfBirthLabel: UILabel!
     @IBOutlet weak var analysisGroupLabel: UILabel! //Children vs Adults
     @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var weightLabel: UILabel!
     @IBOutlet weak var lastBPDateTimeLabel: UILabel!
     @IBOutlet weak var lastBPMeasurmentLabel: UILabel!
     @IBOutlet weak var lastBPPercentileLabel: UILabel!
@@ -36,8 +35,7 @@ class BPEPatientDetailViewController: UIViewController {
         lastNameLabel.text = patient.lastName
         dateOfBirthLabel.text = BirthDay.format(date: patient.birthDate)
         analysisGroupLabel.text = "N/A"
-        heightLabel.text = patient.heightInMeters.description
-        weightLabel.text = "N/A"
+        heightLabel.text = patient.height.description
         lastBPDateTimeLabel.text = "N/A"
         lastBPPercentileLabel.text = "N/A"
         lastBPMeasurmentLabel.text = "N/A"

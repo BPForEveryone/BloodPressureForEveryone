@@ -15,6 +15,27 @@ public class Config {
     static let DocumentsDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
     static let PatientStore = DocumentsDirectory.appendingPathComponent("patients")
     
+    // Enum of possible number systems.
+    public enum UnitSystem {
+        case metric
+        case imperial
+    }
+    
+    // The currently active number system.
+    public static var unitSystem: UnitSystem {
+        get {
+            if let format = UserDefaults.standard.object(forKey: "numSystem") as? Int {
+                if format == 0 {
+                    return UnitSystem.metric
+                }
+                
+                return UnitSystem.imperial
+            }
+            
+            return UnitSystem.metric
+        }
+    }
+    
     // The list of patients we save.
     static public var patients: [Patient] {
         get {

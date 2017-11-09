@@ -42,7 +42,7 @@ class BPNormsTable {
             }
             
             // Index by value.
-            public subscript(heightInMeters: Float) -> BPNormsEntry {
+            public subscript(heightInMeters: Double) -> BPNormsEntry {
             
                 get {
                     
@@ -138,15 +138,15 @@ class BPNormsTable {
             
             // Edge cases.
             if (page <= 1) {
-                return table[0][sexIndex]![patient.heightInMeters];
+                return table[0][sexIndex]![patient.height.meters];
             }
             
             // Edge cases.
             if (page >= table.count - 1) {
-                return table[table.count - 1][sexIndex]![patient.heightInMeters];
+                return table[table.count - 1][sexIndex]![patient.height.meters];
             }
             
-            return table[page][sexIndex]![patient.heightInMeters]
+            return table[page][sexIndex]![patient.height.meters]
         }
     }
     

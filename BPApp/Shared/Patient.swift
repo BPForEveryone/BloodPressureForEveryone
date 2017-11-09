@@ -20,7 +20,7 @@ public class Patient: NSObject, NSCoding {
     var firstName: String
     var lastName: String
     var birthDate: Date
-    var heightInMeters: Float
+    var height: Height
     private var sexInBoolean: Bool
     private var bloodPressureMeasurementsSorted: [BloodPressureMeasurement]! = []
     public var bloodPressureMeasurements: [BloodPressureMeasurement] {
@@ -68,7 +68,7 @@ public class Patient: NSObject, NSCoding {
     }
     
     // Create a new patient
-    init?(firstName: String, lastName: String, birthDate: Date, heightInMeters: Float, sex: Patient.Sex, bloodPressureMeasurements: [BloodPressureMeasurement]) {
+    init?(firstName: String, lastName: String, birthDate: Date, height: Height, sex: Patient.Sex, bloodPressureMeasurements: [BloodPressureMeasurement]) {
         
         // The names must not be empty
         guard !firstName.isEmpty else {
@@ -80,14 +80,14 @@ public class Patient: NSObject, NSCoding {
         }
         
         // Height must be positive.
-        guard heightInMeters >= 0.0 else {
+        guard height.meters >= 0.0 else {
             return nil
         }
         
         self.firstName = firstName
         self.lastName = lastName
         self.birthDate = birthDate
-        self.heightInMeters = heightInMeters
+        self.height = height
         
         switch sex {
             case .male: self.sexInBoolean = true
@@ -104,7 +104,7 @@ public class Patient: NSObject, NSCoding {
         encoder.encode(firstName, forKey: PropertyKey.firstName)
         encoder.encode(lastName, forKey: PropertyKey.lastName)
         encoder.encode(birthDate, forKey: PropertyKey.birthDate)
-        encoder.encode(heightInMeters, forKey: PropertyKey.heightInMeters)
+        encoder.encode(height.meters, forKey: PropertyKey.heightInMeters)
         encoder.encode(sexInBoolean, forKey: PropertyKey.sexInBoolean)
         encoder.encode(bloodPressureMeasurementsSorted, forKey: PropertyKey.bloodPressureMeasurementsSorted)
     }
@@ -129,7 +129,7 @@ public class Patient: NSObject, NSCoding {
             return nil
         }
         
-        let heightInMeters = decoder.decodeFloat(forKey: PropertyKey.heightInMeters)
+        let heightInMeters = decoder.decodeDouble(forKey: PropertyKey.heightInMeters)
         
         let sexInBoolean = decoder.decodeBool(forKey: PropertyKey.sexInBoolean)
         
@@ -152,7 +152,7 @@ public class Patient: NSObject, NSCoding {
             firstName: firstName,
             lastName: lastName,
             birthDate: birthDate,
-            heightInMeters: heightInMeters,
+            height: Height(heightInMeters: heightInMeters),
             sex: sex,
             bloodPressureMeasurements: bloodPressureMeasurementsSorted
         )

@@ -84,9 +84,9 @@ class BPEAddPatientViewController: UIViewController {
         let patientSex = (genderControl.selectedSegmentIndex == 0) ? Patient.Sex.male : Patient.Sex.female;
         let bpMeasurements : [BloodPressureMeasurement] = [];
         
-        let height = (heightStr as NSString).floatValue;
+        let height = (heightStr as NSString).doubleValue;
         
-        patient = Patient(firstName: firstname, lastName: lastname, birthDate: patientDob, heightInMeters: height, sex: patientSex, bloodPressureMeasurements: bpMeasurements);
+        patient = Patient(firstName: firstname, lastName: lastname, birthDate: patientDob, height: Height(heightInMeters: height), sex: patientSex, bloodPressureMeasurements: bpMeasurements);
         
         var patients = Config.patients
         patients.append(patient)
