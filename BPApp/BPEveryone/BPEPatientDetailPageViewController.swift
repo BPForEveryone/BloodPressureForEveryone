@@ -14,7 +14,7 @@ class BPEPatientDetailPageViewController: PageViewStaticListController {
     var patientId: Int = 0
     
     override func sourceStoryboard() -> String {
-        return "BPEMain"
+        return "BPEBloodPressure"
     }
     
     override func sourcePageIdentifiers() -> [String] {
