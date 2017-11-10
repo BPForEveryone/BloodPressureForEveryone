@@ -269,6 +269,8 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
         if (self.age < 13) {
             // Do BP for children calculations based on table here
             // Note: This now follows the fifth report guidelines
+            // QuickBPAnalysisViewController should use norms table here now
+            // TODO: Use norms table here
         } else {
             // This is the adolescents+ case
             if (systolicBP >= 140 || diastolicBP >= 90) {
