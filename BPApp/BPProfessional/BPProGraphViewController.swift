@@ -22,6 +22,7 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
     }
     
     // Systolic Chart Dummy Data
+    // Use Patient Object data from previous to index into norms table
     let age = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
     let BP = [86.0, 89.0, 90.0, 92.0, 94.0, 95.0, 97.0, 98.0, 99.0, 100.0, 102.0, 104.0, 105.0, 109.0, 113.0, 115.0, 117.0]
     
