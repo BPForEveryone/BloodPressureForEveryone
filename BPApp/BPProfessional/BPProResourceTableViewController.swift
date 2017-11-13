@@ -17,12 +17,19 @@ class BPProResourceTableViewController: UIViewController, UITableViewDataSource,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        articles.append(Article(title: "The Fifth Report",
+        articles.append(Article(title: "AAP Guidelines for Children",
                                 description: "A clinical practice guideline for screening and management of high blood pressure in children and adolescents.",
                                 url: "http://pediatrics.aappublications.org/content/pediatrics/early/2017/08/21/peds.2017-1904.full.pdf"))
-        articles.append(Article(title: "The Fourth Report",
+        articles.append(Article(title: "NIH 4th Report Guidelines for Children",
                                 description: "The recommendations concerning the diagnosis, evaluation, and treatment of hypertension in children.",
                                 url: "https://www.nhlbi.nih.gov/files/docs/resources/heart/hbp_ped.pdf"))
+        
+        articles.append(Article(title: "JNC 8 Guidlines for Adults",
+                                description: "vidence-Based JNC 8 Guideline for the Management of High Blood Pressure in Adults",
+                                url: "https://sites.jamanetwork.com/jnc8/"))
+        articles.append(Article(title: "Effects of JNC 8 Guidlines",
+                                description: "vidence-Based JNC 8 Guideline for the Management of High Blood Pressure in Adults",
+                                url: "https://jamanetwork.com/journals/jama/fullarticle/1853202"))
         // Add your articles here
     }
     
