@@ -9,6 +9,15 @@
 import UIKit
 
 class BPProResourceViewController: UIViewController {
+    
+    private var articles: [Article] = []
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        articles.append(Article(title: "The Fourth Report",
+                                description: "The recommendations concerning the diagnosis, evaluation, and treatment of hypertension in children.",
+                                url: "https://www.nhlbi.nih.gov/files/docs/resources/heart/hbp_ped.pdf"))
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1702E45820B513779ABDD34C /* Pods_BPForProfessionals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BFAF9061F5AF7D3CBF54DB0 /* Pods_BPForProfessionals.framework */; };
+		282558A61FB8E171009EC4C2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282558A51FB8E171009EC4C2 /* Article.swift */; };
+		282558A71FB8E171009EC4C2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282558A51FB8E171009EC4C2 /* Article.swift */; };
 		2870640C1F946AA6006E811A /* BPProGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2870640B1F946AA6006E811A /* BPProGraphViewController.swift */; };
 		28F55EF81F7DD03300B17BBB /* BPAnalysisResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */; };
 		575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */; };
@@ -68,7 +70,6 @@
 		DC3AC9671F8C4A2B000DAE6A /* BPProQuickAnalysis.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC9661F8C4A2B000DAE6A /* BPProQuickAnalysis.storyboard */; };
 		DC3AC9691F8C4A5B000DAE6A /* BPProResources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC9681F8C4A5B000DAE6A /* BPProResources.storyboard */; };
 		DC3AC96B1F8C4A86000DAE6A /* BPProSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3AC96A1F8C4A86000DAE6A /* BPProSettings.storyboard */; };
-		DC3AC96D1F8C5C00000DAE6A /* BPProResourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3AC96C1F8C5C00000DAE6A /* BPProResourceViewController.swift */; };
 		DC5E4B581EADBED900B35F2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B571EADBED900B35F2D /* AppDelegate.swift */; };
 		DC5E4B5A1EADBED900B35F2D /* BPProMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B591EADBED900B35F2D /* BPProMainViewController.swift */; };
 		DC5E4B601EADBED900B35F2D /* BPApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B5E1EADBED900B35F2D /* BPApp.xcdatamodeld */; };
@@ -102,6 +103,7 @@
 
 /* Begin PBXFileReference section */
 		165115CA59EE456379F2225C /* Pods-BPForProfessionals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BPForProfessionals.release.xcconfig"; path = "Pods/Target Support Files/Pods-BPForProfessionals/Pods-BPForProfessionals.release.xcconfig"; sourceTree = "<group>"; };
+		282558A51FB8E171009EC4C2 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		2870640B1F946AA6006E811A /* BPProGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPProGraphViewController.swift; sourceTree = "<group>"; };
 		28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPAnalysisResultsViewController.swift; sourceTree = "<group>"; };
 		575FD7801F7DC3620050EF52 /* BPProSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BPProSettingsViewController.swift; path = BPApp/BPProfessional/BPProSettingsViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -137,7 +139,6 @@
 		DC3AC9661F8C4A2B000DAE6A /* BPProQuickAnalysis.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BPProQuickAnalysis.storyboard; sourceTree = "<group>"; };
 		DC3AC9681F8C4A5B000DAE6A /* BPProResources.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BPProResources.storyboard; sourceTree = "<group>"; };
 		DC3AC96A1F8C4A86000DAE6A /* BPProSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BPProSettings.storyboard; sourceTree = "<group>"; };
-		DC3AC96C1F8C5C00000DAE6A /* BPProResourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPProResourceViewController.swift; sourceTree = "<group>"; };
 		DC5E4B541EADBED900B35F2D /* BPForProfessionals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BPForProfessionals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5E4B571EADBED900B35F2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC5E4B591EADBED900B35F2D /* BPProMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPProMainViewController.swift; sourceTree = "<group>"; };
@@ -249,7 +250,6 @@
 				DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */,
 				28F55EF71F7DD03300B17BBB /* BPAnalysisResultsViewController.swift */,
 				DC38320B1EAE3A1600804EDF /* BPProResourceTableViewController.swift */,
-				DC3AC96C1F8C5C00000DAE6A /* BPProResourceViewController.swift */,
 				2870640B1F946AA6006E811A /* BPProGraphViewController.swift */,
 			);
 			name = ViewControllers;
@@ -270,6 +270,7 @@
 		DC3AC9711F8C68D8000DAE6A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				282558A51FB8E171009EC4C2 /* Article.swift */,
 				AD4AF1411F7D989600F416A4 /* Config.swift */,
 				DC3AC9551F8C41E9000DAE6A /* BloodPressureMeasurement.swift */,
 				DC7C783E1F7C7EBA00D87C3D /* Patient.swift */,
@@ -668,7 +669,6 @@
 			files = (
 				28F55EF81F7DD03300B17BBB /* BPAnalysisResultsViewController.swift in Sources */,
 				DC3AC9561F8C41F5000DAE6A /* BloodPressureMeasurement.swift in Sources */,
-				DC3AC96D1F8C5C00000DAE6A /* BPProResourceViewController.swift in Sources */,
 				AD7D33EB1F7F00B100A2C15A /* QuickBPAnalysisViewController.swift in Sources */,
 				AD4AF1451F7D989600F416A4 /* Config.swift in Sources */,
 				AD0A18231FB5021900D3056A /* Height.swift in Sources */,
@@ -680,6 +680,7 @@
 				ADE764CB1FAF9B9E00A119A9 /* BPNormsEntry.swift in Sources */,
 				ADFF25021FA925CD00A459CC /* BPNormsTable.swift in Sources */,
 				DC5E4B581EADBED900B35F2D /* AppDelegate.swift in Sources */,
+				282558A61FB8E171009EC4C2 /* Article.swift in Sources */,
 				DC38320C1EAE3A1600804EDF /* BPProResourceTableViewController.swift in Sources */,
 				DC7C78411F7C82B300D87C3D /* Patient.swift in Sources */,
 			);
@@ -735,6 +736,7 @@
 				DC5E4B8C1EADBEF500B35F2D /* AppDelegate.swift in Sources */,
 				AD9BEE211F80B4FE00F1C986 /* BirthDay.swift in Sources */,
 				DC38320E1EAE3EE100804EDF /* BPETrackUsersViewController.swift in Sources */,
+				282558A71FB8E171009EC4C2 /* Article.swift in Sources */,
 				DC26333A1F7F1DC600945319 /* BPEPatientEditViewController.swift in Sources */,
 				ADFF25031FA925CD00A459CC /* BPNormsTable.swift in Sources */,
 				AD0A18241FB5050700D3056A /* Height.swift in Sources */,
