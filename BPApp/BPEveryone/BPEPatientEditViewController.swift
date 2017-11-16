@@ -15,7 +15,6 @@ class BPEPatientEditViewController : UIViewController {
     @IBOutlet weak var sexSegmentedControl: UISegmentedControl!
     @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
-    @IBOutlet weak var weightTextField: UITextField!
     
     var dob: Date!
     var patientId: Int = 0
@@ -42,19 +41,12 @@ class BPEPatientEditViewController : UIViewController {
             return;
         }
         
-        guard let weightStr = weightTextField.text else {
-            print("weight not entered");
-            return;
-        }
-        
         guard let patientDob = dob else {
             print("dob not entered");
             return;
         }
         
         let patientSex = (sexSegmentedControl.selectedSegmentIndex == 0) ? Patient.Sex.male : Patient.Sex.female;
-        
-        let weight = (weightStr as NSString).doubleValue
         let height = (heightStr as NSString).doubleValue
         
         let patient = Patient(
@@ -99,29 +91,28 @@ class BPEPatientEditViewController : UIViewController {
     // Update the defaults of all the fields to that of the selected patient.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         // Grab patient we are editting.
         let patient = Config.patients[patientId]
-        
+
         // Populate old date of birth so that update function works.
         self.dob = patient.birthDate
-       
+
         // Set names
         firstNameTextField.text = patient.firstName
         lastNameTextField.text = patient.lastName
-        
+
         // Set gender
         var selectedSegment: Int = 0
         if patient.sex == Patient.Sex.female {
             selectedSegment = 1
         }
         sexSegmentedControl.selectedSegmentIndex = selectedSegment
-        
+
         // Birth date
         dobTextField.text = BirthDay.format(date: dob)
-        
+
         // Height and weight
         heightTextField.text = patient.height.description
-        weightTextField.text = "0"
     }
 }

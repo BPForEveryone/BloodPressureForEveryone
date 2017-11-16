@@ -21,20 +21,18 @@ class BPESettingsViewController : UIViewController {
     
     
     @IBAction func save(_ sender: UIBarButtonItem) {
-        UserDefaults.standard.set(numSysSelection.selectedSegmentIndex, forKey: "numSystem")
-        UserDefaults.standard.set(true, forKey: "numSystemChanged")
+        Config.unitSystem = numSysSelection.selectedSegmentIndex == 0 ? Config.UnitSystem.imperial : Config.UnitSystem.metric
     }
     
     @IBAction func save2(_ sender: UIButton) {
-        UserDefaults.standard.set(numSysSelection.selectedSegmentIndex, forKey: "numSystem")
-        UserDefaults.standard.set(true, forKey: "numSystemChanged")
+        Config.unitSystem = numSysSelection.selectedSegmentIndex == 0 ? Config.UnitSystem.imperial : Config.UnitSystem.metric
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if let x = UserDefaults.standard.object(forKey: "numSystem") as? Int {
-            numSysSelection.selectedSegmentIndex = x
-            //print("Selection: ",numSysSelection.selectedSegmentIndex)
-            //print("numSystem: ",UserDefaults.standard.object(forKey: "numSystem") ?? "blank")
+        if Config.unitSystem == Config.UnitSystem.imperial {
+            numSysSelection.selectedSegmentIndex = 0
+        } else {
+            numSysSelection.selectedSegmentIndex = 1
         }
     }
 }

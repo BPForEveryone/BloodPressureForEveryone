@@ -35,7 +35,10 @@ public class Height {
             if Config.unitSystem == Config.UnitSystem.metric {
                 return "\(self.meters) m"
             } else {
-                return "\(self.meters * 3.28084) ft"
+                let conv = self.meters * 3.28084
+                let ft = floor(conv)
+                let inch = floor(conv.truncatingRemainder(dividingBy: 1.0) * 12)
+                return "\(Int(ft)) ft \(Int(inch)) in"
             }
         }
     }

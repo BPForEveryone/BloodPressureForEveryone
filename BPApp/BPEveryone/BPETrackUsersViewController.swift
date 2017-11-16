@@ -29,7 +29,7 @@ class BPETrackUsersViewControler: UITableViewController {
         
         if(!Config.patients[indexPath.row].bloodPressureMeasurements.isEmpty) {
             let lastBPRecording = Config.patients[indexPath.row].bloodPressureMeasurements.last;
-            lastBPRecordingLabel.text = "\(lastBPRecording?.systolic)/\(lastBPRecording?.diastolic)";
+            lastBPRecordingLabel.text = "\(String(describing: lastBPRecording?.systolic))/\(String(describing: lastBPRecording?.diastolic))";
         }
         
         return cell

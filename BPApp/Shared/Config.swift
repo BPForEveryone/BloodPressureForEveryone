@@ -27,12 +27,22 @@ public class Config {
             if let format = UserDefaults.standard.object(forKey: "numSystem") as? Int {
                 if format == 0 {
                     return UnitSystem.metric
+                } else {
+                    return UnitSystem.imperial
                 }
-                
-                return UnitSystem.imperial
             }
             
             return UnitSystem.metric
+        }
+        
+        set(unitSystem) {
+            if (unitSystem == UnitSystem.metric) {
+                UserDefaults.standard.set(0, forKey: "numSystem");
+            } else {
+                UserDefaults.standard.set(1, forKey: "numSystem");
+            }
+            
+            UserDefaults.standard.set(true, forKey: "numSystemChanged")
         }
     }
     

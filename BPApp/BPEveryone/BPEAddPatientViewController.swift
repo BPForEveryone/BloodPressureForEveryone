@@ -14,7 +14,6 @@ class BPEAddPatientViewController: UIViewController {
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
-    @IBOutlet weak var weightTextField: UITextField!
     @IBOutlet weak var genderControl: UISegmentedControl!
     
     var patient: Patient!
@@ -68,11 +67,6 @@ class BPEAddPatientViewController: UIViewController {
         
         guard let heightStr = heightTextField.text  else {
             print("height not entered");
-            return;
-        }
-        
-        guard let weightStr = weightTextField.text else {
-            print("weight not entered");
             return;
         }
         
