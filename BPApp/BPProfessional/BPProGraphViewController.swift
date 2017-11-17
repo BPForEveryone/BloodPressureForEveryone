@@ -21,6 +21,9 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // Patient Object passed from Analysis Results
+    var patient: Patient?
+    
     // Systolic Chart Dummy Data
     // Use Patient Object data from previous to index into norms table
     let age = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
@@ -29,6 +32,7 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
     // Prepare data before view loads
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print(Patient.Sex.male)
     }
     
     // Present graphs once the view loads
