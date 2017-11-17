@@ -30,7 +30,7 @@ public class Patient: NSObject, NSCoding {
         
         set(newBloodPressureMeasurements) {
             self.bloodPressureMeasurementsSorted = newBloodPressureMeasurements.sorted {
-                return $0.measurementDate < $1.measurementDate
+                return $0.measurementDate > $1.measurementDate
             }
         }
     }
@@ -39,6 +39,44 @@ public class Patient: NSObject, NSCoding {
         get {
             return BPNormsTable.index(patient: self)
         }
+    }
+    
+    public var percentile: Int {
+        get {
+            let norms = self.norms
+            
+            if self.bloodPressureMeasurements.count == 0 {
+                return 0
+            }
+            
+            let measurement = self.bloodPressureMeasurements[0]
+            
+            if norms.diastolic95 < measurement.diastolic {
+                return 95
+            } else if norms.diastolic90 < measurement.diastolic {
+                return 90
+            } else if norms.diastolic50 < measurement.diastolic {
+                return 50
+            }
+    
+            return 0
+        }
+    }
+    
+    public var diastolic: Int {
+        if self.bloodPressureMeasurements.count == 0 {
+            return 0
+        }
+        
+        return self.bloodPressureMeasurements[0].diastolic
+    }
+    
+    public var systolic: Int {
+        if self.bloodPressureMeasurements.count == 0 {
+            return 0
+        }
+        
+        return self.bloodPressureMeasurements[0].systolic
     }
     
     public var sex: Patient.Sex {

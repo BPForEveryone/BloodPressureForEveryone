@@ -36,9 +36,17 @@ class BPEPatientDetailViewController: UIViewController {
         dateOfBirthLabel.text = BirthDay.format(date: patient.birthDate)
         analysisGroupLabel.text = "N/A"
         heightLabel.text = patient.height.description
-        lastBPDateTimeLabel.text = "N/A"
-        lastBPPercentileLabel.text = "N/A"
-        lastBPMeasurmentLabel.text = "N/A"
+        
+        if patient.bloodPressureMeasurements.count != 0 {
+            
+            let measurement = patient.bloodPressureMeasurements[0]
+            
+            lastBPDateTimeLabel.text = String(describing: measurement.measurementDate)
+            lastBPPercentileLabel.text = String(describing: patient.percentile)
+            lastBPMeasurmentLabel.text = "\(patient.systolic)/\(patient.diastolic)"
+            
+        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
