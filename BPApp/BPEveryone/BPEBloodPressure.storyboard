@@ -704,7 +704,7 @@
         <!--Patient Details Graph-->
         <scene sceneID="PXx-2A-Xd5">
             <objects>
-                <viewController storyboardIdentifier="PatientDetailPage2" title="Patient Details Graph" id="hcY-u6-RVR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PatientDetailPage2" title="Patient Details Graph" id="hcY-u6-RVR" customClass="BPEPatientGraphViewController" customModule="BPForEveryone" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="F8z-4e-Qv9"/>
                         <viewControllerLayoutGuide type="bottom" id="4Zb-kM-9sf"/>
@@ -713,13 +713,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Graph goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8V-jF-IYH">
-                                <rect key="frame" x="123" y="247" width="128" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BoQ-v3-qA3">
                                 <rect key="frame" x="28" y="553" width="318" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -728,13 +721,21 @@
                                     <segue destination="QgS-zM-Eyk" kind="show" id="VFR-0K-epl"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zzl-Vi-H5E" customClass="CPTGraphHostingView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="545"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="graphContainer" destination="Zzl-Vi-H5E" id="Pcv-vN-ETs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KO0-LX-3da" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7569" y="-1075"/>
+            <point key="canvasLocation" x="7568.8000000000002" y="-1075.4122938530736"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nPW-Ej-0j0">

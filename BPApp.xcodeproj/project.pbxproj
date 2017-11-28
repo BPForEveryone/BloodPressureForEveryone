@@ -26,6 +26,10 @@
 		AD5CFD9B1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */; };
 		AD5CFD9C1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */; };
 		AD5CFD9D1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */; };
+		AD68BB811FCE11BB000E6EB7 /* BPEGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD68BB801FCE11BB000E6EB7 /* BPEGraph.swift */; };
+		AD68BB821FCE11BB000E6EB7 /* BPEGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD68BB801FCE11BB000E6EB7 /* BPEGraph.swift */; };
+		AD68BB841FCE1873000E6EB7 /* BPEPatientGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD68BB831FCE1873000E6EB7 /* BPEPatientGraphViewController.swift */; };
+		AD68BB851FCE19D0000E6EB7 /* BPEPatientGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD68BB831FCE1873000E6EB7 /* BPEPatientGraphViewController.swift */; };
 		AD7D33EB1F7F00B100A2C15A /* QuickBPAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */; };
 		AD9BEE201F80B35300F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
 		AD9BEE211F80B4FE00F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
@@ -114,6 +118,8 @@
 		AD5CFD921F8AE9BD00D9BDD9 /* BPEBPListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEBPListViewController.swift; sourceTree = "<group>"; };
 		AD5CFD961F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEPatientDetailPageViewController.swift; sourceTree = "<group>"; };
 		AD5CFD9A1F8B18E700D9BDD9 /* PageViewStaticListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewStaticListController.swift; sourceTree = "<group>"; };
+		AD68BB801FCE11BB000E6EB7 /* BPEGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEGraph.swift; sourceTree = "<group>"; };
+		AD68BB831FCE1873000E6EB7 /* BPEPatientGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEPatientGraphViewController.swift; sourceTree = "<group>"; };
 		AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDay.swift; sourceTree = "<group>"; };
 		ADE764CA1FAF9B9E00A119A9 /* BPNormsEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPNormsEntry.swift; sourceTree = "<group>"; };
 		ADFF25011FA925CD00A459CC /* BPNormsTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPNormsTable.swift; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 				DC38320D1EAE3EE100804EDF /* BPETrackUsersViewController.swift */,
 				DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */,
 				DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */,
+				AD68BB831FCE1873000E6EB7 /* BPEPatientGraphViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -367,6 +374,7 @@
 		DC7C783F1F7C7EC000D87C3D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				AD68BB801FCE11BB000E6EB7 /* BPEGraph.swift */,
 				DC3AC9721F8C68F6000DAE6A /* Views */,
 				DC3AC9711F8C68D8000DAE6A /* Models */,
 				ADFF25011FA925CD00A459CC /* BPNormsTable.swift */,
@@ -674,11 +682,13 @@
 				AD0A18231FB5021900D3056A /* Height.swift in Sources */,
 				2870640C1F946AA6006E811A /* BPProGraphViewController.swift in Sources */,
 				DC5E4B601EADBED900B35F2D /* BPApp.xcdatamodeld in Sources */,
+				AD68BB811FCE11BB000E6EB7 /* BPEGraph.swift in Sources */,
 				AD9BEE201F80B35300F1C986 /* BirthDay.swift in Sources */,
 				575FD7811F7DC3620050EF52 /* BPProSettingsViewController.swift in Sources */,
 				DC5E4B5A1EADBED900B35F2D /* BPProMainViewController.swift in Sources */,
 				ADE764CB1FAF9B9E00A119A9 /* BPNormsEntry.swift in Sources */,
 				ADFF25021FA925CD00A459CC /* BPNormsTable.swift in Sources */,
+				AD68BB851FCE19D0000E6EB7 /* BPEPatientGraphViewController.swift in Sources */,
 				DC5E4B581EADBED900B35F2D /* AppDelegate.swift in Sources */,
 				282558A61FB8E171009EC4C2 /* Article.swift in Sources */,
 				DC38320C1EAE3A1600804EDF /* BPProResourceTableViewController.swift in Sources */,
@@ -727,7 +737,9 @@
 				DC685B361F7B422000EF7C21 /* BPEAddPatientViewController.swift in Sources */,
 				DC2633381F7F1D5100945319 /* BPEPatientDetailViewController.swift in Sources */,
 				AD4AF1431F7D989600F416A4 /* Config.swift in Sources */,
+				AD68BB841FCE1873000E6EB7 /* BPEPatientGraphViewController.swift in Sources */,
 				DC3832121EAE44DC00804EDF /* BPESettingsViewController.swift in Sources */,
+				AD68BB821FCE11BB000E6EB7 /* BPEGraph.swift in Sources */,
 				DC5E4B8A1EADBEF500B35F2D /* BPApp.xcdatamodeld in Sources */,
 				ADE764CC1FAF9C0300A119A9 /* BPNormsEntry.swift in Sources */,
 				DC3832061EAE2E2D00804EDF /* BPEMainViewController.swift in Sources */,
