@@ -29,7 +29,6 @@
 		AD68BB811FCE11BB000E6EB7 /* BPEGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD68BB801FCE11BB000E6EB7 /* BPEGraph.swift */; };
 		AD68BB821FCE11BB000E6EB7 /* BPEGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD68BB801FCE11BB000E6EB7 /* BPEGraph.swift */; };
 		AD68BB841FCE1873000E6EB7 /* BPEPatientGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD68BB831FCE1873000E6EB7 /* BPEPatientGraphViewController.swift */; };
-		AD68BB851FCE19D0000E6EB7 /* BPEPatientGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD68BB831FCE1873000E6EB7 /* BPEPatientGraphViewController.swift */; };
 		AD7D33EB1F7F00B100A2C15A /* QuickBPAnalysisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC5E4B971EADCEB200B35F2D /* QuickBPAnalysisViewController.swift */; };
 		AD9BEE201F80B35300F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
 		AD9BEE211F80B4FE00F1C986 /* BirthDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9BEE1F1F80B35300F1C986 /* BirthDay.swift */; };
@@ -688,7 +687,6 @@
 				DC5E4B5A1EADBED900B35F2D /* BPProMainViewController.swift in Sources */,
 				ADE764CB1FAF9B9E00A119A9 /* BPNormsEntry.swift in Sources */,
 				ADFF25021FA925CD00A459CC /* BPNormsTable.swift in Sources */,
-				AD68BB851FCE19D0000E6EB7 /* BPEPatientGraphViewController.swift in Sources */,
 				DC5E4B581EADBED900B35F2D /* AppDelegate.swift in Sources */,
 				282558A61FB8E171009EC4C2 /* Article.swift in Sources */,
 				DC38320C1EAE3A1600804EDF /* BPProResourceTableViewController.swift in Sources */,
