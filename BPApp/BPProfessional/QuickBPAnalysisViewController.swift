@@ -23,15 +23,14 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
     
     // Globals storing data to be passed on
     var height: Height?
-    //var gender: String = ""
     var gender: Patient.Sex = Patient.Sex.male
     var age: Int = -1
-    //var height: Double = 0.0
-    //var weight: String = ""
-    var readingDiagnosis: String = "We could not determine an analysis based on your patient data. Please double check your patient information and try again!"
     var systolicBP: Int = -1
     var diastolicBP: Int = -1
-    
+    var resetFlag = false;
+
+    var readingDiagnosis: String = "We could not determine an analysis based on your patient data. Please double check your patient information and try again!"
+
     // Preset Interpretations
     let stage2HTN = "This patient has stage 2 hypertension and is over the 95th percentile + 12 mmHg. This patient needs to take immediate action and drastic life changes to improve personal health to combat this high BP."
     let stage1HTN = "This patient has stage 1 hypertension and is between the 95th percentile and the 95th percentile + 12 mmH. This patient needs to to have an action plan to improve personal health to combat this high BP."
@@ -45,6 +44,13 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
         tapGesture.cancelsTouchesInView = true
         tableView.addGestureRecognizer(tapGesture)
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        if(resetFlag){
+//            resetFlag = false;
+//            resetView();
+//        }
+//    }
     
     func hideKeyboard() {
         tableView.endEditing(true)
@@ -69,6 +75,14 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
         heightTextField.reloadInputViews()
     }
     
+//    func resetView() {
+//        genderControl.selectedSegmentIndex = 0
+//        ageTextField.text = ""
+//        heightTextField.text = ""
+//        systolicTextField.text = ""
+//        diastolicTextField.text = ""
+//    }
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         // One component is the ft, the other component is the in
@@ -92,30 +106,6 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
         self.height = Height(heightInFeet: Double(pickerView.selectedRow(inComponent: 0)) + Double(pickerView.selectedRow(inComponent: 1)) / 12.0)
     }
     
-
-
-//
-//    func convertHeightToDouble(heightString: String) -> Double {
-//        if numSysImperial {
-//            let apostropheInd = heightString.index(of: "'")
-//            let quotationInd = heightString.index(of: "\"")
-//            let spaceInd = heightString.index(of: " ")
-//            let rangeFeet = heightString.startIndex..<apostropheInd
-//            let rangeInches = heightString.index(spaceInd!, offsetBy: 1)..<quotationInd
-//            return Double(heightString.substring(with: rangeFeet))! * 12.0 + Double(heightString.substring(with: rangeInches))!
-//        } else {
-//            //let spaceInd = heightString.index(of: " ")
-//            //let rangeCm = heightString.startIndex..<spaceInd
-//            //return Double(heightString.substring(with: rangeCm))!
-//            let meterInd = heightString.index(of: "m")
-//            let centimeterInd = heightString.index(of: "c")
-//            let spaceInd = heightString.index(of: " ")
-//            let rangeMeters = heightString.startIndex..<meterInd
-//            let rangeCentimeters = heightString.index(spaceInd!, offsetBy: 1)..<centimeterInd
-//            return Double(heightString.substring(with: rangeMeters))! * 100.0 + Double(heightString.substring(with: rangeCentimeters))!
-//        }
-//    }
-//
     // Disable or grey out Analyze Navigation UIBarButtonItem if
     // fields are left empty /or invalid
     @IBAction func analyzeOnPress(_ sender: UIBarButtonItem) {
@@ -207,7 +197,6 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
                 BPAnalysisResultsViewController.gender = self.gender
                 BPAnalysisResultsViewController.age = self.age
                 BPAnalysisResultsViewController.height = self.height
-                //BPAnalysisResultsViewController.weight = self.weight
                 BPAnalysisResultsViewController.readingDiagnosis = self.readingDiagnosis
                 BPAnalysisResultsViewController.systolic = self.systolicBP
                 BPAnalysisResultsViewController.diastolic = self.diastolicBP
