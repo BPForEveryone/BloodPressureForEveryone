@@ -11,8 +11,6 @@ import os.log
 
 class BPEPatientDetailViewController: UITableViewController {
     
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var dateOfBirthLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var lastBPDateTimeLabel: UILabel!
@@ -30,8 +28,6 @@ class BPEPatientDetailViewController: UITableViewController {
         
         let patient = Config.patients[patientId]
 
-        firstNameLabel.text = patient.firstName
-        lastNameLabel.text = patient.lastName
         dateOfBirthLabel.text = BirthDay.format(date: patient.birthDate)
         heightLabel.text = patient.height.description
         
@@ -44,6 +40,11 @@ class BPEPatientDetailViewController: UITableViewController {
             
         }
         
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let patient = Config.patients[patientId]
+        return "\(patient.firstName) \(patient.lastName)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {

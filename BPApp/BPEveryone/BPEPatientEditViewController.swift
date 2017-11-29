@@ -37,6 +37,7 @@ class BPEPatientEditViewController : UITableViewController, UIPickerViewDelegate
             heightTextField.inputView = nil
         }
         
+        heightTextField.text = ""
         heightTextField.reloadInputViews()
     }
     

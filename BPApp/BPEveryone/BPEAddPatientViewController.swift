@@ -39,13 +39,13 @@ class BPEAddPatientViewController: UITableViewController, UIPickerViewDelegate, 
             heightTextField.inputView = pickerView
             pickerView.delegate = self
             
-            
         } else {
             
             heightTextField.keyboardType = UIKeyboardType.decimalPad
             heightTextField.inputView = nil
         }
         
+        heightTextField.text = ""
         heightTextField.reloadInputViews()
     }
     
