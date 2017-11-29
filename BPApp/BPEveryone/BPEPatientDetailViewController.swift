@@ -50,14 +50,6 @@ class BPEPatientDetailViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
         
-        // This is the name of the segue in the storyboard.
-        if (segue.identifier == "patientEditDetailView") {
-            
-            let controller = (segue.destination as! UINavigationController).topViewController as! BPEPatientEditViewController
-            
-            controller.patientId = self.patientId
-        }
-        
         // Blood pressure list also requires a patient id.
         if (segue.identifier == "bloodPressureList") {
             

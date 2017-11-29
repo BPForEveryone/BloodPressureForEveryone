@@ -21,9 +21,20 @@ class BPEPatientDetailPageViewController: PageViewStaticListController {
         return ["PatientDetailPage1", "PatientDetailPage2"]
     }
     
-    /*override func newControllerSelected(controller: UIViewController) {
+    override func newControllerSelected(controller: UIViewController) {
         if let patientDetailView = controller as? BPEPatientDetailViewController {
             patientDetailView.patientId = patientId
         }
-    }*/
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
+        
+        // This is the name of the segue in the storyboard.
+        if (segue.identifier == "patientEditView") {
+            
+            let controller = (segue.destination as! UINavigationController).topViewController as! BPEPatientEditViewController
+            
+            controller.patientId = self.patientId
+        }
+    }
 }

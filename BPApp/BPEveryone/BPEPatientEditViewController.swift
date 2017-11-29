@@ -8,16 +8,37 @@
 
 import UIKit
 
-class BPEPatientEditViewController : UIViewController {
+class BPEPatientEditViewController : UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var sexSegmentedControl: UISegmentedControl!
     @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
+    @IBOutlet weak var unitSelection: UISegmentedControl!
     
+    var height: Height?
     var dob: Date!
     var patientId: Int = 0
+    
+    @IBAction func unitSystemChanged(_ sender: Any) {
+        if self.unitSelection.selectedSegmentIndex == 1 {
+            
+            heightTextField.keyboardType = UIKeyboardType.alphabet
+            
+            let pickerView = UIPickerView()
+            heightTextField.inputView = pickerView
+            pickerView.delegate = self
+            
+            
+        } else {
+            
+            heightTextField.keyboardType = UIKeyboardType.decimalPad
+            heightTextField.inputView = nil
+        }
+        
+        heightTextField.reloadInputViews()
+    }
     
     // Exit without updating.
     @IBAction func cancel(_ sender: Any) {
@@ -27,33 +48,32 @@ class BPEPatientEditViewController : UIViewController {
     // Update the patient.
     @IBAction func updatePatient(_ sender: Any) {
         guard let firstName = firstNameTextField.text else {
-            print("Firstname not entered");
-            return;
+            return
         }
         
         guard let lastName = lastNameTextField.text else {
-            print("Lastname not entered");
-            return;
-        }
-        
-        guard let heightStr = heightTextField.text  else {
-            print("height not entered");
-            return;
+            return
         }
         
         guard let patientDob = dob else {
-            print("dob not entered");
-            return;
+            return
+        }
+        
+        if self.heightTextField.keyboardType == UIKeyboardType.decimalPad {
+            self.height = Height(heightInMeters: Double(self.heightTextField.text!)!)
+        }
+        
+        guard let _ = self.height as Height! else {
+            return
         }
         
         let patientSex = (sexSegmentedControl.selectedSegmentIndex == 0) ? Patient.Sex.male : Patient.Sex.female;
-        let height = (heightStr as NSString).doubleValue
         
         let patient = Patient(
             firstName: firstName,
             lastName: lastName,
             birthDate: patientDob,
-            height: Height(heightInMeters: height),
+            height: Height(heightInMeters: self.height!.meters),
             sex: patientSex,
             bloodPressureMeasurements: Config.patients[patientId].bloodPressureMeasurements
         );
@@ -84,10 +104,6 @@ class BPEPatientEditViewController : UIViewController {
         dobTextField.text = BirthDay.format(date: dob)
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
     // Update the defaults of all the fields to that of the selected patient.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -112,7 +128,31 @@ class BPEPatientEditViewController : UIViewController {
         // Birth date
         dobTextField.text = BirthDay.format(date: dob)
 
-        // Height and weight
-        heightTextField.text = patient.height.description
+        // Height
+        heightTextField.text = "\(patient.height.meters)"
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        // One component is the ft, the other component is the in
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        // Component 0 is the ft, component 1 is the inches.
+        return component == 0 ? 7 : 12
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return component == 0 ? "\(row) ft" : "\(row) in"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        heightTextField.text = "\(pickerView.selectedRow(inComponent: 0)) ft \(pickerView.selectedRow(inComponent: 1)) in"
+        self.height = Height(heightInFeet: Double(pickerView.selectedRow(inComponent: 0)) + Double(pickerView.selectedRow(inComponent: 1)) / 12.0)
+    }
+    
 }

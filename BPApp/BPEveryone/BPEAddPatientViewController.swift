@@ -8,27 +8,51 @@
 
 import UIKit
 
-class BPEAddPatientViewController: UIViewController {
+class BPEAddPatientViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var firstnameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var dobTextField: UITextField!
     @IBOutlet weak var heightTextField: UITextField!
     @IBOutlet weak var genderControl: UISegmentedControl!
+    @IBOutlet weak var unitSelection: UISegmentedControl!
     
-    var patient: Patient!
-    var dob: Date!;
-    //var patients: PersistentPatients!
+    var height: Height?
+    
+    var dob: Date!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad();
     }
     
+    @IBAction func cancel(_ sender: Any) {
+        // Exit without updating.
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func unitSystemChanged(_ sender: Any) {
+        if self.unitSelection.selectedSegmentIndex == 1 {
+            
+            heightTextField.keyboardType = UIKeyboardType.alphabet
+            
+            let pickerView = UIPickerView()
+            heightTextField.inputView = pickerView
+            pickerView.delegate = self
+            
+            
+        } else {
+            
+            heightTextField.keyboardType = UIKeyboardType.decimalPad
+            heightTextField.inputView = nil
+        }
+        
+        heightTextField.reloadInputViews()
+    }
+    
     @IBAction func editingDOBTextField(_ sender: UITextField) {
-        let dobPickerView: UIDatePicker = UIDatePicker();
-        dobPickerView.datePickerMode = UIDatePickerMode.date;
-        sender.inputView = dobPickerView;
+        let dobPickerView: UIDatePicker = UIDatePicker()
+        dobPickerView.datePickerMode = UIDatePickerMode.date
+        sender.inputView = dobPickerView
         
         dobPickerView.addTarget(self, action: #selector(handleDOBPicker(sender:)), for: .valueChanged)
     }
@@ -41,49 +65,65 @@ class BPEAddPatientViewController: UIViewController {
         dobTextField.text = dateFormatter.string(from: sender.date);
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    /*override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
-    }
+    }*/
     
     @IBAction func createPatient(_ sender: Any) {
-        createNewPatient();
-        dismiss(animated: true, completion: nil);
-    }
-    
-    @IBAction func Cancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil);
-    }
-    
-    private func createNewPatient() {
+        
         guard let firstname = firstnameTextField.text else {
-            print("firstname not entered");
-            return;
+            return
         }
         
         guard let lastname = lastNameTextField.text else {
-            print("lastname not entered");
-            return;
-        }
-        
-        guard let heightStr = heightTextField.text  else {
-            print("height not entered");
-            return;
+            return
         }
         
         guard let patientDob = dob else {
-            print("dob not entered");
-            return;
+            return
         }
         
         let patientSex = (genderControl.selectedSegmentIndex == 0) ? Patient.Sex.male : Patient.Sex.female;
         let bpMeasurements : [BloodPressureMeasurement] = [];
         
-        let height = (heightStr as NSString).doubleValue;
+        if self.heightTextField.keyboardType == UIKeyboardType.decimalPad {
+            self.height = Height(heightInMeters: Double(self.heightTextField.text!)!)
+        }
         
-        patient = Patient(firstName: firstname, lastName: lastname, birthDate: patientDob, height: Height(heightInMeters: height), sex: patientSex, bloodPressureMeasurements: bpMeasurements);
+        guard let _ = self.height as Height! else {
+            return
+        }
+        
+        let patient: Patient! = Patient(firstName: firstname, lastName: lastname, birthDate: patientDob, height: Height(heightInMeters: self.height!.meters), sex: patientSex, bloodPressureMeasurements: bpMeasurements)
         
         var patients = Config.patients
         patients.append(patient)
         Config.patients = patients
+        
+        dismiss(animated: true, completion: nil)
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        
+        // One component is the ft, the other component is the in
+        return 2
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        // Component 0 is the ft, component 1 is the inches.
+        return component == 0 ? 7 : 12
+    }
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return component == 0 ? "\(row) ft" : "\(row) in"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        heightTextField.text = "\(pickerView.selectedRow(inComponent: 0)) ft \(pickerView.selectedRow(inComponent: 1)) in"
+        self.height = Height(heightInFeet: Double(pickerView.selectedRow(inComponent: 0)) + Double(pickerView.selectedRow(inComponent: 1)) / 12.0)
+    }
+    
 }
