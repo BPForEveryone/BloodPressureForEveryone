@@ -41,6 +41,10 @@ class BPEPatientDetailViewController: UITableViewController {
             lastBPPercentileLabel.text = String(describing: patient.percentile)
             lastBPMeasurmentLabel.text = "\(patient.diastolic)/\(patient.systolic)"
             
+        } else {
+            lastBPDateTimeLabel.text = "N/A"
+            lastBPPercentileLabel.text = "N/A"
+            lastBPMeasurmentLabel.text = "N/A"
         }
     }
     
