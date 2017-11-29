@@ -12,6 +12,10 @@ import CorePlot
 
 class BPEPatientGraphViewController : UIViewController, CPTScatterPlotDataSource, CPTAxisDelegate {
     
+    // The number of blood pressure measurements to consider in the graph.
+    let numberOfMeasurements = 10
+    
+    // The ID of the patient we are displaying for.
     var patientId: Int = 0
     
     // Holds our reference the graph we are rendering,
@@ -25,6 +29,36 @@ class BPEPatientGraphViewController : UIViewController, CPTScatterPlotDataSource
     
     // The container that we render the graph to.
     @IBOutlet weak var graphContainer: CPTGraphHostingView!
+    
+    // Returns the currently selected patient.
+    private func patient() -> Patient {
+        return Config.patients[self.patientId]
+    }
+    
+    // Return the blood pressure measurements we are working with.
+    private func allMeasurements() -> [BloodPressureMeasurement] {
+        return self.patient().bloodPressureMeasurements
+    }
+    
+    // Return the blood pressure measurements relevant to the graph.
+    private func measurements() -> [BloodPressureMeasurement] {
+        let all = self.allMeasurements()
+        
+        // Don't take a subset if we don't even have enough measurements available.
+        if all.count <= self.numberOfMeasurements {
+            return all
+        }
+        
+        // Take the last x measurements.
+        return []
+    }
+    
+    // Calculates the x width of the graph, based on the blood pressure measurement history.
+    private func graphWidth() -> Double {
+        
+        // Get the blood
+        return 1.0
+    }
     
     // Internal function responsible for setting up the graph.
     private func setupGraph() {
