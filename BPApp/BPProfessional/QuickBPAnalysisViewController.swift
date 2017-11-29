@@ -271,8 +271,33 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDataSour
             // Note: This now follows the fifth report guidelines
             // QuickBPAnalysisViewController should use norms table here now
             // TODO: Use norms table here
+            let currentDate = Date()
+            let calendar = Calendar.current
+            var dateComponents = DateComponents()
+            dateComponents.year = calendar.component(.year, from: currentDate) - age
+            let dateOfBirth = calendar.date(from: dateComponents)
+            let currPatient = Patient(firstName: "Some", lastName: "Last", birthDate: dateOfBirth!,
+                                      height: Height(heightInMeters: self.height / 100),
+                                      sex: (self.gender == "male") ? Patient.Sex.male : Patient.Sex.female,
+                                      bloodPressureMeasurements: [BloodPressureMeasurement(systolic: self.systolicBP, diastolic: self.diastolicBP, measurementDate: currentDate)!])
+            let diastolicPercent95_12mmHg = currPatient?.norms.diastolic95plus
+            let diastolicPercent95 = currPatient?.norms.diastolic95
+            let diastolicPercent90 = currPatient?.norms.diastolic90
+            let systolicPercent95_12mmHg = currPatient?.norms.systolic95plus
+            let systolicPercent95 = currPatient?.norms.systolic95
+            let systolicPercent90 = currPatient?.norms.systolic90
+            if (systolicBP >= systolicPercent95_12mmHg! || diastolicBP >= diastolicPercent95_12mmHg!) {
+                readingDiagnosis = stage2HTN
+            } else if (systolicBP >= systolicPercent95! || diastolicBP >= diastolicPercent95!) {
+                readingDiagnosis = stage1HTN
+            } else if (systolicBP >= systolicPercent90! || diastolicBP >= diastolicPercent90!) {
+                readingDiagnosis = elevatedBP
+            } else {
+                readingDiagnosis = normalBP
+            }
+            
         } else {
-            // This is the adolescents+ case
+            // This is the adults and/or 13+ case
             if (systolicBP >= 140 || diastolicBP >= 90) {
                 readingDiagnosis = stage2HTN
             } else if (systolicBP >= 130 || diastolicBP >= 80) {
