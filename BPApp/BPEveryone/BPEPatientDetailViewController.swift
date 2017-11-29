@@ -9,12 +9,11 @@
 import UIKit
 import os.log
 
-class BPEPatientDetailViewController: UIViewController {
+class BPEPatientDetailViewController: UITableViewController {
     
     @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var dateOfBirthLabel: UILabel!
-    @IBOutlet weak var analysisGroupLabel: UILabel! //Children vs Adults
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var lastBPDateTimeLabel: UILabel!
     @IBOutlet weak var lastBPMeasurmentLabel: UILabel!
@@ -34,13 +33,12 @@ class BPEPatientDetailViewController: UIViewController {
         firstNameLabel.text = patient.firstName
         lastNameLabel.text = patient.lastName
         dateOfBirthLabel.text = BirthDay.format(date: patient.birthDate)
-        analysisGroupLabel.text = "N/A"
         heightLabel.text = patient.height.description
         
         if patient.bloodPressureMeasurements.count != 0 {
             
             let measurement = patient.bloodPressureMeasurements[0]
-            lastBPDateTimeLabel.text = String(describing: measurement.measurementDate)
+            lastBPDateTimeLabel.text = BirthDay.format(date: measurement.measurementDate)
             lastBPPercentileLabel.text = String(describing: patient.percentile)
             lastBPMeasurmentLabel.text = "\(patient.systolic)/\(patient.diastolic)"
             

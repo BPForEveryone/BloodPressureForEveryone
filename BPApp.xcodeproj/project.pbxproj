@@ -17,6 +17,7 @@
 		AD0A18241FB5050700D3056A /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A18221FB5021900D3056A /* Height.swift */; };
 		AD0A18251FB5050800D3056A /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A18221FB5021900D3056A /* Height.swift */; };
 		AD0A18261FB5050900D3056A /* Height.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0A18221FB5021900D3056A /* Height.swift */; };
+		AD2ECC9A1FCEB2B5006AAE94 /* BPEPagerControlNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2ECC991FCEB2B5006AAE94 /* BPEPagerControlNavigationController.swift */; };
 		AD4AF1421F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
 		AD4AF1431F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
 		AD4AF1441F7D989600F416A4 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4AF1411F7D989600F416A4 /* Config.swift */; };
@@ -113,6 +114,7 @@
 		90D5D19926BAA8FF97FA18BC /* Pods-BPForProfessionals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BPForProfessionals.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BPForProfessionals/Pods-BPForProfessionals.debug.xcconfig"; sourceTree = "<group>"; };
 		9BFAF9061F5AF7D3CBF54DB0 /* Pods_BPForProfessionals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BPForProfessionals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD0A18221FB5021900D3056A /* Height.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Height.swift; sourceTree = "<group>"; };
+		AD2ECC991FCEB2B5006AAE94 /* BPEPagerControlNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEPagerControlNavigationController.swift; sourceTree = "<group>"; };
 		AD4AF1411F7D989600F416A4 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		AD5CFD921F8AE9BD00D9BDD9 /* BPEBPListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEBPListViewController.swift; sourceTree = "<group>"; };
 		AD5CFD961F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BPEPatientDetailPageViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 				DC3832051EAE2E2D00804EDF /* BPEMainViewController.swift */,
 				DC685B351F7B422000EF7C21 /* BPEAddPatientViewController.swift */,
 				AD68BB831FCE1873000E6EB7 /* BPEPatientGraphViewController.swift */,
+				AD2ECC991FCEB2B5006AAE94 /* BPEPagerControlNavigationController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				AD5CFD971F8B155400D9BDD9 /* BPEPatientDetailPageViewController.swift in Sources */,
 				DC7C78401F7C82B200D87C3D /* Patient.swift in Sources */,
 				AD5CFD9B1F8B18E700D9BDD9 /* PageViewStaticListController.swift in Sources */,
+				AD2ECC9A1FCEB2B5006AAE94 /* BPEPagerControlNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -42,10 +42,21 @@ class PageViewStaticListController: UIPageViewController {
         return controllers
     }()
     
+    var pageControl = UIPageControl()
+    
     // When the view loads, we want to set ourselves as the data source, and setup the first view controller.
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // The total number of pages that are available is based on how many available colors we have.
+        pageControl = UIPageControl()
+        self.pageControl.numberOfPages = self.controllers.count
+        self.pageControl.currentPage = 0
+        self.pageControl.pageIndicatorTintColor = UIColor.lightGray
+        self.pageControl.currentPageIndicatorTintColor = UIColor.black
+        self.view.addSubview(pageControl)
+       
+        delegate = self
         dataSource = self
         
         if let controller = controllers.first {
@@ -58,6 +69,14 @@ class PageViewStaticListController: UIPageViewController {
     
     // Called when we switch views, on the new view.
     func newControllerSelected(controller: UIViewController) {}
+}
+
+extension PageViewStaticListController: UIPageViewControllerDelegate {
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        let pageContentViewController = pageViewController.viewControllers![0]
+        self.pageControl.currentPage = controllers.index(of: pageContentViewController)!
+    }
 }
 
 extension PageViewStaticListController: UIPageViewControllerDataSource {
@@ -93,5 +112,13 @@ extension PageViewStaticListController: UIPageViewControllerDataSource {
         self.newControllerSelected(controller: controllers[index + 1])
         
         return controllers[index + 1]
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return self.controllers.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        return 0
     }
 }

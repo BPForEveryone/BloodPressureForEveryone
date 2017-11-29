@@ -8,44 +8,39 @@
 
 import UIKit
 
-class BPERecordBPViewController: UIViewController {
-   
-    @IBOutlet weak var fullNameLabel: UILabel!
-    @IBOutlet weak var fullNameTextField: UITextField!
-    @IBOutlet weak var ageLabel: UILabel!
-    @IBOutlet weak var ageTextField: UITextField!
-    @IBOutlet weak var heightLabel: UILabel!
-    @IBOutlet weak var heightTextField: UITextField!
-    @IBOutlet weak var weightLabel: UILabel!
-    @IBOutlet weak var weightTextField: UITextField!
-    @IBOutlet weak var combinedBPLabel: UILabel!
-    @IBOutlet weak var systolicSlider: UISlider!
-    @IBOutlet weak var diastolicSlider: UISlider!
+class BPERecordBPViewController: UITableViewController {
+    
+    @IBOutlet weak var systolicTextField: UITextField!
+    @IBOutlet weak var diastolicTextField: UITextField!
     
     // The id of the patient to change.
     var patientId: Int = 0
-    
-    func updateBPLabel() {
-        combinedBPLabel.text = "\(Int(systolicSlider.value))/\(Int(diastolicSlider.value))"
-    }
-    
-    @IBAction func systolicChanged(_ sender: Any) {
-        updateBPLabel()
-    }
-    
-    @IBAction func diastolicChanged(_ sender: Any) {
-        updateBPLabel()
-    }
     
     @IBAction func record(_ sender: Any) {
         
         let patient = Config.patients[self.patientId]
         
+        guard let _ = systolicTextField.text as String! else {
+            return
+        }
+        
+        guard let _ = diastolicTextField.text as String! else {
+            return
+        }
+        
+        guard let _ = Int(systolicTextField.text!) as Int! else {
+            return
+        }
+        
+        guard let _ = Int(diastolicTextField.text!) as Int! else {
+            return
+        }
+        
         // Add new measurement to patient.
         patient.bloodPressureMeasurements.append(
             BloodPressureMeasurement(
-                systolic: Int(systolicSlider.value),
-                diastolic: Int(diastolicSlider.value),
+                systolic: Int(systolicTextField.text!)!,
+                diastolic: Int(diastolicTextField.text!)!,
                 measurementDate: Date(timeIntervalSinceNow: TimeInterval())
             )!
         )
@@ -61,14 +56,6 @@ class BPERecordBPViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        
-        let patient = Config.patients[patientId]
-        let age = Calendar.current.dateComponents([.year], from: patient.birthDate, to: Date()).year ?? 0
-        
-        fullNameTextField.text = "\(patient.firstName) \(patient.lastName)"
-        ageTextField.text = "\(age) years"
-        heightTextField.text = "\(patient.height.meters) meters"
-        
         super.viewDidLoad();
     }
 }
