@@ -63,7 +63,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hC4-Nf-ZWk" kind="show" id="kG8-4y-mBr"/>
+                                    <segue destination="hC4-Nf-ZWk" kind="show" identifier="patientDetailView" id="kG8-4y-mBr"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -113,7 +113,7 @@
                             <tableViewSection headerTitle="Patient Information" id="bbf-md-gBa">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SyK-7q-04d">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SyK-7q-04d" id="CR3-Po-3DL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -143,7 +143,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="xpI-Vr-fwS">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xpI-Vr-fwS" id="MaR-Ll-44q">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -173,7 +173,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pvM-Z0-H35">
-                                        <rect key="frame" x="0.0" y="144" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="143.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pvM-Z0-H35" id="DGg-ZC-KNF">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -203,7 +203,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="m4B-0k-VSK">
-                                        <rect key="frame" x="0.0" y="188" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="187.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m4B-0k-VSK" id="2o9-Uo-fXf">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -233,7 +233,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KjY-jr-ikW">
-                                        <rect key="frame" x="0.0" y="232" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="231.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KjY-jr-ikW" id="kN9-dA-1rj">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -936,7 +936,7 @@
                                 <rect key="frame" x="16" y="637" width="343" height="30"/>
                                 <state key="normal" title="Add or Remove Blood Pressure Measurements"/>
                                 <connections>
-                                    <segue destination="QgS-zM-Eyk" kind="show" id="VFR-0K-epl"/>
+                                    <segue destination="QgS-zM-Eyk" kind="show" identifier="bloodPressureList" id="VFR-0K-epl"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zzl-Vi-H5E" customClass="CPTGraphHostingView">

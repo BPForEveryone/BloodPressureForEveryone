@@ -31,33 +31,31 @@ class BPEPatientGraphViewController : UIViewController, CPTScatterPlotDataSource
     @IBOutlet weak var graphContainer: CPTGraphHostingView!
     
     // Returns the currently selected patient.
-    private func patient() -> Patient {
-        return Config.patients[self.patientId]
+    private var patient: Patient {
+        get {
+            return Config.patients[self.patientId]
+        }
     }
     
     // Return the blood pressure measurements we are working with.
-    private func allMeasurements() -> [BloodPressureMeasurement] {
-        return self.patient().bloodPressureMeasurements
-    }
+    private var measurements: [BloodPressureMeasurement] {
+        get {
     
-    // Return the blood pressure measurements relevant to the graph.
-    private func measurements() -> [BloodPressureMeasurement] {
-        let all = self.allMeasurements()
-        
-        // Don't take a subset if we don't even have enough measurements available.
-        if all.count <= self.numberOfMeasurements {
-            return all
+            return self.patient.bloodPressureMeasurements
         }
-        
-        // Take the last x measurements.
-        return []
     }
     
     // Calculates the x width of the graph, based on the blood pressure measurement history.
     private func graphWidth() -> Double {
         
-        // Get the blood
-        return 1.0
+        if measurements.count == 0 {
+            return 10.0
+        }
+        
+        // Get the date range of possible data.
+        //let range = measurements[measurements.count].measurementDate. measurements[0].measurementDate
+        
+        return 0.0
     }
     
     // Internal function responsible for setting up the graph.
@@ -178,19 +176,10 @@ class BPEPatientGraphViewController : UIViewController, CPTScatterPlotDataSource
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.setupGraph()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
-        
-        // This is the name of the segue in the storyboard.
-        if (segue.identifier == "patientEditDetailView") {
-            
-            let controller = (segue.destination as! UINavigationController).topViewController as! BPEPatientEditViewController
-            
-            controller.patientId = self.patientId
-        }
         
         // Blood pressure list also requires a patient id.
         if (segue.identifier == "bloodPressureList") {

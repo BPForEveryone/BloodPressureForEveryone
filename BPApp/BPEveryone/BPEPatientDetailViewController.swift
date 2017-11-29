@@ -25,9 +25,12 @@ class BPEPatientDetailViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        update()
+    }
+    
+    public func update() {
         let patient = Config.patients[patientId]
-
+        
         dateOfBirthLabel.text = BirthDay.format(date: patient.birthDate)
         heightLabel.text = patient.height.description
         
@@ -39,7 +42,6 @@ class BPEPatientDetailViewController: UITableViewController {
             lastBPMeasurmentLabel.text = "\(patient.systolic)/\(patient.diastolic)"
             
         }
-        
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

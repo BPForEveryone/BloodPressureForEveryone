@@ -40,7 +40,7 @@ class BPETrackUsersViewControler: UITableViewController {
         // This is the name of the segue in the storyboard.
         if (segue.identifier == "patientDetailView") {
             
-            let controller = (segue.destination as! UINavigationController).topViewController as! BPEPatientDetailPageViewController
+            let controller = segue.destination as! BPEPatientDetailPageViewController
             
             let cell = sender as! UITableViewCell
             let tableView = cell.superview as! UITableView

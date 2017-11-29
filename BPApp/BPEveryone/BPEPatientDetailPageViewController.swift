@@ -21,9 +21,13 @@ class BPEPatientDetailPageViewController: PageViewStaticListController {
         return ["PatientDetailPage1", "PatientDetailPage2"]
     }
     
-    override func newControllerSelected(controller: UIViewController) {
+    override func initController(controller: UIViewController) {
         if let patientDetailView = controller as? BPEPatientDetailViewController {
             patientDetailView.patientId = patientId
+        }
+        
+        if let patientGraphView = controller as? BPEPatientGraphViewController {
+            patientGraphView.patientId = patientId
         }
     }
     
@@ -34,7 +38,7 @@ class BPEPatientDetailPageViewController: PageViewStaticListController {
             
             let controller = (segue.destination as! UINavigationController).topViewController as! BPEPatientEditViewController
             
-            controller.patientId = self.patientId
+            controller.patientId = patientId
         }
     }
 }
