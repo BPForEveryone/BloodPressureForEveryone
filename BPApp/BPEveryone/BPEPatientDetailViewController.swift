@@ -39,7 +39,7 @@ class BPEPatientDetailViewController: UITableViewController {
             let measurement = patient.bloodPressureMeasurements[0]
             lastBPDateTimeLabel.text = BirthDay.format(date: measurement.measurementDate)
             lastBPPercentileLabel.text = String(describing: patient.percentile)
-            lastBPMeasurmentLabel.text = "\(patient.systolic)/\(patient.diastolic)"
+            lastBPMeasurmentLabel.text = "\(patient.diastolic)/\(patient.systolic)"
             
         }
     }

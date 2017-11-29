@@ -57,7 +57,7 @@ class BPNormsTable {
                     // Lower limit of binary search.
                     var lower: Int = 0
                     
-                    // If the age is lower than first entry, use first entry.
+                    // If the height is lower than first entry, use first entry.
                     if (heightInMeters <= rangeTree[0].heightInMeters) {
                         return self.rangeTree[0]
                     }

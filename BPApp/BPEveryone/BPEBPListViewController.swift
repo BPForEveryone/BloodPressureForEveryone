@@ -32,7 +32,7 @@ class BPEBPListViewController: UITableViewController {
         
         dateLabel.text = BirthDay.format(date: measurement.measurementDate);
         
-        bpLabel.text = "\(measurement.systolic)/\(measurement.diastolic)"
+        bpLabel.text = "\(measurement.diastolic)/\(measurement.systolic)"
 
         return cell
     }
