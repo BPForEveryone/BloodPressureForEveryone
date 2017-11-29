@@ -50,7 +50,6 @@ public class Patient: NSObject, NSCoding {
             }
             
             let measurement = self.bloodPressureMeasurements[0]
-            
             if norms.diastolic95 < measurement.diastolic {
                 return 95
             } else if norms.diastolic90 < measurement.diastolic {

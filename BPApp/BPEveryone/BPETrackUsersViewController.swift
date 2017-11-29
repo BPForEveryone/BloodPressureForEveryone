@@ -29,7 +29,7 @@ class BPETrackUsersViewControler: UITableViewController {
         
         if(!Config.patients[indexPath.row].bloodPressureMeasurements.isEmpty) {
             let lastBPRecording = Config.patients[indexPath.row].bloodPressureMeasurements.last;
-            lastBPRecordingLabel.text = "\(String(describing: lastBPRecording!.systolic))/\(String(describing: lastBPRecording!.diastolic))";
+            lastBPRecordingLabel.text = "\(String(describing: lastBPRecording!.diastolic))/\(String(describing: lastBPRecording!.systolic))";
         }
         
         return cell
@@ -40,7 +40,7 @@ class BPETrackUsersViewControler: UITableViewController {
         // This is the name of the segue in the storyboard.
         if (segue.identifier == "patientDetailView") {
             
-            let controller = (segue.destination as! UINavigationController).topViewController as! BPEPatientDetailPageViewController
+            let controller = segue.destination as! BPEPatientDetailPageViewController
             
             let cell = sender as! UITableViewCell
             let tableView = cell.superview as! UITableView

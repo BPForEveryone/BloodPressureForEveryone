@@ -36,7 +36,9 @@ class PageViewStaticListController: UIPageViewController {
         var controllers: [UIViewController] = []
         
         for identifier in self.sourcePageIdentifiers() {
-                controllers.append(UIStoryboard(name: self.sourceStoryboard(), bundle: nil).instantiateViewController(withIdentifier: identifier))
+            let controller = UIStoryboard(name: self.sourceStoryboard(), bundle: nil).instantiateViewController(withIdentifier: identifier)
+            self.initController(controller: controller)
+            controllers.append(controller)
         }
         
         return controllers
@@ -69,6 +71,10 @@ class PageViewStaticListController: UIPageViewController {
     
     // Called when we switch views, on the new view.
     func newControllerSelected(controller: UIViewController) {}
+    
+    // Called when a new view is created.
+    func initController(controller: UIViewController) {}
+    
 }
 
 extension PageViewStaticListController: UIPageViewControllerDelegate {

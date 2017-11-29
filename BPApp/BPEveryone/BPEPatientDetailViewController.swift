@@ -11,8 +11,6 @@ import os.log
 
 class BPEPatientDetailViewController: UITableViewController {
     
-    @IBOutlet weak var firstNameLabel: UILabel!
-    @IBOutlet weak var lastNameLabel: UILabel!
     @IBOutlet weak var dateOfBirthLabel: UILabel!
     @IBOutlet weak var heightLabel: UILabel!
     @IBOutlet weak var lastBPDateTimeLabel: UILabel!
@@ -27,11 +25,12 @@ class BPEPatientDetailViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        update()
+    }
+    
+    public func update() {
         let patient = Config.patients[patientId]
-
-        firstNameLabel.text = patient.firstName
-        lastNameLabel.text = patient.lastName
+        
         dateOfBirthLabel.text = BirthDay.format(date: patient.birthDate)
         heightLabel.text = patient.height.description
         
@@ -40,10 +39,18 @@ class BPEPatientDetailViewController: UITableViewController {
             let measurement = patient.bloodPressureMeasurements[0]
             lastBPDateTimeLabel.text = BirthDay.format(date: measurement.measurementDate)
             lastBPPercentileLabel.text = String(describing: patient.percentile)
-            lastBPMeasurmentLabel.text = "\(patient.systolic)/\(patient.diastolic)"
+            lastBPMeasurmentLabel.text = "\(patient.diastolic)/\(patient.systolic)"
             
+        } else {
+            lastBPDateTimeLabel.text = "N/A"
+            lastBPPercentileLabel.text = "N/A"
+            lastBPMeasurmentLabel.text = "N/A"
         }
-        
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let patient = Config.patients[patientId]
+        return "\(patient.firstName) \(patient.lastName)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any!) {
