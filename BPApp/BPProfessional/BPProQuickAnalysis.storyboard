@@ -211,7 +211,6 @@
                         <barButtonItem key="rightBarButtonItem" title="Analyze" id="2kx-6d-VUv">
                             <connections>
                                 <action selector="analyzeOnPress:" destination="6Uu-zG-rNe" id="rfn-cd-rRU"/>
-                                <segue destination="Jrd-0O-KC2" kind="show" identifier="showBPAnalysisResults" id="Qme-gk-f4l"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -223,6 +222,7 @@
                         <outlet property="heightTextField" destination="oB9-4u-HiS" id="ydz-P1-ihg"/>
                         <outlet property="systolicTextField" destination="HGc-kx-p05" id="tWs-Rr-qW3"/>
                         <outlet property="unitSelection" destination="WZP-7Z-5VW" id="3Kb-IH-C17"/>
+                        <segue destination="Jrd-0O-KC2" kind="presentation" identifier="showBPAnalysisResults" id="wcI-rn-ked"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNC-QQ-X4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
