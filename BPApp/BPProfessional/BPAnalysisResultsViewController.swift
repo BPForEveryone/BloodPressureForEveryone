@@ -10,38 +10,46 @@ import UIKit
 
 class BPAnalysisResultsViewController: UITableViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+    
     // Data Entered By User (Patient Data)
-    var gender: String?
+    var gender: Patient.Sex = Patient.Sex.male
     var age: Int?
-    var height: Double?
-    var weight: String?
+    var height: Height?
+    //var weight: String?
     var readingDiagnosis: String?
     var systolic: Int?
     var diastolic: Int?
     
     // Navigation Bar Handlers
-    @IBAction func editPressed(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
+    
     @IBAction func donePressed(_ sender: UIBarButtonItem) {
+//        if let presenter = presentingViewController as? QuickBPAnalysisViewController {
+//            //clear inputs
+//            presenter.resetFlag = true
+//        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     // Table Cell Elements
     @IBOutlet var genderLabel: UILabel!
     @IBOutlet var ageLabel: UILabel!
     @IBOutlet var heightLabel: UILabel!
-    @IBOutlet var weightLabel: UILabel!
+    //@IBOutlet var weightLabel: UILabel!
     @IBOutlet var BPReadingLabel: UILabel!
     @IBOutlet var BPInterpretationText: UITextView!
     
     // Prepare data before view loads
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.genderLabel.text = gender
+        self.genderLabel.text = (self.gender == Patient.Sex.male) ? "Male" : "Female";
         self.ageLabel.text = String(age!) + " yrs"
         // TODO: Create conditional statement for Imperial and Metric display and fix formatting
-        self.heightLabel.text = String(height!) + " cm"
-        self.weightLabel.text = weight
+        self.heightLabel.text = String(format: "%.2f m", height!.meters)
+        //self.weightLabel.text = weight
         self.BPReadingLabel.text = String(systolic!) + "/" + String(diastolic!) + " mmHg"
         self.BPInterpretationText.text = readingDiagnosis
     }
@@ -63,8 +71,8 @@ class BPAnalysisResultsViewController: UITableViewController {
                 let dateOfBirth = calendar.date(from: dateComponents)
                 BPProGraphViewController.patient = Patient(firstName: "First", lastName: "Last",
                                                            birthDate: dateOfBirth!,
-                                                           height: Height(heightInMeters: (self.height! / 100)),
-                                                           sex: (self.gender! == "male") ? Patient.Sex.male : Patient.Sex.female,
+                                                           height: self.height!,
+                                                           sex: self.gender,
                                                            bloodPressureMeasurements: [BloodPressureMeasurement(systolic: self.systolic!, diastolic: self.diastolic!, measurementDate: currentDate)!])
             }
         }
