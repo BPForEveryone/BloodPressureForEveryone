@@ -6,59 +6,63 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Settings-->
-        <scene sceneID="AMI-s0-d5B">
+        <scene sceneID="JEW-ZY-szn">
             <objects>
-                <viewController id="ERM-UE-yzK" customClass="BPESettingsViewController" customModule="BPForEveryone" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mRI-UN-4jB"/>
-                        <viewControllerLayoutGuide type="bottom" id="qgJ-QQ-DAB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="U9M-oC-ya4">
+                <tableViewController id="kFl-zq-L7W" customClass="BPESettingsViewController" customModule="BPForEveryone" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="QJV-WM-KHT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tby-Zv-RZ1">
-                                <rect key="frame" x="66" y="118" width="242" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Imperial"/>
-                                    <segment title="Metric"/>
-                                </segments>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJh-Oh-9B5">
-                                <rect key="frame" x="0.0" y="89" width="375" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Number System">
-                                        <attributes>
-                                            <font key="NSFont" metaFont="system" size="17"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="3B4-gH-MJI">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="HgI-HB-0c5">
-                            <connections>
-                                <action selector="save:" destination="ERM-UE-yzK" id="mRo-vQ-DgT"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Unit System" id="WVB-Uf-uV6">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="O1B-b2-wvz">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O1B-b2-wvz" id="Nvj-mr-Kr4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tLn-mT-QZr">
+                                                    <rect key="frame" x="16" y="11" width="343" height="23"/>
+                                                    <segments>
+                                                        <segment title="Metric"/>
+                                                        <segment title="Imperial"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="numSysSelectionChanged:" destination="kFl-zq-L7W" eventType="valueChanged" id="jfa-jy-9L1"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="tLn-mT-QZr" firstAttribute="leading" secondItem="Nvj-mr-Kr4" secondAttribute="leadingMargin" id="INH-Xq-FgS"/>
+                                                <constraint firstItem="tLn-mT-QZr" firstAttribute="top" secondItem="Nvj-mr-Kr4" secondAttribute="topMargin" id="NOs-BI-fjA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="tLn-mT-QZr" secondAttribute="bottom" id="leO-wY-kfq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="tLn-mT-QZr" secondAttribute="trailing" id="skA-SQ-1et"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="kFl-zq-L7W" id="dig-tf-kjT"/>
+                            <outlet property="delegate" destination="kFl-zq-L7W" id="Hqo-Mj-b6I"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="Msc-O5-MK9"/>
                     <connections>
-                        <outlet property="numSysSelection" destination="tby-Zv-RZ1" id="MEM-qs-M6u"/>
+                        <outlet property="numSysSelection" destination="tLn-mT-QZr" id="uTE-3X-13e"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3p2-J7-Dud" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkq-oS-SnG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2880.8000000000002" y="1145.577211394303"/>
+            <point key="canvasLocation" x="2780" y="1146"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ERO-uG-yAo">
@@ -72,7 +76,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ERM-UE-yzK" kind="relationship" relationship="rootViewController" id="w4c-O2-8xV"/>
+                        <segue destination="kFl-zq-L7W" kind="relationship" relationship="rootViewController" id="9XB-jd-sI7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hIV-Vw-e68" userLabel="First Responder" sceneMemberID="firstResponder"/>
