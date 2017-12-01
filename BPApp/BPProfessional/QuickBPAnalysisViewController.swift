@@ -21,13 +21,14 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
     // Analyze Navigation Button Reference (for disabling if the fields are left empty)
     @IBOutlet var analyzeButton: UIBarButtonItem!
     
-    // Globals storing data to be passed on
+    // Globals storing data to be passed on and those used to create a temporary Patient Object
     var height: Height?
     var gender: Patient.Sex = Patient.Sex.male
     var age: Int = -1
     var systolicBP: Int = -1
     var diastolicBP: Int = -1
     var resetFlag = false;
+    var patient: Patient?
 
     var readingDiagnosis: String = "We could not determine an analysis based on your patient data. Please double check your patient information and try again!"
 
@@ -35,7 +36,7 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
     let stage2HTN = "This patient has stage 2 hypertension and is over the 95th percentile + 12 mmHg. This patient needs to take immediate action and drastic life changes to improve personal health to combat this high BP."
     let stage1HTN = "This patient has stage 1 hypertension and is between the 95th percentile and the 95th percentile + 12 mmH. This patient needs to to have an action plan to improve personal health to combat this high BP."
     let elevatedBP = "This patient has stage 2 hypertension and between the 90th and 95th percentiles. This patient needs to look into incorporating small life changes (ie. healthy diet, more exercise) to handle this elevated BP."
-    let normalBP = "This patient is within normal BP ranges, ie. < 90th percentile. They should still continue to live a healthy lifestyle, especially if they are older or have previously had hypertension."
+    let normalBP = "This patient is within normal BP ranges, i.e. < 90th percentile. They should still continue to live a healthy lifestyle, even if they are older or have previously had hypertension."
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -141,26 +142,27 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
         
         self.diastolicBP = Int(diastolicBPString)!
 
+        // Case for children under 13
         if (self.age < 13) {
-            // Do BP for children calculations based on table here
-            // Note: This now follows the fifth report guidelines
-            // QuickBPAnalysisViewController should use norms table here now
-            // TODO: Use norms table here
+            // Create a current Date object for reference
             let currentDate = Date()
             let calendar = Calendar.current
             var dateComponents = DateComponents()
             dateComponents.year = calendar.component(.year, from: currentDate) - age
+            // Create a Date object only from the (current year - age) component to find the DOB
             let dateOfBirth = calendar.date(from: dateComponents)
-            let currPatient = Patient(firstName: "Some", lastName: "Last", birthDate: dateOfBirth!,
-                                      height: self.height!,
-                                      sex: self.gender,
+            let currPatient = Patient(firstName: "First", lastName: "Last", birthDate: dateOfBirth!, height: self.height!, sex: self.gender,
                                       bloodPressureMeasurements: [BloodPressureMeasurement(systolic: self.systolicBP, diastolic: self.diastolicBP, measurementDate: currentDate)!])
+            // Assign the Current Patient Object to the global data to be passed on
+            patient = currPatient
+            // Obtain BP Percentile by indexing the Patient into the BPNormsTable
             let diastolicPercent95_12mmHg = currPatient?.norms.diastolic95plus
             let diastolicPercent95 = currPatient?.norms.diastolic95
             let diastolicPercent90 = currPatient?.norms.diastolic90
             let systolicPercent95_12mmHg = currPatient?.norms.systolic95plus
             let systolicPercent95 = currPatient?.norms.systolic95
             let systolicPercent90 = currPatient?.norms.systolic90
+            // Conditionals to determine proper diagnosis
             if (systolicBP >= systolicPercent95_12mmHg! || diastolicBP >= diastolicPercent95_12mmHg!) {
                 readingDiagnosis = stage2HTN
             } else if (systolicBP >= systolicPercent95! || diastolicBP >= diastolicPercent95!) {
@@ -172,7 +174,7 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
             }
 
         } else {
-            // This is the adults and/or 13+ case
+            // Case for adults and adolescents (13+)
             if (systolicBP >= 140 || diastolicBP >= 90) {
                 readingDiagnosis = stage2HTN
             } else if (systolicBP >= 130 || diastolicBP >= 80) {
@@ -184,7 +186,6 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
             }
 
         }
-
         self.performSegue(withIdentifier: "showBPAnalysisResults", sender: self)
     }
 
@@ -194,14 +195,10 @@ class QuickBPAnalysisViewController: UITableViewController, UIPickerViewDelegate
             if identifier == "showBPAnalysisResults" {
                 let navController = segue.destination as! UINavigationController
                 let BPAnalysisResultsViewController = navController.topViewController as! BPAnalysisResultsViewController
-                BPAnalysisResultsViewController.gender = self.gender
                 BPAnalysisResultsViewController.age = self.age
-                BPAnalysisResultsViewController.height = self.height
                 BPAnalysisResultsViewController.readingDiagnosis = self.readingDiagnosis
-                BPAnalysisResultsViewController.systolic = self.systolicBP
-                BPAnalysisResultsViewController.diastolic = self.diastolicBP
+                BPAnalysisResultsViewController.patient = self.patient
             }
         }
     }
-    
 }

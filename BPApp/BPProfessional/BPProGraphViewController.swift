@@ -24,15 +24,35 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
     // Patient Object passed from Analysis Results
     var patient: Patient?
     
-    // Systolic Chart Dummy Data
+    // Holds the BPNorms entries obtained by indexing Sex/Age
+    var normsTable: [BPNormsEntry]?
+    
+    // Y-Axis - Height Percentile
+    let heightPercentile = [5, 10, 25, 50, 75, 90, 95]
+    
+    // Systolic Chart Data
+    var systolicNorms50: [Int] = []
+    var systolicNorms90: [Int] = []
+    var systolicNorms95: [Int] = []
+    var systolicNorms95plus: [Int] = []
+    
+    // Diastolic Chart Data
+    
     // Use Patient Object data from previous to index into norms table
+    // Temporary Dummy Data
     let age = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
     let BP = [86.0, 89.0, 90.0, 92.0, 94.0, 95.0, 97.0, 98.0, 99.0, 100.0, 102.0, 104.0, 105.0, 109.0, 113.0, 115.0, 117.0]
     
     // Prepare data before view loads
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(Patient.Sex.male)
+        normsTable = patient?.normsArray
+//        for index in 0...normsTable!.count {
+//            systolicNorms50.append(normsTable![index].systolic50)
+//            systolicNorms90.append(normsTable![index].systolic90)
+//            systolicNorms95.append(normsTable![index].systolic95)
+//            systolicNorms95plus.append(normsTable![index].systolic95plus)
+//        }
     }
     
     // Present graphs once the view loads
@@ -45,10 +65,13 @@ class BPProGraphViewController: UIViewController, ChartViewDelegate {
         systolicLineChartView.delegate = self
         systolicLineChartView.backgroundColor = UIColor.white
         systolicLineChartView.translatesAutoresizingMaskIntoConstraints = false
+        //Temporary so that the app does not break
         setLineChart(dataPoints: age, values: BP)
+        //setLineChart(dataPoints: heightPercentile, values: systolicNorms50)
     }
     
     func setLineChart(dataPoints: [Int], values: [Double]) {
+    //func setLineChart(dataPoints: [Int], values: [Int]) {
         // No Data Available Setup
         systolicLineChartView.noDataTextColor = UIColor.white
         systolicLineChartView.noDataText = "No graph data available"

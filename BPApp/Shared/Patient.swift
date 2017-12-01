@@ -41,6 +41,12 @@ public class Patient: NSObject, NSCoding {
         }
     }
     
+    public var normsArray: [BPNormsEntry] {
+        get {
+            return BPNormsTable.indexForArray(patient: self)
+        }
+    }
+    
     public var percentile: Int {
         get {
             let norms = self.norms

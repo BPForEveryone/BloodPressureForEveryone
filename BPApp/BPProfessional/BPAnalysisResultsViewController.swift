@@ -15,14 +15,10 @@ class BPAnalysisResultsViewController: UITableViewController {
         
     }
     
-    // Data Entered By User (Patient Data)
-    var gender: Patient.Sex = Patient.Sex.male
+    // Patient Data from Patient Object and Supplementary Data
     var age: Int?
-    var height: Height?
-    //var weight: String?
     var readingDiagnosis: String?
-    var systolic: Int?
-    var diastolic: Int?
+    var patient: Patient?
     
     // Navigation Bar Handlers
     
@@ -38,19 +34,18 @@ class BPAnalysisResultsViewController: UITableViewController {
     @IBOutlet var genderLabel: UILabel!
     @IBOutlet var ageLabel: UILabel!
     @IBOutlet var heightLabel: UILabel!
-    //@IBOutlet var weightLabel: UILabel!
     @IBOutlet var BPReadingLabel: UILabel!
     @IBOutlet var BPInterpretationText: UITextView!
     
     // Prepare data before view loads
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.genderLabel.text = (self.gender == Patient.Sex.male) ? "Male" : "Female";
-        self.ageLabel.text = String(age!) + " yrs"
+        self.genderLabel.text = (self.patient?.sex == Patient.Sex.male) ? "Male" : "Female";
+        self.ageLabel.text = String(self.age!) + " yrs"
         // TODO: Create conditional statement for Imperial and Metric display and fix formatting
-        self.heightLabel.text = String(format: "%.2f m", height!.meters)
+        self.heightLabel.text = String(format: "%.2f m", (self.patient?.height.meters)!)
         //self.weightLabel.text = weight
-        self.BPReadingLabel.text = String(systolic!) + "/" + String(diastolic!) + " mmHg"
+        self.BPReadingLabel.text = String(describing: self.patient?.bloodPressureMeasurements[0].systolic) + "/" + String(describing: self.patient?.bloodPressureMeasurements[0].diastolic) + " mmHg"
         self.BPInterpretationText.text = readingDiagnosis
     }
     
@@ -61,19 +56,7 @@ class BPAnalysisResultsViewController: UITableViewController {
                 // Set the segue destination as the Navigation Controller and the BPProGraphView as the top view
                 let navController = segue.destination as! UINavigationController
                 let BPProGraphViewController = navController.topViewController as! BPProGraphViewController
-                
-                // Create a current Date object for reference
-                let currentDate = Date()
-                let calendar = Calendar.current
-                var dateComponents = DateComponents()
-                dateComponents.year = calendar.component(.year, from: currentDate) - age!
-                // Create a Date object only from the (current year - age) component to find the DOB
-                let dateOfBirth = calendar.date(from: dateComponents)
-                BPProGraphViewController.patient = Patient(firstName: "First", lastName: "Last",
-                                                           birthDate: dateOfBirth!,
-                                                           height: self.height!,
-                                                           sex: self.gender,
-                                                           bloodPressureMeasurements: [BloodPressureMeasurement(systolic: self.systolic!, diastolic: self.diastolic!, measurementDate: currentDate)!])
+                BPProGraphViewController.patient = self.patient
             }
         }
     }

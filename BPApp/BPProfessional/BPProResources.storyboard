@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ycv-2L-RMd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ycv-2L-RMd">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +22,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="prx-yS-jVX" kind="relationship" relationship="rootViewController" id="2bB-LP-eft"/>
+                        <segue destination="nOR-bW-Ahk" kind="relationship" relationship="rootViewController" id="AUg-4l-0FU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5B3-EZ-MKk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -29,73 +30,75 @@
             <point key="canvasLocation" x="1952.8" y="490.70464767616198"/>
         </scene>
         <!--Resources-->
-        <scene sceneID="SaM-IG-tCl">
+        <scene sceneID="VWH-6Y-hXs">
             <objects>
-                <viewController id="prx-yS-jVX" customClass="BPProResourceTableViewController" customModule="BPForProfessionals" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8jg-MG-gxB"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cze-5r-fCu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZkE-zV-u5Z">
+                <tableViewController id="nOR-bW-Ahk" customClass="BPProResourceTableViewController" customModule="BPForProfessionals" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Bzg-a6-0mG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XkQ-oa-mBL">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
-                                <items>
-                                    <barButtonItem style="plain" id="1X3-Pa-NH1">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="OPd-u5-J6e">
-                                            <rect key="frame" x="16" y="7.5" width="343" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Articles"/>
-                                                <segment title="Tables"/>
-                                            </segments>
-                                        </segmentedControl>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wpb-p1-se9">
-                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BPProResourceArticle" rowHeight="90" id="VzD-9H-0Ap" customClass="BPProResourceArticleCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="90"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VzD-9H-0Ap" id="h8U-E6-a2A">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnW-kF-Wz4">
-                                                    <rect key="frame" x="8" y="9" width="346" height="72"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <string key="text">Clinical Practice Guideline for Screening and Management of High Blood Pressure in Children and Adolescents            read more...</string>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="descriptionLabel" destination="GnW-kF-Wz4" id="jrq-m6-zQD"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Resources" id="ydi-oC-hNc"/>
-                    <connections>
-                        <outlet property="segmentedControl" destination="OPd-u5-J6e" id="qC7-6e-dqJ"/>
-                        <outlet property="tableView" destination="wpb-p1-se9" id="0xf-sH-B4T"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KGi-Jm-dZA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BPProResourceCell" rowHeight="160" id="VzD-9H-0Ap">
+                                <rect key="frame" x="0.0" y="28" width="375" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VzD-9H-0Ap" id="h8U-E6-a2A">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="159.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="7" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnW-kF-Wz4">
+                                            <rect key="frame" x="16" y="88" width="343" height="61"/>
+                                            <string key="text">Clinical Practice Guideline for Screening and Management of High Blood Pressure in Children and Adolescents            read more...</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <size key="shadowOffset" width="0.0" height="0.0"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmN-dE-aZ8">
+                                            <rect key="frame" x="16" y="61" width="343" height="17"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="AAP Guidelines for Children">
+                                                    <attributes>
+                                                        <font key="NSFont" size="20" name=".SFNSDisplay"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="9" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="751" text="[PDF][FullText]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cze-TP-yIh">
+                                            <rect key="frame" x="41" y="21" width="293" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GnW-kF-Wz4" firstAttribute="leading" secondItem="h8U-E6-a2A" secondAttribute="leadingMargin" id="0u0-mq-0vT"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="cze-TP-yIh" secondAttribute="trailing" constant="25" id="AHv-rT-lIz"/>
+                                        <constraint firstItem="lmN-dE-aZ8" firstAttribute="top" secondItem="cze-TP-yIh" secondAttribute="bottom" constant="20" id="Ah4-Cu-lVD"/>
+                                        <constraint firstItem="lmN-dE-aZ8" firstAttribute="leading" secondItem="h8U-E6-a2A" secondAttribute="leadingMargin" id="Jrq-Nd-2A4"/>
+                                        <constraint firstItem="cze-TP-yIh" firstAttribute="leading" secondItem="h8U-E6-a2A" secondAttribute="leadingMargin" constant="25" id="JyH-fj-irm"/>
+                                        <constraint firstItem="GnW-kF-Wz4" firstAttribute="top" secondItem="lmN-dE-aZ8" secondAttribute="bottom" constant="10" id="UBo-Rw-P3L"/>
+                                        <constraint firstItem="GnW-kF-Wz4" firstAttribute="bottom" secondItem="h8U-E6-a2A" secondAttribute="bottomMargin" id="bUq-7l-Da7"/>
+                                        <constraint firstItem="GnW-kF-Wz4" firstAttribute="top" secondItem="lmN-dE-aZ8" secondAttribute="bottom" constant="10" id="ckD-rB-4Bo"/>
+                                        <constraint firstItem="lmN-dE-aZ8" firstAttribute="trailing" secondItem="h8U-E6-a2A" secondAttribute="trailingMargin" id="dYP-IF-Jen"/>
+                                        <constraint firstItem="cze-TP-yIh" firstAttribute="top" secondItem="h8U-E6-a2A" secondAttribute="topMargin" constant="10" id="deg-1I-LgK"/>
+                                        <constraint firstItem="GnW-kF-Wz4" firstAttribute="trailing" secondItem="h8U-E6-a2A" secondAttribute="trailingMargin" id="jCn-Gf-sVm"/>
+                                        <constraint firstItem="GnW-kF-Wz4" firstAttribute="top" secondItem="lmN-dE-aZ8" secondAttribute="bottom" constant="10" id="x3B-zQ-fdB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nOR-bW-Ahk" id="Mc1-Qm-eYL"/>
+                            <outlet property="delegate" destination="nOR-bW-Ahk" id="pnP-xW-uvP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Resources" id="kun-1Q-1yX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uAx-BL-RBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2784.8000000000002" y="490.70464767616198"/>
+            <point key="canvasLocation" x="2828" y="490.70464767616198"/>
         </scene>
     </scenes>
 </document>
