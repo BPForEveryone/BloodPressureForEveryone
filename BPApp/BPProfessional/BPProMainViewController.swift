@@ -23,8 +23,6 @@ class BPProMainViewController: UIViewController {
                 UserDefaults.standard.set(0, forKey: "numSystem")
             }
         }
-        //print("numSystemChanged: ",UserDefaults.standard.value(forKey: "numSystemChanged") ?? "numSystemChanged not set")
-        //print("start numSystem: ",UserDefaults.standard.value(forKey: "numSystem") ?? "numSystem not set")
     }
 
     override func didReceiveMemoryWarning() {
