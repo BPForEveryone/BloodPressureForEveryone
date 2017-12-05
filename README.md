@@ -35,7 +35,7 @@ BloodPressureForEveryone is a set of two blood pressure focused iOS applications
 > - Corrected BPForEveryone View that reveresed systolic and diastolic blood pressures
 >
 > #### Known Bugs and Defects:
-> - *Crash*: In certain circumstances on both applications, if patient data is entered incorrectly, the analysis will not proceed and there will be a fatal error.
+> - *Crash*: In certain circumstances on both applications, if patient data is entered incorrectly, the analysis will not proceed and there will be a fatal error. In most cases, this occurs when the height is entered for the wrong measurement system (ie. when entering feet-inches measurement when the application expects meters).
 
 ## Install Guide
 
