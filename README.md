@@ -30,6 +30,10 @@ BloodPressureForEveryone is a two-edition HIPAA-compliant iOS application, one f
 > - Graph view displays past blood pressure measurements as a plot over time
 > - Resources tab provides articles, websites, programs, and other miscellaneous tools to help educate the user about blood pressure, hypertension, cardiovascular health, and eating and exercise habits
 >
+> #### Bug Fixes:
+> - Corrected errors in BP Norms tables for 13 year olds.
+> - Corrected BPForEveryone View that reveresed systolic and diastolic blood pressures
+>
 > #### Known Bugs and Defects:
 > - *Crash*: In certain circumstances on both applications, if patient data is entered incorrectly, the analysis will not proceed and there will be a fatal error.
 
