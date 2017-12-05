@@ -7,7 +7,6 @@ BloodPressureForEveryone
 2. [Release Notes](#release-notes)
 3. [Install Guide](#install-guide)
 4. [Build Guide](#build-guide)
-5. [Troubleshooting](#troubleshooting)
 
 ## Overview
 
@@ -31,8 +30,8 @@ BloodPressureForEveryone is a set of two blood pressure focused iOS applications
 > - Resources tab provides articles, websites, programs, and other miscellaneous tools to help educate the user about blood pressure, hypertension, cardiovascular health, and eating and exercise habits
 >
 > #### Bug Fixes:
-> - Corrected errors in BP Norms tables for 13 year olds.
-> - Corrected BPForEveryone View that reveresed systolic and diastolic blood pressures
+> - Corrected errors in BP Norms tables for 13 year olds
+> - Corrected BPForEveryone View that reversed systolic and diastolic blood pressures
 >
 > #### Known Bugs and Defects:
 > - *Crash*: In certain circumstances on both applications, if patient data is entered incorrectly, the analysis will not proceed and there will be a fatal error. In most cases, this occurs when the height is entered for the wrong measurement system (ie. when entering feet-inches measurement when the application expects meters).
@@ -43,14 +42,14 @@ BloodPressureForEveryone is a set of two blood pressure focused iOS applications
 - iOS 11.0 or later
 
 ### Beta Install
-- Connect iPhone to a computer with iTunes.
-- Drag & Drop the BPForEveryone.ipa or BPForProfessionals.ipa to the phone to sync.
+- Connect iPhone to a computer with iTunes
+- Drag & Drop the BPForEveryone.ipa or BPForProfessionals.ipa to the phone to sync
 
 ### Alternative Beta Install
-- Download XCode on a Mac computer.
+- Download the latest Xcode on a system running macOS 10.12 Sierra or later
 - Open a new project from source control using this link, https://github.com/BPForEveryone/BloodPressureForEveryone
-- Click near the run tab and set the target to a connected iPhone (optional, otherwise will emulate on the computer).
-- Click the run tab to build the application to the target destination (and run, if target is computer).
+- Click near the run tab and set the target to a connected iPhone (optional, otherwise will emulate on the computer)
+- Click the run tab to build the application to the target destination (and run, if target is computer)
 
 ### Official Download and Installation (Coming Soon)
 - Navigate to the App Store to find and download our application
@@ -73,5 +72,5 @@ The following are required to edit the graph views in their current state:
 ```bash
 pod install
 ```
-- Open project BPApp.xcworkspace in XCode.
+- Open project BPApp.xcworkspace in XCode
 - Select the desired target application and device and select 'build'
