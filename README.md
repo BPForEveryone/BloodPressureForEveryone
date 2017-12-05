@@ -58,7 +58,7 @@ BloodPressureForEveryone is a two-edition HIPAA-compliant iOS application, one f
 - Swift 4.0 or later
 
 ### Dependencies
-The following are required to edit the graph views in their current state:
+The following are required to render the graph views in the app:
 - [CocoaPods Dependency Manager](https://cocoapods.org/)
 - [Core Plot 2D Plotting Framework for iOS](https://github.com/core-plot/core-plot)
 
