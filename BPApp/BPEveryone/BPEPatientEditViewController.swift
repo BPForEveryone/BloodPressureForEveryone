@@ -105,6 +105,18 @@ class BPEPatientEditViewController : UITableViewController, UIPickerViewDelegate
         dobTextField.text = BirthDay.format(date: dob)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("hideKeyboard"))
+        tapGesture.cancelsTouchesInView = true
+        tableView.addGestureRecognizer(tapGesture)
+    }
+    
+    func hideKeyboard() {
+        tableView.endEditing(true)
+    }
+    
     // Update the defaults of all the fields to that of the selected patient.
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -130,7 +142,7 @@ class BPEPatientEditViewController : UITableViewController, UIPickerViewDelegate
         dobTextField.text = BirthDay.format(date: dob)
 
         // Height
-        heightTextField.text = "\(patient.height.meters)"
+        heightTextField.text = patient.height.description
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

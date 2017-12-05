@@ -41,7 +41,7 @@ public class Height {
             
             // Display in metric.
             if Config.unitSystem == Config.UnitSystem.metric {
-                return "\(self.meters) m"
+                return String(format: "%.2f m", self.meters)
             
             // Displayt in ft, in
             } else {

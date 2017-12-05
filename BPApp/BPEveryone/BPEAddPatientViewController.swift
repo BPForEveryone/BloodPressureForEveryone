@@ -23,6 +23,14 @@ class BPEAddPatientViewController: UITableViewController, UIPickerViewDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad();
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: Selector("hideKeyboard"))
+        tapGesture.cancelsTouchesInView = true
+        tableView.addGestureRecognizer(tapGesture)
+    }
+    
+    func hideKeyboard() {
+        tableView.endEditing(true)
     }
     
     @IBAction func cancel(_ sender: Any) {

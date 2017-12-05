@@ -48,7 +48,7 @@ class BPAnalysisResultsViewController: UITableViewController {
         self.genderLabel.text = (self.gender == Patient.Sex.male) ? "Male" : "Female";
         self.ageLabel.text = String(age!) + " yrs"
         // TODO: Create conditional statement for Imperial and Metric display and fix formatting
-        self.heightLabel.text = String(format: "%.2f m", height!.meters)
+        self.heightLabel.text = height?.description
         //self.weightLabel.text = weight
         self.BPReadingLabel.text = String(systolic!) + "/" + String(diastolic!) + " mmHg"
         self.BPInterpretationText.text = readingDiagnosis
