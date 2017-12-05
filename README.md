@@ -42,7 +42,11 @@ BloodPressureForEveryone is a two-edition HIPAA-compliant iOS application, one f
 ### Prerequisites
 - iOS 11.0 or later
 
-### Download and Installation
+### Beta Install
+- Connect iPhone to a computer with iTunes.
+- Drag & Drop the BPForEveryone.ipa or BPForProfessionals.ipa to the phone to sync.
+
+### Official Download and Installation (Coming Soon)
 - Navigate to the App Store to find and download our application
 - Installation will begin on your device when the application finishes downloading
 
@@ -57,5 +61,13 @@ BloodPressureForEveryone is a two-edition HIPAA-compliant iOS application, one f
 The following are required to edit the graph views in their current state:
 - [CocoaPods Dependency Manager](https://cocoapods.org/)
 - [Core Plot 2D Plotting Framework for iOS](https://github.com/core-plot/core-plot)
+
+### Build Instructions
+- After cloning the project navigate to the project directory and run
+```bash
+pod install
+```
+- Open project BPApp.xcworkspace in XCode.
+- Select thetarget application and device and select 'build'
 
 ## Troubleshooting
