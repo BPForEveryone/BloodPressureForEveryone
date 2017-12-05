@@ -69,5 +69,3 @@ pod install
 ```
 - Open project BPApp.xcworkspace in XCode.
 - Select thetarget application and device and select 'build'
-
-## Troubleshooting
