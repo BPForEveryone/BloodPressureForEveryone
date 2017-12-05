@@ -11,7 +11,7 @@ BloodPressureForEveryone
 
 ## Overview
 
-BloodPressureForEveryone is a two-edition HIPAA-compliant iOS application, one for medical professionals (BPForProfessionals) and the other for caretakers (BPForEveryone), that allows users to analyze blood pressure measurements. The latter allows users to track and view their blood pressure history. Additionally, the application also provides supplementary resources for specialists and common practitioners alike and educational resources for patients and caregivers.
+BloodPressureForEveryone is a set of two blood pressure focused iOS applications, one for medical professionals (BPForProfessionals) and the other for caretakers (BPForEveryone), that allows users to analyze blood pressure measurements. The latter allows users to track and view their blood pressure history. The medical professional application is HIPAA compliant and suitable for use during a patient consultation. Additionally, the application also provides supplementary resources for specialists and common practitioners alike and educational resources for patients and caregivers.
 
 ## Release Notes
 > ## v1.0.0 (12/04/2017)
@@ -46,6 +46,12 @@ BloodPressureForEveryone is a two-edition HIPAA-compliant iOS application, one f
 - Connect iPhone to a computer with iTunes.
 - Drag & Drop the BPForEveryone.ipa or BPForProfessionals.ipa to the phone to sync.
 
+### Alternative Beta Install
+- Download XCode on a Mac computer.
+- Open a new project from source control using this link, https://github.com/BPForEveryone/BloodPressureForEveryone
+- Click near the run tab and set the target to a connected iPhone (optional, otherwise will emulate on the computer).
+- Click the run tab to build the application to the target destination (and run, if target is computer).
+
 ### Official Download and Installation (Coming Soon)
 - Navigate to the App Store to find and download our application
 - Installation will begin on your device when the application finishes downloading
@@ -58,7 +64,7 @@ BloodPressureForEveryone is a two-edition HIPAA-compliant iOS application, one f
 - Swift 4.0 or later
 
 ### Dependencies
-The following are required to render the graph views in the app:
+The following are required to edit the graph views in their current state:
 - [CocoaPods Dependency Manager](https://cocoapods.org/)
 - [Core Plot 2D Plotting Framework for iOS](https://github.com/core-plot/core-plot)
 
