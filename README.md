@@ -68,4 +68,4 @@ The following are required to render the graph views in the app:
 pod install
 ```
 - Open project BPApp.xcworkspace in XCode.
-- Select thetarget application and device and select 'build'
+- Select the desired target application and device and select 'build'
