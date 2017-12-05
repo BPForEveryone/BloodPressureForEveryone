@@ -68,4 +68,4 @@ The following are required to edit the graph views in their current state:
 pod install
 ```
 - Open project BPApp.xcworkspace in XCode.
-- Select thetarget application and device and select 'build'
+- Select the desired target application and device and select 'build'
